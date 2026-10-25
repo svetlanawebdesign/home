@@ -3030,18 +3030,16 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 @media screen and (max-width: 991px) {
   .legal__title { font-size: 44px; }
 }
+/* телефон: крайние линии стоят по краям блока (0 и 100%), поэтому текст идёт от линии до линии, без отступов */
 @media screen and (max-width: 767px) {
   .content-wrap.legal { padding-top: 130px; padding-bottom: 80px; }
-  .legal__head, .legal__row { grid-template-columns: 5% 90% 1fr; }
-  .legal__title, .legal__date, .legal__h2, .legal__text { grid-column: 2; }
+  .legal__head, .legal__row { grid-template-columns: 100%; }
+  .legal__title, .legal__date, .legal__h2, .legal__text { grid-column: 1; }
   .legal__h2 { margin-bottom: 14px; padding-right: 0; }
   .legal__title { font-size: 34px; }
   .legal__head { margin-bottom: 48px; }
   .legal__row { margin-bottom: 40px; }
   .legal__text { font-size: 15px; }
-}
-@media screen and (max-width: 479px) {
-  .legal__head, .legal__row { grid-template-columns: 16px calc(100% - 32px) 1fr; }
 }
 
 /* ======================================================================

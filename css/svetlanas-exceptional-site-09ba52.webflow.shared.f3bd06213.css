@@ -32,7 +32,10 @@
    27. Просмотр отзывов на весь экран (лайтбокс)
    28. Работы: обрезка картинок сверху по центру; точки-декор на карте
    29. Карта: подсказка-список для кластеров
-   30. Первый экран (hero) на всю высоту экрана, контент по центру
+   30. Первый экран (hero): на всю высоту, контент и бегущая строка по центру
+   31. Текстовые страницы (Политика конфиденциальности, Cookie)
+   32. Плашка про cookie
+   33. Плашки на карте: ширина 350px (на телефоне 90%), поверх точек, текст в списках слева
 
    Из файла удалены стили, которых нет в index.html (формы, слайдер, табы,
    dropdown, lightbox, 12-колоночная сетка и неиспользуемые классы).
@@ -2158,7 +2161,6 @@ h2 {
     margin-top: 0;
     margin-bottom: -40px;
     inset: auto 0%;
-     top:60%;
   }
 
   .master-navigation {
@@ -2490,8 +2492,8 @@ body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; }
 /* всплывающая подсказка */
 .tip {
   position: absolute;
-  z-index: 20;
-  width: 200px;
+  z-index: 300;                  /* выше всех точек (у точек z-index до ~100) */
+  width: 350px;
   background: var(--tip-bg);
   border-radius: 4px;
   padding: 12px 12px 22px;
@@ -2966,7 +2968,7 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 .tip--wide .tip__list { columns: 3; }
 .tip--list .tip__sub { margin-top: 12px; }
 @media screen and (max-width: 600px) {
-  .tip--list, .tip--wide { width: min(320px, calc(100vw - 16px)); }
+  .tip--list, .tip--wide { width: 90vw; }
   .tip__list, .tip--wide .tip__list { columns: 1; max-height: 42vh; overflow-y: auto; overscroll-behavior: contain; font-size: 14px; }
 }
 .point--cluster::after { display: none !important; }   /* у кластеров зона касания и так большая, иначе перекрывают соседей */
@@ -2984,4 +2986,104 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 }
 @media screen and (max-width: 767px) {
   .content-wrap.center.add-top { padding-bottom: 0; }
+  .hero-stage .marquee-2 { top: 60%; }
 }
+
+/* ======================================================================
+   31. ТЕКСТОВЫЕ СТРАНИЦЫ (privacy/, cookies/): блок с вертикальными линиями как на главной.
+   Заголовок разделов стоит на первой линии (5%), текст - между линиями 27.5% и 72.5%
+   ====================================================================== */
+.content-wrap.legal { display: block; padding-top: 180px; padding-bottom: 120px; overflow: visible; }
+.legal__head, .legal__row {
+  display: grid;
+  grid-template-columns: 5% 22.5% 45% 1fr;     /* пустая колонка, заголовок, текст, остаток - ровно по линиям */
+  position: relative;
+  z-index: 6;
+}
+.legal__head { margin-bottom: 72px; }
+.legal__title {
+  grid-column: 2 / 4;
+  margin: 0 0 20px;
+  color: #fff;
+  font-family: Oranienbaum, sans-serif;
+  font-size: 56px; font-weight: 400; line-height: 1;
+  text-transform: uppercase;
+}
+.legal__date { grid-column: 2 / 4; color: #ffffff80; font-family: Inter, sans-serif; font-size: 14px; }
+.legal__row { margin-bottom: 56px; }
+.legal__h2 {
+  grid-column: 2;
+  margin: 0; padding-right: 24px;
+  color: #fff;
+  font-family: Oranienbaum, sans-serif;
+  font-size: 22px; font-weight: 400; line-height: 1.15;
+  text-transform: uppercase;
+}
+.legal__text { grid-column: 3; color: #ffffffcc; font-family: Inter, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.6; }
+.legal__text p { margin: 0 0 14px; }
+.legal__text ul { margin: 0 0 14px; padding-left: 20px; }
+.legal__text li { margin-bottom: 8px; }
+.legal__text strong { color: #fff; font-weight: 500; }
+.legal__text a { color: #fff; text-decoration: underline; text-decoration-color: #ffffff59; text-underline-offset: 3px; transition: text-decoration-color .2s ease; overflow-wrap: anywhere; }
+.legal__text a:hover { text-decoration-color: #fff; }
+@media screen and (max-width: 991px) {
+  .legal__title { font-size: 44px; }
+  .legal__head, .legal__row { grid-template-columns: 5% 30% 55% 1fr; }
+}
+@media screen and (max-width: 767px) {
+  .content-wrap.legal { padding-top: 130px; padding-bottom: 80px; }
+  .legal__head, .legal__row { grid-template-columns: 5% 90% 1fr; }
+  .legal__title, .legal__date, .legal__h2, .legal__text { grid-column: 2; }
+  .legal__h2 { margin-bottom: 14px; padding-right: 0; }
+  .legal__title { font-size: 34px; }
+  .legal__head { margin-bottom: 48px; }
+  .legal__row { margin-bottom: 40px; }
+  .legal__text { font-size: 15px; }
+}
+@media screen and (max-width: 479px) {
+  .legal__head, .legal__row { grid-template-columns: 16px calc(100% - 32px) 1fr; }
+}
+
+/* ======================================================================
+   32. ПЛАШКА ПРО COOKIE: внизу слева, пока человек не нажмёт «Принять». Скрипт: js/cookie-banner.js
+   ====================================================================== */
+.cookie-banner {
+  position: fixed; left: 20px; bottom: 20px; z-index: 2500;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  width: min(380px, calc(100vw - 32px));
+  padding: 18px 20px;
+  background: #232323;
+  border: 1px solid #ffffff1f;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px #00000059;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .4s ease, transform .4s cubic-bezier(.76, 0, .24, 1);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner.is-visible { opacity: 1; transform: none; }
+.cookie-banner__text { margin: 0; color: #ffffffb3; font-family: Inter, sans-serif; font-size: 13px; font-weight: 300; line-height: 1.5; }
+.cookie-banner__link { color: #fff; text-decoration: underline; text-decoration-color: #ffffff59; text-underline-offset: 3px; }
+.cookie-banner__link:hover { text-decoration-color: #fff; }
+.cookie-banner__btn {
+  display: inline-block;
+  padding: 10px 24px;
+  color: #18181a; background: #fff;
+  border-radius: 600px;
+  font-family: Inter, sans-serif; font-size: 13px; font-weight: 400; line-height: 1.2;
+  text-decoration: none;
+  overflow: clip;
+  -webkit-tap-highlight-color: transparent;
+}
+.cookie-banner__btn .stagger-wrap { width: auto; }
+.cookie-banner__btn [stagger-link-text] { display: inline-block; }
+@media screen and (max-width: 479px) {
+  .cookie-banner { left: 16px; right: 16px; bottom: 16px; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) { .cookie-banner { transition: none; } }
+
+/* ======================================================================
+   33. ПЛАШКИ НА КАРТЕ: ширина 350px (на телефоне 90% экрана), z-index выше всех точек,
+   в плашках-списках (кластеры с цифрами) текст выровнен по левому краю
+   ====================================================================== */
+@media screen and (max-width: 767px) { .tip { width: 90vw; } }
+.tip--list, .tip--list .tip__sub, .tip__list { text-align: left; }

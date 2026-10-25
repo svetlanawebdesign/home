@@ -36,6 +36,7 @@
    31. Текстовые страницы (Политика конфиденциальности, Cookie)
    32. Плашка про cookie
    33. Плашки на карте: ширина 350px (на телефоне 90%), поверх точек, текст в списках слева
+   34. Шапка: EN | RU прижат к правому краю (по линии) на всех экранах
 
    Из файла удалены стили, которых нет в index.html (формы, слайдер, табы,
    dropdown, lightbox, 12-колоночная сетка и неиспользуемые классы).
@@ -2991,12 +2992,12 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 
 /* ======================================================================
    31. ТЕКСТОВЫЕ СТРАНИЦЫ (privacy/, cookies/): блок с вертикальными линиями как на главной.
-   Заголовок разделов стоит на первой линии (5%), текст - между линиями 27.5% и 72.5%
+   Заголовок разделов стоит на первой линии (5%), текст начинается от середины (50%) и идёт до правой линии (95%)
    ====================================================================== */
 .content-wrap.legal { display: block; padding-top: 180px; padding-bottom: 120px; overflow: visible; }
 .legal__head, .legal__row {
   display: grid;
-  grid-template-columns: 5% 22.5% 45% 1fr;     /* пустая колонка, заголовок, текст, остаток - ровно по линиям */
+  grid-template-columns: 5% 45% 45% 1fr;       /* пустая колонка, заголовок (с 5%), текст (с 50%), остаток - ровно по линиям */
   position: relative;
   z-index: 6;
 }
@@ -3028,7 +3029,6 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 .legal__text a:hover { text-decoration-color: #fff; }
 @media screen and (max-width: 991px) {
   .legal__title { font-size: 44px; }
-  .legal__head, .legal__row { grid-template-columns: 5% 30% 55% 1fr; }
 }
 @media screen and (max-width: 767px) {
   .content-wrap.legal { padding-top: 130px; padding-bottom: 80px; }
@@ -3045,10 +3045,10 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 }
 
 /* ======================================================================
-   32. ПЛАШКА ПРО COOKIE: внизу слева, пока человек не нажмёт «Принять». Скрипт: js/cookie-banner.js
+   32. ПЛАШКА ПРО COOKIE: внизу справа, пока человек не нажмёт «Принять». Скрипт: js/cookie-banner.js
    ====================================================================== */
 .cookie-banner {
-  position: fixed; left: 20px; bottom: 20px; z-index: 2500;
+  position: fixed; right: 20px; bottom: 20px; z-index: 2500;
   display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
   width: min(380px, calc(100vw - 32px));
   padding: 18px 20px;
@@ -3087,3 +3087,8 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
    ====================================================================== */
 @media screen and (max-width: 767px) { .tip { width: 90vw; } }
 .tip--list, .tip--list .tip__sub, .tip__list { text-align: left; }
+
+/* ======================================================================
+   34. ШАПКА: EN | RU прижат к правому краю (на уровне правой линии) на всех экранах
+   ====================================================================== */
+.lang-switch:not(.not-mob) .lang-row { justify-content: flex-end; }

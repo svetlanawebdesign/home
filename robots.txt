@@ -1,5 +1,5 @@
-# robots.txt - https://svetlanawebdesign.github.io/robots.txt
-# Файл кладётся в корень сайта. При переезде на свой домен добавьте строку Sitemap: https://ВАШ-ДОМЕН/sitemap.xml, когда появится sitemap.xml
+# robots.txt - https://svetlana.is-a.dev/robots.txt
+# Файл кладётся в корень сайта.
 
 # Всем роботам можно сканировать весь сайт (Google, Яндекс, Bing и др.)
 User-agent: *
@@ -23,3 +23,5 @@ Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+
+Sitemap: https://svetlana.is-a.dev/sitemap.xml

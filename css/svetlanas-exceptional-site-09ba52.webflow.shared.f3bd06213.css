@@ -31,6 +31,8 @@
    26. Отзывы: бегущая лента (на телефоне ещё и листается пальцем), формат карточки 1595/958
    27. Просмотр отзывов на весь экран (лайтбокс)
    28. Работы: обрезка картинок сверху по центру; точки-декор на карте
+   29. Карта: подсказка-список для кластеров
+   30. Первый экран (hero) на всю высоту экрана, контент по центру
 
    Из файла удалены стили, которых нет в index.html (формы, слайдер, табы,
    dropdown, lightbox, 12-колоночная сетка и неиспользуемые классы).
@@ -2697,7 +2699,7 @@ a[stagger-link] .stagger-wrap [stagger-link-text] { text-shadow: 0 1.2em 0 var(-
    ====================================================================== */
 @media (max-width: 767px), (pointer: coarse) {
   .point { width: calc(var(--d) * 1.12); touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
-  .point::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; }
+  .point::after { content: ""; position: absolute; inset: -3px; border-radius: 50%; }
 }
 
 /* ======================================================================
@@ -2946,3 +2948,39 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 #work .image-cover { object-position: 50% 0%; }
 .point--static { cursor: default; pointer-events: none; }
 .point--static::after { display: none !important; }
+
+/* ======================================================================
+   29. КАРТА: подсказка-список (кластеры 10+ / 25+ / 5+): без картинки и заголовка,
+   на компьютере в две колонки, на телефоне - одна колонка с прокруткой внутри
+   ====================================================================== */
+.tip.is-open { pointer-events: auto; }
+.tip--list { width: min(460px, calc(100vw - 16px)); }
+.tip__list {
+  list-style: none; margin: 8px 12px 12px; padding: 0;
+  columns: 2; column-gap: 20px;
+  font-size: 13px; line-height: 1.35;
+}
+.tip__list li { break-inside: avoid; margin: 0 0 7px; }
+.tip--wide { width: min(680px, calc(100vw - 16px)); }
+.tip--wide .tip__list { columns: 3; }
+.tip--list .tip__sub { margin-top: 12px; }
+@media screen and (max-width: 600px) {
+  .tip--list, .tip--wide { width: min(320px, calc(100vw - 16px)); }
+  .tip__list, .tip--wide .tip__list { columns: 1; max-height: 42vh; overflow-y: auto; overscroll-behavior: contain; font-size: 14px; }
+}
+.point--cluster::after { display: none !important; }   /* у кластеров зона касания и так большая, иначе перекрывают соседей */
+
+/* ======================================================================
+   30. HERO: от 768px - первый экран на всю высоту экрана, фото + кнопка по центру,
+   бегущая строка тоже по центру экрана. Внутри .hero-stage лежат фото, кнопка и строка.
+   На телефоне (≤767px) как было раньше: без высоты на весь экран, строка у верха фото,
+   нижний отступ у .content-wrap убран. Заголовки по углам остаются у нижнего края
+   ====================================================================== */
+.hero-stage { display: flex; flex-direction: column; align-items: center; gap: 32px; }
+@media screen and (min-width: 768px) {
+  .content-wrap.center.add-top { min-height: 100vh; min-height: 100svh; padding-top: 175px; padding-bottom: 105px; }
+  .hero-stage .marquee-2 { top: 50%; left: 0; margin-top: 0; transform: translateY(-50%); }
+}
+@media screen and (max-width: 767px) {
+  .content-wrap.center.add-top { padding-bottom: 0; }
+}

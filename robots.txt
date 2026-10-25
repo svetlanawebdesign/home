@@ -1,0 +1,25 @@
+# robots.txt - https://svetlanawebdesign.github.io/robots.txt
+# Файл кладётся в корень сайта. При переезде на свой домен добавьте строку Sitemap: https://ВАШ-ДОМЕН/sitemap.xml, когда появится sitemap.xml
+
+# Всем роботам можно сканировать весь сайт (Google, Яндекс, Bing и др.)
+User-agent: *
+Allow: /
+
+# Роботы ИИ-поиска - явно разрешены, чтобы сайт попадал в ответы ChatGPT и других сервисов
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /

@@ -1,0 +1,34 @@
+# Svetlana Kochetova — Web Designer
+
+> Independent freelance web designer and developer. Turnkey website design and development (landing pages, corporate sites, online stores, design-to-code) on Tilda, Webflow, WordPress, Framer, Wix, LPmotor and Shopify. Works with clients worldwide, in Russian and English. Working since 2019: 6+ years of experience, 400+ websites delivered, 250+ reviews.
+
+Svetlana Kochetova is a private specialist, not an agency. The site is available in two languages with identical content: Russian (default) and English. Prices are "from" prices; the final cost is agreed per project.
+
+## Main pages
+
+- [Home page (Russian)](https://svetlana.is-a.dev/): portfolio, services with prices, clients map, reviews, contacts
+- [Home page (English)](https://svetlana.is-a.dev/en/): same content in English
+
+## Services (English prices in USD, Russian prices in RUB)
+
+- Landing page: from 10 days, from $400 (from 30,000 RUB). Custom design and responsive development, for ads, product launches or testing a niche.
+- Corporate website: from 20 days, from $700 (from 50,000 RUB). Multi-page business site with a user-friendly CMS.
+- Online store: from 20 days, from $900 (from 65,000 RUB). Catalog, cart, payments, delivery and admin panel.
+- Design to code: from 1 day, from $150 (from 10,000 RUB). Responsive development from a ready Figma design.
+
+## Platforms and skills
+
+Web design, UX/UI, website development. Tilda, Webflow, WordPress, Framer, Wix, LPmotor, Shopify, Figma.
+
+## Contact
+
+- Email: svekochetova@gmail.com
+- Phone / WhatsApp: +43 665 6574 2024
+- Telegram: https://t.me/svetlanawebdesign
+- Book a 30-minute call: https://calendly.com/svekochetova/30min
+- Webflow profile: https://webflow.com/@svetlanawebdesign
+- Tilda experts profile: https://experts.tilda.cc/flavoweb
+
+## Optional
+
+- [Русская версия](https://svetlana.is-a.dev/): Светлана Кочетова — веб-дизайнер. Дизайн и разработка сайтов «под ключ»: лендинг от 30 000 ₽, корпоративный сайт от 50 000 ₽, интернет-магазин от 65 000 ₽, вёрстка по макету из Figma от 10 000 ₽. Работает с 2019 года, 400+ реализованных сайтов.

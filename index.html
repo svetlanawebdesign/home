@@ -67,7 +67,516 @@
 <script>document.documentElement.classList.add("is-loading","sk-on");</script>
 <!-- [HEAD] Иконки сайта (favicon) -->
 <link rel="icon" href="img/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"/><link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"/><link rel="manifest" href="img/site.webmanifest"/><!-- Микроразметка schema.org (JSON-LD): данные о сайте, специалисте и услугах для поисковиков -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://svetlana.is-a.dev/#website", "url": "https://svetlana.is-a.dev/", "name": "Светлана Кочетова — веб-дизайнер", "inLanguage": "ru", "publisher": {"@id": "https://svetlana.is-a.dev/#person"}}, {"@type": "Person", "@id": "https://svetlana.is-a.dev/#person", "name": "Светлана Кочетова", "alternateName": ["Svetlana Kochetova", "Светлана Кочетова"], "jobTitle": "Веб-дизайнер", "url": "https://svetlana.is-a.dev/", "image": "https://svetlana.is-a.dev/img/cover.png", "email": "mailto:svekochetova@gmail.com", "telephone": "+4366565742024", "sameAs": ["https://t.me/svetlanawebdesign", "https://webflow.com/@svetlanawebdesign", "https://experts.tilda.cc/flavoweb", "https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ"], "knowsAbout": ["Веб-дизайн", "Разработка сайтов", "Tilda", "WordPress", "Webflow", "Framer", "Shopify"]}, {"@type": "ProfessionalService", "@id": "https://svetlana.is-a.dev/#service", "name": "Светлана Кочетова — дизайн и разработка сайтов", "url": "https://svetlana.is-a.dev/", "image": "https://svetlana.is-a.dev/img/cover.png", "description": "Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify.", "provider": {"@id": "https://svetlana.is-a.dev/#person"}, "areaServed": "Worldwide", "availableLanguage": ["ru", "en"], "email": "svekochetova@gmail.com", "telephone": "+4366565742024", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Услуги", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Лендинг", "description": "Современный лендинг с индивидуальным дизайном и адаптивной разработкой."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 30000, "priceCurrency": "RUB"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Корпоративный сайт", "description": "Сайт для бизнеса с несколькими разделами и удобной CMS."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 50000, "priceCurrency": "RUB"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Интернет-магазин", "description": "Интернет-магазин с каталогом, корзиной, оплатой и доставкой."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 65000, "priceCurrency": "RUB"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Просто верстка", "description": "Адаптивная вёрстка по готовому макету из Figma."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 10000, "priceCurrency": "RUB"}}]}}, {"@type": "WebPage", "@id": "https://svetlana.is-a.dev/#webpage", "url": "https://svetlana.is-a.dev/", "name": "Веб-дизайнер Светлана Кочетова | Дизайн и разработка сайтов, интерфейсов и приложений", "description": "Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify.", "inLanguage": "ru", "isPartOf": {"@id": "https://svetlana.is-a.dev/#website"}, "about": {"@id": "https://svetlana.is-a.dev/#person"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://svetlana.is-a.dev/img/cover.png"}}]}</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://svetlana.is-a.dev/#website",
+   "url": "https://svetlana.is-a.dev/",
+   "name": "Светлана Кочетова — веб-дизайнер",
+   "inLanguage": "ru",
+   "publisher": {
+    "@id": "https://svetlana.is-a.dev/#person"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://svetlana.is-a.dev/#person",
+   "name": "Светлана Кочетова",
+   "alternateName": [
+    "Svetlana Kochetova",
+    "Светлана Кочетова"
+   ],
+   "jobTitle": "Веб-дизайнер",
+   "url": "https://svetlana.is-a.dev/",
+   "image": "https://svetlana.is-a.dev/img/cover.png",
+   "email": "mailto:svekochetova@gmail.com",
+   "telephone": "+4366565742024",
+   "sameAs": [
+    "https://t.me/svetlanawebdesign",
+    "https://webflow.com/@svetlanawebdesign",
+    "https://experts.tilda.cc/flavoweb",
+    "https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ"
+   ],
+   "knowsAbout": [
+    "Веб-дизайн",
+    "Разработка сайтов",
+    "Tilda",
+    "WordPress",
+    "Webflow",
+    "Framer",
+    "Shopify"
+   ]
+  },
+  {
+   "@type": "ProfessionalService",
+   "@id": "https://svetlana.is-a.dev/#service",
+   "name": "Светлана Кочетова — дизайн и разработка сайтов",
+   "url": "https://svetlana.is-a.dev/",
+   "image": "https://svetlana.is-a.dev/img/cover.png",
+   "description": "Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify.",
+   "provider": {
+    "@id": "https://svetlana.is-a.dev/#person"
+   },
+   "areaServed": "Worldwide",
+   "availableLanguage": [
+    "ru",
+    "en"
+   ],
+   "email": "svekochetova@gmail.com",
+   "telephone": "+4366565742024",
+   "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Услуги",
+    "itemListElement": [
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Лендинг",
+       "description": "Современный лендинг с индивидуальным дизайном и адаптивной разработкой."
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "minPrice": 30000,
+       "priceCurrency": "RUB"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Корпоративный сайт",
+       "description": "Сайт для бизнеса с несколькими разделами и удобной CMS."
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "minPrice": 50000,
+       "priceCurrency": "RUB"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Интернет-магазин",
+       "description": "Интернет-магазин с каталогом, корзиной, оплатой и доставкой."
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "minPrice": 65000,
+       "priceCurrency": "RUB"
+      }
+     },
+     {
+      "@type": "Offer",
+      "itemOffered": {
+       "@type": "Service",
+       "name": "Просто верстка",
+       "description": "Адаптивная вёрстка по готовому макету из Figma."
+      },
+      "priceSpecification": {
+       "@type": "PriceSpecification",
+       "minPrice": 10000,
+       "priceCurrency": "RUB"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "@type": "WebPage",
+   "@id": "https://svetlana.is-a.dev/#webpage",
+   "url": "https://svetlana.is-a.dev/",
+   "name": "Веб-дизайнер Светлана Кочетова | Дизайн и разработка сайтов, интерфейсов и приложений",
+   "description": "Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify.",
+   "inLanguage": "ru",
+   "isPartOf": {
+    "@id": "https://svetlana.is-a.dev/#website"
+   },
+   "about": {
+    "@id": "https://svetlana.is-a.dev/#person"
+   },
+   "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://svetlana.is-a.dev/img/cover.png"
+   },
+   "hasPart": {
+    "@id": "https://svetlana.is-a.dev/#portfolio"
+   }
+  },
+  {
+   "@type": "ItemList",
+   "@id": "https://svetlana.is-a.dev/#portfolio",
+   "name": "Портфолио: примеры сайтов",
+   "inLanguage": "ru",
+   "numberOfItems": 24,
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img1.png",
+      "name": "Пример работы 1",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/ENnewline1img2.png",
+      "name": "Пример работы 2",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img3.png",
+      "name": "Пример работы 3",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/ENnewline1img4.png",
+      "name": "Пример работы 4",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 5,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img5.png",
+      "name": "Пример работы 5",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 6,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img6.png",
+      "name": "Пример работы 6",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 7,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img7.png",
+      "name": "Пример работы 7",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 8,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img8.png",
+      "name": "Пример работы 8",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 9,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img9.png",
+      "name": "Пример работы 9",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 10,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img10.png",
+      "name": "Пример работы 10",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 11,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img11.png",
+      "name": "Пример работы 11",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 12,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline1img12.png",
+      "name": "Пример работы 12",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 13,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img1.png",
+      "name": "Пример работы 13",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 14,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img2.png",
+      "name": "Пример работы 14",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 15,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img3.png",
+      "name": "Пример работы 15",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 16,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img4.png",
+      "name": "Пример работы 16",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 17,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img5.png",
+      "name": "Пример работы 17",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 18,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img6.png",
+      "name": "Пример работы 18",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 19,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img7.png",
+      "name": "Пример работы 19",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 20,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img8.png",
+      "name": "Пример работы 20",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 21,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img9.png",
+      "name": "Пример работы 21",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 22,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img10.png",
+      "name": "Пример работы 22",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 23,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img11.png",
+      "name": "Пример работы 23",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    },
+    {
+     "@type": "ListItem",
+     "position": 24,
+     "item": {
+      "@type": "ImageObject",
+      "contentUrl": "https://svetlana.is-a.dev/img/newline2img12.png",
+      "name": "Пример работы 24",
+      "width": 1680,
+      "height": 1260,
+      "encodingFormat": "image/png",
+      "creator": {
+       "@id": "https://svetlana.is-a.dev/#person"
+      }
+     }
+    }
+   ]
+  }
+ ]
+}</script>
 </head><body class="body">
 <!-- [1] ЭКРАН ЗАГРУЗКИ: подпись слева, проценты справа, линия прогресса снизу. Число и ширину линии обновляет скрипт «ЭКРАН ЗАГРУЗКИ» в конце файла. Стили: CSS, раздел 5 -->
 <div class="page-loader" aria-hidden="true"><div class="page-loader__wrap"><div class="page-loader__row"><div class="page-loader__label">Загружаем сайт...</div><div class="page-loader__pct"><span id="plPct">0</span>%</div></div><div class="page-loader__bar"><i id="plFill"></i></div></div></div>
@@ -76,7 +585,7 @@
 <!-- [3] HERO - ПЕРВЫЙ ЭКРАН: фото, бегущая строка «Web Design • UX/UI • Development», два заголовка, кнопка «Свяжитесь со мной». Анимацию появления (grow in) запускает скрипт загрузки после ухода прелоадера -->
 <section class="page-section no-scroll"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap center add-top"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><!-- Блок «фото + кнопка + бегущая строка»: центрируется по вертикали на весь экран (CSS, раздел 30) --><div class="hero-stage"><!-- Главное фото hero --><img class="hero-img" src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1).avif" alt="" style="opacity:0" sizes="100vw" data-w-id="77ecca7d-adb8-a67b-8c74-9377a49356ea" loading="eager" fetchpriority="high" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1).avif 1159w"/><a href="#" stagger-link="" data-open-popup="" data-w-id="64bf88e4-4440-56c1-b822-3ea0ecb97232" style="opacity:0" class="stagger-animation relative w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Свяжитесь со мной</div></div><div class="hover-bg"></div></div></a><!-- Бегущая строка на hero: в HTML один текст, скрипт «размножение hero-строки» делает 6 текстов x 3 блока --><div class="marquee-2"><div data-w-id="fda49462-dfa0-b15a-15ac-2e973116a85b" style="-webkit-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="marquee-text"><div class="single-marquee-text"><div class="text-h0">Web Design • UX/UI • Development •</div></div></div><div class="shadow-work-slider"></div><div class="shadow-work-slider right"></div></div></div><div data-w-id="f913e596-4d6e-4d96-fa16-bf3d380a080e" style="opacity:0" class="text-h6 heading-medium uppercase _01">Сайты с душой, <br/>от души, для души</div><h1 data-w-id="d2cd1c95-320f-befa-7e07-d260d9035a73" style="opacity:0" class="text-h6 heading-medium uppercase">Веб-дизайнер<br/>светлана Кочетова</h1></div></div></section>
 <!-- [4] РАБОТЫ (#work, второй экран): две ленты карточек, движутся в разные стороны. Фон карточек #232323 (скелетон) пока картинка грузится -->
-<section id="work" class="page-section no-scroll"><div class="w-layout-blockcontainer section-container no-limit w-container"><div class="content-wrap center"><div class="_1-clmn-line fix"></div><div class="_2-clmn-line fix"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line fix"></div><div class="_5-clmn-line fix"></div><div class="marquee img"><!-- Лента 1 (вправо). Скорость: data-wr-speed. Карточка = блок .work-card-link (не ссылка): картинка + подпись (сфера • платформа) --><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="right" class="marquee-logos scroll images"><div class="single-line less-gap"><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image1.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Event • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image2.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Auto • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image3.png" loading="lazy" height="100" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">tattoo • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image4.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">beauty • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image5.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">portfolio • wix</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image6.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">portfolio • wix</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image7.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">health • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image8.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">fintech • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image9.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">fintech • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image10.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">fintech • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image11.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Food • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image12.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Food • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image13.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Ads • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%202087326332.png" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-2600.png 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-3200.png 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%202087326332.png 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">advent • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image15.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">advent • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line1image16.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">ai • figma</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%201462984996.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%201462984996.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">real estate • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%201462985024.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%201462985024.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">real estate • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%201462984995%20(5).avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%201462984995%20(5).avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">real estate • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%201462984997%20(5).avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%201462984997%20(5).avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">construction • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%2016_9%20-%201%20(1).avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%2016_9%20-%201%20(1).avif 1920w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">travel • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%201462984998.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%201462984998.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">events • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%201462985013.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%201462985013.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">events • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%201462985006.png" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-2600.png 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-3200.png 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%201462985006.png 6000w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">events • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%201462985035.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%201462985035.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">e-commerce • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%201462985038.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%201462985038.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">health • tilda</div></div></div></div></div></div><!-- Лента 2 (влево): тот же набор карточек --><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="left" class="marquee-logos scroll images"><div class="single-line less-gap"><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line2image1.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Event • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line2image2.png" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Auto • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd02_Untitled.avif 3360w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">tattoo • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line2image4.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">beauty • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line2image5.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">portfolio • wix</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%201462984994.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%25201462984994-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%25201462984994-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%25201462984994-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%25201462984994-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%25201462984994-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%25201462984994-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcf2_Frame%201462984994.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">portfolio • wix</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcd2_Frame%201462985037.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcd2_Frame%25201462985037-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcd2_Frame%25201462985037-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcd2_Frame%25201462985037-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcd2_Frame%25201462985037-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcd2_Frame%201462985037.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">health • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%201462985025.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%25201462985025-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%25201462985025-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%25201462985025-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%25201462985025-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%25201462985025-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%25201462985025-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%25201462985025-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc22_Frame%201462985025.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">fintech • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/line2image9.avif" loading="lazy" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">fintech • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%201462985027.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%25201462985027-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%25201462985027-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%25201462985027-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%25201462985027-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%25201462985027-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%25201462985027-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%25201462985027-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc12_Frame%201462985027.avif 3442w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">fintech • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%201462984997.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%25201462984997-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%25201462984997-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%25201462984997-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%25201462984997-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%25201462984997-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%25201462984997-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcc2_Frame%201462984997.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Food • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%201462985021.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%25201462985021-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%25201462985021-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%25201462985021-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%25201462985021-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%25201462985021-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%25201462985021-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc62_Frame%201462985021.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Food • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%201462984995.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%25201462984995-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%25201462984995-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%25201462984995-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%25201462984995-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%25201462984995-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%25201462984995-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%25201462984995-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc32_Frame%201462984995.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">Ads • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%202087326332.png" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-2600.png 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%25202087326332-p-3200.png 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd60_Frame%202087326332.png 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">advent • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c590c1c0713779dd97_Pancost%20co%20uj%20%D0%B4%D0%BE%D1%85%D1%83%D1%8F%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%20%D0%91%D0%BB%D0%BE%D0%B3%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%B0%D0%B9%D1%82%D0%B8%D0%BD%D0%B3.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c590c1c0713779dd97_Pancost%2520co%2520uj%2520%25D0%25B4%25D0%25BE%25D1%2585%25D1%2583%25D1%258F%2520%25D1%2581%25D1%2582%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B8%25D1%2586%2520%25D0%2591%25D0%25BB%25D0%25BE%25D0%25B3%2520%25D0%25BA%25D0%25B0%25D1%2582%25D0%25B0%25D0%25BB%25D0%25BE%25D0%25B3%2520%25D0%259B%25D0%25B8%25D1%2587%25D0%25BD%25D1%258B%25D0%25B9%2520%25D0%25BA%25D0%25B0%25D0%25B1%25D0%25B8%25D0%25BD%25D0%25B5%25D1%2582%2520%25D0%25BA%25D0%25BE%25D0%25BF%25D0%25B8%25D1%2580%25D0%25B0%25D0%25B9%25D1%2582%25D0%25B8%25D0%25BD%25D0%25B3-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c590c1c0713779dd97_Pancost%2520co%2520uj%2520%25D0%25B4%25D0%25BE%25D1%2585%25D1%2583%25D1%258F%2520%25D1%2581%25D1%2582%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B8%25D1%2586%2520%25D0%2591%25D0%25BB%25D0%25BE%25D0%25B3%2520%25D0%25BA%25D0%25B0%25D1%2582%25D0%25B0%25D0%25BB%25D0%25BE%25D0%25B3%2520%25D0%259B%25D0%25B8%25D1%2587%25D0%25BD%25D1%258B%25D0%25B9%2520%25D0%25BA%25D0%25B0%25D0%25B1%25D0%25B8%25D0%25BD%25D0%25B5%25D1%2582%2520%25D0%25BA%25D0%25BE%25D0%25BF%25D0%25B8%25D1%2580%25D0%25B0%25D0%25B9%25D1%2582%25D0%25B8%25D0%25BD%25D0%25B3-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c590c1c0713779dd97_Pancost%2520co%2520uj%2520%25D0%25B4%25D0%25BE%25D1%2585%25D1%2583%25D1%258F%2520%25D1%2581%25D1%2582%25D1%2580%25D0%25B0%25D0%25BD%25D0%25B8%25D1%2586%2520%25D0%2591%25D0%25BB%25D0%25BE%25D0%25B3%2520%25D0%25BA%25D0%25B0%25D1%2582%25D0%25B0%25D0%25BB%25D0%25BE%25D0%25B3%2520%25D0%259B%25D0%25B8%25D1%2587%25D0%25BD%25D1%258B%25D0%25B9%2520%25D0%25BA%25D0%25B0%25D0%25B1%25D0%25B8%25D0%25BD%25D0%25B5%25D1%2582%2520%25D0%25BA%25D0%25BE%25D0%25BF%25D0%25B8%25D1%2580%25D0%25B0%25D0%25B9%25D1%2582%25D0%25B8%25D0%25BD%25D0%25B3-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c590c1c0713779dd97_Pancost%20co%20uj%20%D0%B4%D0%BE%D1%85%D1%83%D1%8F%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%20%D0%91%D0%BB%D0%BE%D0%B3%20%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%80%D0%B0%D0%B9%D1%82%D0%B8%D0%BD%D0%B3.avif 1677w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">advent • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd41_slide1.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd41_slide1-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd41_slide1-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd41_slide1-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd41_slide1.avif 3160w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">ai • figma</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%201462984996.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%25201462984996-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc72_Frame%201462984996.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">real estate • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%201462985024.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%25201462985024-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dcb2_Frame%201462985024.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">real estate • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%201462984995%20(5).avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%25201462984995%2520(5)-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd8a_Frame%201462984995%20(5).avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">real estate • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%201462984997%20(5).avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%25201462984997%2520(5)-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd7a_Frame%201462984997%20(5).avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">construction • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%2016_9%20-%201%20(1).avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%252016_9%2520-%25201%2520(1)-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd6d_Slide%2016_9%20-%201%20(1).avif 1920w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">travel • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%201462984998.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%25201462984998-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc52_Frame%201462984998.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">events • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%201462985013.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%25201462985013-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc82_Frame%201462985013.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">events • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%201462985006.png" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-2600.png 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%25201462985006-p-3200.png 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd50_Frame%201462985006.png 6000w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">events • webflow</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%201462985035.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-2600.avif 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%25201462985035-p-3200.avif 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dc92_Frame%201462985035.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">e-commerce • tilda</div></div></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%201462985038.avif" loading="lazy" sizes="(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-1600.avif 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%25201462985038-p-2000.avif 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad090c490c1c0713779dd12_Frame%201462985038.avif 3354w" alt="" class="image-cover"/></div><div class="content-work-card"><div class="tag-wrap-work-card"><div class="text-small geist-mono big uppercase white">health • tilda</div></div></div></div></div></div></div></div></div></section>
+<section id="work" class="page-section no-scroll"><div class="w-layout-blockcontainer section-container no-limit w-container"><div class="content-wrap center"><div class="_1-clmn-line fix"></div><div class="_2-clmn-line fix"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line fix"></div><div class="_5-clmn-line fix"></div><div class="marquee img"><!-- Лента 1 (вправо). Скорость: data-wr-speed. Карточка = блок .work-card-link (не ссылка): только картинка 1680x1260 (формат 4:3), подписей нет. Файлы: img/newline1img1..12.png --><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="right" class="marquee-logos scroll images"><div class="single-line less-gap"><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img1.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 1" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/ENnewline1img2.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 2" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img3.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 3" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/ENnewline1img4.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 4" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img5.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 5" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img6.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 6" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img7.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 7" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img8.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 8" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img9.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 9" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img10.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 10" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img11.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 11" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img12.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 12" class="image-cover"/></div></div></div></div><!-- Лента 2 (влево): newline2img1..12.png --><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="left" class="marquee-logos scroll images"><div class="single-line less-gap"><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img1.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 13" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img2.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 14" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img3.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 15" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img4.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 16" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img5.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 17" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img6.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 18" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img7.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 19" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img8.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 20" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img9.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 21" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img10.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 22" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img11.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 23" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img12.png" width="1680" height="1260" loading="lazy" decoding="async" alt="Пример работы: дизайн сайта, 24" class="image-cover"/></div></div></div></div></div></div></div></section>
 <!-- [5] ТЕКСТ О СЕБЕ: абзац «Я создаю дизайн…» и кнопка «Свяжитесь со мной» -->
 <section class="page-section"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap center add-bottom"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><div class="w-layout-vflex limit-text"><div data-w-id="7deae46e-8be4-3a16-6a17-42ef5de4e2ad" style="opacity:0" class="huge-paragraph reveal-type">Я создаю дизайн, который привлекает внимание своей эстетикой и при этом работает на достижение ваших бизнес-целей.<br/><br/>Давайте создадим сайт, который подчеркнёт ценность вашего бренда, вызовет доверие и поможет привлекать больше клиентов.</div></div><a href="#" stagger-link="" data-open-popup="" data-w-id="7deae46e-8be4-3a16-6a17-42ef5de4e2c8" style="opacity:0" class="stagger-animation w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Свяжитесь со мной</div></div><div class="hover-bg"></div></div></a></div></div></section>
 <!-- [6] НАКЛОННЫЕ ЛЕНТЫ-ПЛАШКИ между блоками: «6+ лет опыта / работаю с 2019 г.» и «400+ сайтов реализовано / 250+ отзывов». В HTML один цикл, до нужной ширины их размножает сборщик лент -->

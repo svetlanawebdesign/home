@@ -3104,3 +3104,7 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 #work .image-cover { object-position: 50% 50%; }
 @media screen and (max-width: 991px) { #work .work-card-link { width: 280px; } }
 @media screen and (max-width: 479px) { #work .work-card-link { width: 180px; } }
+
+@media screen and (max-width: 767px) {
+  .footer-img.footer-img--mob { width: 100%; min-width: 0; max-width: 100%; margin-left: 0; }
+}

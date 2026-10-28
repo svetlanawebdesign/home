@@ -3090,3 +3090,17 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
    34. ШАПКА: EN | RU прижат к правому краю (на уровне правой линии) на всех экранах
    ====================================================================== */
 .lang-switch:not(.not-mob) .lang-row { justify-content: flex-end; }
+
+
+/* ======================================================================
+   10. ВТОРОЙ ЭКРАН (#work): карточки-картинки 1680x1260 (4:3), без подписей.
+   Размер карточки задаётся шириной, высота выходит из пропорции 4:3.
+   Старые правила .work-card-link / .image-wrap-work-card выше этим блоком
+   перекрываются, но только внутри #work (отзывы не затронуты).
+   Ширина: десктоп 320px, до 991px - 280px, до 479px - 180px.
+   ====================================================================== */
+#work .work-card-link { aspect-ratio: 4 / 3; width: 320px; min-width: 0; max-width: none; height: auto; flex: none; }
+#work .image-wrap-work-card { aspect-ratio: 4 / 3; width: 100%; height: auto; }
+#work .image-cover { object-position: 50% 50%; }
+@media screen and (max-width: 991px) { #work .work-card-link { width: 280px; } }
+@media screen and (max-width: 479px) { #work .work-card-link { width: 180px; } }

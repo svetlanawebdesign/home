@@ -37,6 +37,8 @@
    32. Плашка про cookie
    33. Плашки на карте: ширина 350px (на телефоне 90%), поверх точек, текст в списках слева
    34. Шапка: EN | RU прижат к правому краю (по линии) на всех экранах
+   35. Работы: формат карточек 1680/1260
+   36. Мобильные правки: br в абзацах, плашки карты 200px, карта +20%, мелкие кнопки шапки
 
    Из файла удалены стили, которых нет в index.html (формы, слайдер, табы,
    dropdown, lightbox, 12-колоночная сетка и неиспользуемые классы).
@@ -2494,7 +2496,7 @@ body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; }
 .tip {
   position: absolute;
   z-index: 300;                  /* выше всех точек (у точек z-index до ~100) */
-  width: 350px;
+  width: 300px;
   background: var(--tip-bg);
   border-radius: 4px;
   padding: 12px 12px 22px;
@@ -2510,7 +2512,7 @@ body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; }
 .tip__img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 600 / 442;
   object-fit: cover;
   border-radius: 2px;
   background: #8fdc72;          /* заглушка, пока нет картинки */
@@ -3083,7 +3085,6 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
    33. ПЛАШКИ НА КАРТЕ: ширина 350px (на телефоне 90% экрана), z-index выше всех точек,
    в плашках-списках (кластеры с цифрами) текст выровнен по левому краю
    ====================================================================== */
-@media screen and (max-width: 767px) { .tip { width: 90vw; } }
 .tip--list, .tip--list .tip__sub, .tip__list { text-align: left; }
 
 /* ======================================================================
@@ -3091,91 +3092,31 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
    ====================================================================== */
 .lang-switch:not(.not-mob) .lang-row { justify-content: flex-end; }
 
+/* ======================================================================
+   35. РАБОТЫ: формат картинок в лентах 1680 / 1260 (4:3) на всех экранах
+   ====================================================================== */
+#work .work-card-link { aspect-ratio: auto; height: auto; }
+#work .image-wrap-work-card { aspect-ratio: 1680 / 1260; width: 100%; height: auto; }
 
 /* ======================================================================
-   10. ВТОРОЙ ЭКРАН (#work): карточки-картинки 1680x1260 (4:3), без подписей.
-   Размер карточки задаётся шириной, высота выходит из пропорции 4:3.
-   Старые правила .work-card-link / .image-wrap-work-card выше этим блоком
-   перекрываются, но только внутри #work (отзывы не затронуты).
-   Ширина: десктоп 320px, до 991px - 280px, до 479px - 180px.
+   36. МОБИЛЬНЫЕ ПРАВКИ (до 767px)
    ====================================================================== */
-#work .work-card-link { aspect-ratio: 4 / 3; width: 320px; min-width: 0; max-width: none; height: auto; flex: none; }
-#work .image-wrap-work-card { aspect-ratio: 4 / 3; width: 100%; height: auto; }
-#work .image-cover { object-position: 50% 50%; }
-@media screen and (max-width: 991px) { #work .work-card-link { width: 280px; } }
-@media screen and (max-width: 479px) { #work .work-card-link { width: 180px; } }
-
 @media screen and (max-width: 767px) {
-  .footer-img.footer-img--mob { width: 100%; min-width: 0; max-width: 100%; margin-left: 0; }
-}
+  /* абзацы под заголовками «Дизайн и разработка сайтов» и «Реальные отзывы»: без переноса строки */
+  .no-br-mobile br { display: none; }
 
-/* ======================================================================
-   СТИЛИ СТРАНИЦЫ 404 (404.html и en/404.html) - вставить в конец общего CSS.
-   Блок по центру экрана между линиями: большая надпись, текст, кнопка «На главную».
-   Использует уже существующие классы: .body-medium.description, .primary-btn, .hero-btn
-   ====================================================================== */
-.content-wrap.notfound {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 28px;
-  min-height: 100vh; min-height: 100svh;
-  padding: 140px 0 100px;
-  text-align: center;
-  overflow: visible;
-}
-.content-wrap.notfound > :not([class*="clmn-line"]) { position: relative; z-index: 6; }
-.notfound__title {
-  margin: 0;
-  color: #fff;
-  font-family: Oranienbaum, sans-serif;
-  font-size: clamp(56px, 13vw, 220px);
-  font-weight: 400; line-height: .95;
-  text-transform: uppercase;
-}
-.body-medium.description.notfound__text { max-width: 460px; margin: 0; text-align: center; }
-@media screen and (max-width: 767px) {
-  .content-wrap.notfound { gap: 22px; padding: 120px 0 80px; }
-  .body-medium.description.notfound__text { max-width: 320px; }
-}
+  /* плашки на карте: ширина 200px, заголовок 14px, город 11px, описание 12px */
+  .tip:not(.tip--list) { width: 200px; max-width: 200px; }
+  .tip__title { font-size: 14px; }
+  .tip__sub { font-size: 11px; }
+  .tip__text { font-size: 12px; }
+  .tip__list, .tip--wide .tip__list { font-size: 12px; }
 
-/* ======================================================================
-   СТИЛИ СТРАНИЦЫ 404 (404.html и en/404.html) - вставить в конец общего CSS.
-   Блок по центру экрана между линиями: большая надпись, текст, кнопка «На главную».
-   Использует уже существующие классы: .body-medium.description, .primary-btn, .hero-btn
-   ====================================================================== */
-.content-wrap.notfound {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 28px;
-  min-height: 100vh; min-height: 100svh;
-  padding: 140px 0 100px;
-  text-align: center;
-  overflow: visible;
-}
-.content-wrap.notfound > :not([class*="clmn-line"]) { position: relative; z-index: 6; }
-.notfound__title {
-  margin: 0;
-  color: #fff;
-  font-family: Oranienbaum, sans-serif;
-  font-size: clamp(56px, 13vw, 220px);
-  font-weight: 400; line-height: .95;
-  text-transform: uppercase;
-}
-.body-medium.description.notfound__text { max-width: 460px; margin: 0; text-align: center; }
-@media screen and (max-width: 767px) {
-  .content-wrap.notfound { gap: 22px; padding: 120px 0 80px; }
-  .body-medium.description.notfound__text { max-width: 320px; }
-}
+  /* карта на 20% больше, выходит за края экрана и не обрезается */
+  #clients { overflow-x: clip; }
+  #clients .content-wrap.center { overflow: visible; }
+  .map.w-embed { width: 120%; max-width: none; margin-left: -10%; }   /* -10% = половина добавленных 20%, карта выходит за экран поровну с обеих сторон */
 
-/* ----------------------------------------------------------------------
-   КНОПКА: заливка при наведении (как у кнопок на главной).
-   На главной эту заливку (.hover-bg: ширина 0 -> 98%) анимирует Webflow, а на других страницах
-   Webflow-скриптов нет, поэтому то же самое сделано на CSS. Работает на странице 404 и в попапе.
-   Если заливка на главной у вас доходит не до 98%, поменяйте число в width.
-   ---------------------------------------------------------------------- */
-.notfound-page .primary-btn .hover-bg,
-.contact-popup .primary-btn .hover-bg { transition: width .5s cubic-bezier(.76, 0, .24, 1); }
-@media (hover: hover) {
-  .notfound-page a:hover .primary-btn .hover-bg,
-  .notfound-page a:focus-visible .primary-btn .hover-bg,
-  .contact-popup a:hover .primary-btn .hover-bg,
-  .contact-popup a:focus-visible .primary-btn .hover-bg { width: 98%; }
+  /* TG | WH | MAX и EN | RU в шапке меньше (было 15px) */
+  .lang-switch .nav-link-text { font-size: 12.5px; }
 }

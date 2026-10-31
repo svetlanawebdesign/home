@@ -307,6 +307,18 @@ button, [type="button"], [type="reset"] {
 /* --- Адаптив: малые телефоны (≤479px) --- */
 
 @media screen and (max-width: 479px) {
+
+   span.huge-paragraph__span {
+    color: #fff9;
+    font-weight: 300;
+    color: #fff9;
+    font-size: 14px;
+    font-family: 'Inter';
+    text-transform: none;
+    line-height: 130%;
+    letter-spacing: 0;
+    display: inline-block;
+}
   .w-container {
     max-width: none;
   }

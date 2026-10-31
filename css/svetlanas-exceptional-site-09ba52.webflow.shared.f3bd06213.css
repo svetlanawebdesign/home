@@ -319,6 +319,9 @@ button, [type="button"], [type="reset"] {
     letter-spacing: 0;
     display: inline-block;
 }
+   img.footer-img.footer-img--mob.is-loaded {
+    padding: 0 17px!important;
+}
   .w-container {
     max-width: none;
   }

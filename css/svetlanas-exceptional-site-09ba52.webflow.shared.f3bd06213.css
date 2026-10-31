@@ -3095,8 +3095,12 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 /* ======================================================================
    35. РАБОТЫ: формат картинок в лентах 1680 / 1260 (4:3) на всех экранах
    ====================================================================== */
-#work .work-card-link { aspect-ratio: auto; height: auto; }
+/* ширина карточки задана явно (раньше её держала фиксированная высота картинки): иначе большая картинка 1680 px раздувает карточку */
+#work .work-card-link { aspect-ratio: auto; height: auto; flex: none; width: 300px; max-width: 300px; min-width: 0; }
 #work .image-wrap-work-card { aspect-ratio: 1680 / 1260; width: 100%; height: auto; }
+@media screen and (max-width: 479px) {
+  #work .work-card-link { width: 170px; max-width: 170px; }
+}
 
 /* ======================================================================
    36. МОБИЛЬНЫЕ ПРАВКИ (до 767px)

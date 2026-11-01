@@ -1,0 +1,80 @@
+/* ======================================================================
+   СТИЛИ СТРАНИЦЫ «КЕЙСЫ» (cases/index.html) - вставить в конец общего CSS.
+   Использует существующие классы: .heading-2, .body-medium.description, вертикальные линии,
+   кнопку .primary-btn и цвета --pink / --green. Колонки стоят по линиям: 5% / 50% / 72.5% / 95%
+   ====================================================================== */
+
+/* ---------- первый экран ---------- */
+.cases-hero__wrap { display: block; padding-top: 190px; padding-bottom: 90px; overflow: visible; }
+.cases-hero__grid {
+  position: relative; z-index: 6;
+  display: grid;
+  grid-template-columns: 5% 45% 22.5% 22.5% 5%;   /* слева заголовок - от первой линии, дальше - по линиям 50% и 72.5% */
+  align-items: end;
+}
+.cases-hero__left { grid-column: 2; padding-right: 24px; }
+.cases-hero__stat { grid-column: 3; padding-right: 24px; color: #fff; font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; line-height: 1.25; }
+.body-medium.description.cases-hero__text { grid-column: 4; margin: 0; padding-right: 0; text-align: left; }
+.cases-hero__title { margin: 18px 0 0; color: #fff; font-size: 72px; text-align: left; }
+
+/* хлебные крошки: шрифт как у пунктов меню */
+.breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: #f6f3f0e0; font-family: Inter, sans-serif; font-size: 14px; font-weight: 300; line-height: 16px; letter-spacing: -.5px; text-transform: uppercase; }
+.breadcrumbs__link { color: #f6f3f0e0; text-decoration: none; transition: color .2s ease; }
+.breadcrumbs__link:hover { color: #fff; }
+.breadcrumbs__sep { color: #ffffff59; }
+.breadcrumbs__current { color: #ffffff80; }
+
+/* ---------- карточки кейсов (десктоп) ---------- */
+.cases-list__wrap { display: flex; flex-direction: column; gap: 24px; padding-top: 0; padding-bottom: 120px; overflow: visible; }
+.case-card {
+  position: relative; z-index: 6;
+  display: block;
+  height: 100vh; height: 100svh; min-height: 520px;
+  overflow: hidden;
+  background: #000;
+  color: #fff; text-decoration: none;
+}
+.case-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.76, 0, .24, 1); }
+@media (hover: hover) { .case-card:hover .case-card__img { transform: scale(1.03); } }
+/* чёрный градиент поверх картинки: тёмный у нижнего края, где стоит текст. Чтобы градиент шёл сверху - поменяйте "to top" на "to bottom" */
+.case-card__shade { position: absolute; inset: 0; background: linear-gradient(to top, #000000eb 0%, #00000099 38%, #00000000 75%); }
+.case-card__body { position: absolute; left: 5%; bottom: 56px; width: 45%; max-width: 640px; text-align: left; }
+.case-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.case-pill { display: inline-flex; align-items: center; padding: 7px 14px; border-radius: 600px; color: #000; font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: .04em; text-transform: uppercase; }
+.case-pill--pink { background-color: var(--pink); }
+.case-pill--green { background-color: var(--green); }
+.case-card__title { margin: 0 0 14px; color: #fff; font-size: 48px; text-align: left; }
+.body-medium.description.case-card__text { margin: 0 0 18px; text-align: left; }
+.case-card__more { color: #fff; font-family: Inter, sans-serif; font-size: 16px; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- блок «Давайте обсудим ваш проект» ---------- */
+.cases-cta__title { margin: 0; color: #fff; text-align: center; }
+.cases-cta .primary-btn .hover-bg { transition: width .5s cubic-bezier(.76, 0, .24, 1); }
+@media (hover: hover) { .cases-cta a:hover .primary-btn .hover-bg, .cases-cta a:focus-visible .primary-btn .hover-bg { width: 98%; } }
+
+/* ---------- планшет ---------- */
+@media screen and (max-width: 991px) {
+  .cases-hero__title { font-size: 56px; }
+  .case-card__title { font-size: 40px; }
+  .case-card__body { width: 60%; }
+}
+
+/* ---------- телефон ---------- */
+@media screen and (max-width: 767px) {
+  /* первый экран по центру: хлебные крошки, заголовок, цифры, абзац друг под другом */
+  .cases-hero__wrap { padding-top: 130px; padding-bottom: 60px; }
+  .cases-hero__grid { grid-template-columns: 100%; justify-items: center; row-gap: 22px; text-align: center; }
+  .cases-hero__left, .cases-hero__stat, .body-medium.description.cases-hero__text { grid-column: 1; padding-right: 0; text-align: center; }
+  .breadcrumbs { justify-content: center; }
+  .cases-hero__title { margin-top: 14px; font-size: 44px; text-align: center; }
+  .cases-hero__stat { font-size: 16px; }
+  .body-medium.description.cases-hero__text { text-align: center; max-width: 340px; }
+
+  /* карточки: сначала квадратная картинка без градиента, потом блок с описанием, всё по левому краю */
+  .cases-list__wrap { gap: 48px; padding-bottom: 80px; }
+  .case-card { height: auto; min-height: 0; display: flex; flex-direction: column; background: transparent; overflow: visible; }
+  .case-card__img { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+  .case-card__shade { display: none; }
+  .case-card__body { position: static; width: 100%; max-width: none; padding: 20px 0 0; }
+  .case-card__title { font-size: 28px; }
+}

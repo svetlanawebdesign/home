@@ -51,6 +51,12 @@
 /* «Подробнее» - продолжение текста описания, в той же строке */
 .case-card__more { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
 
+/* анимация карточек по скроллу (десктоп): сам расчёт - скрипт «АНИМАЦИЯ КАРТОЧЕК» в cases/index.html.
+   Старт: 80% размера и наклон rotateX 12deg, конец: 100% без наклона. Параметры START_SCALE и START_TILT - в начале скрипта */
+@media screen and (min-width: 768px) {
+  .case-card { transform-origin: 50% 0; will-change: transform; backface-visibility: hidden; }
+}
+
 /* ---------- блок «Давайте обсудим ваш проект» ---------- */
 .cases-cta .limit-text { width: 100%; min-width: 0; max-width: none; align-items: center; text-align: center; }
 .cases-cta__title { margin: 0; color: #fff; text-align: center; }

@@ -32,6 +32,7 @@
   position: sticky; top: 90px; z-index: 6;            /* sticky-анимация: карточка закрепляется на 90px от верха, следующая наезжает на неё */
   display: block;
   margin: 0 5%;                                       /* по ширине между первой и последней полосками */
+  border-radius: 10px;
   height: calc(100vh - 90px); height: calc(100svh - 90px); min-height: 520px;   /* от закрепления (90px) до низа экрана */
   overflow: hidden;
   background: #000;
@@ -85,7 +86,7 @@
   /* карточки: сначала картинка 5:4 (чуть ниже квадрата) без градиента, потом блок с описанием, всё по левому краю */
   .cases-list__wrap { gap: 48px; padding-bottom: 80px; }
   .case-card { position: relative; top: auto; margin: 0; height: auto; min-height: 0; display: flex; flex-direction: column; background: transparent; overflow: visible; }
-  .case-card__img { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 5 / 4; }
+  .case-card__img { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 5 / 4; border-radius: 10px; }
   .case-card__shade { display: none; }
   .case-card__body { position: static; width: 100%; max-width: none; padding: 20px 0 0; }
   .cases-cta__sub { max-width: 300px; }

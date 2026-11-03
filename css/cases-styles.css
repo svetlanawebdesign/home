@@ -56,6 +56,13 @@
    Старт: 80% размера и наклон rotateX 12deg, конец: 100% без наклона. Параметры START_SCALE и START_TILT - в начале скрипта */
 @media screen and (min-width: 768px) {
   .case-card { transform-origin: 50% 0; will-change: transform; backface-visibility: hidden; }
+  /* затемнение предыдущей карточки: чёрный градиент поверх, сила (--dim 0..1) задаётся скриптом по скроллу.
+     Меняйте цвета градиента, чтобы сделать темнее или светлее в финале */
+  .case-card::after {
+    content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: linear-gradient(to top, #000000eb 0%, #0000008c 100%);
+    opacity: var(--dim, 0);
+  }
 }
 
 /* ---------- блок «Давайте обсудим ваш проект» ---------- */

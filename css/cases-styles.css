@@ -14,7 +14,11 @@
 }
 .cases-hero__left { grid-column: 2; padding-right: 24px; }
 .cases-hero__stat { grid-column: 3; padding-right: 24px; color: #fff; font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; line-height: 1.25; }
-.body-medium.description.cases-hero__text { grid-column: 4; margin: 0; padding-right: 0; text-align: left; }
+/* абзац справа: на 1px мельче обычного описания (16px -> 15px, на телефоне до 479px 14px -> 13px) */
+.body-medium.description.cases-hero__text { grid-column: 4; margin: 0; padding-right: 0; text-align: left; font-size: 15px; }
+/* эмодзи: в виде текстового символа (✌︎ с селектором \FE0E) он красится в цвет текста - белый.
+   Если нужно спрятать совсем, замените color на transparent */
+.cases-hero__emoji { color: #fff; font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "Apple Symbols", Inter, sans-serif; font-variant-emoji: text; }
 .cases-hero__title { margin: 18px 0 0; color: #fff; font-size: 72px; text-align: left; }
 
 /* хлебные крошки: шрифт как у пунктов меню */
@@ -98,4 +102,7 @@
   .case-card__body { position: static; width: 100%; max-width: none; padding: 20px 0 0; }
   .cases-cta__sub { max-width: 300px; }
   .case-card__title { font-size: 28px; }
+}
+@media screen and (max-width: 479px) {
+  .body-medium.description.cases-hero__text { font-size: 13px; }   /* 14px - 1px */
 }

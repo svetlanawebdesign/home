@@ -13,7 +13,7 @@
   align-items: end;
 }
 .cases-hero__left { grid-column: 2; padding-right: 24px; }
-.cases-hero__stat { grid-column: 3; padding-right: 24px; color: #fff; font-family: Inter, sans-serif; font-size: 20px; font-weight: 600; line-height: 1.25; }
+.cases-hero__stat { grid-column: 3; padding-right: 24px; color: #fff; font-family: Inter, sans-serif; font-size: 19px; font-weight: 600; line-height: 1.25; }
 /* абзац справа: на 1px мельче обычного описания (16px -> 15px, на телефоне до 479px 14px -> 13px) */
 .body-medium.description.cases-hero__text { grid-column: 4; margin: 0; padding-right: 0; text-align: left; font-size: 15.5px; }
 /* эмодзи: в виде текстового символа (✌︎ с селектором \FE0E) он красится в цвет текста - белый.

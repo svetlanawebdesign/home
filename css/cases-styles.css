@@ -21,13 +21,13 @@
 .cases-hero__emoji {color: #fff;}
 .cases-hero__title { margin: 18px 0 0; color: #fff; font-size: 85px; text-align: left; }
 
-/* хлебные крошки: шрифт как у пунктов меню */
+/*хлебные крошки: шрифт как у пунктов меню */
 .breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: #f6f3f0e0; font-family: Inter, sans-serif; font-size: 14px; font-weight: 300; line-height: 16px; letter-spacing: -.5px; text-transform: uppercase; }
 .breadcrumbs__link { color: #f6f3f0e0; text-decoration: none; transition: color .2s ease; }
 .breadcrumbs__link:hover { color: #fff; }
 .breadcrumbs__sep { color: #ffffff59; }
 .breadcrumbs__current { color: #ffffff80; }
-
+ 
 /* ---------- карточки кейсов (десктоп) ---------- */
 .cases-list__wrap { display: flex; flex-direction: column; gap: 120px;   /* расстояние между карточками = сколько прокрутки карточка «держится» до того, как её перекроет следующая */
   padding-top: 0; padding-bottom: 120px; overflow: visible; }
@@ -42,8 +42,7 @@
   background: #000;
   color: #fff; text-decoration: none;
 }
-.case-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.76, 0, .24, 1); }
-@media (hover: hover) { .case-card:hover .case-card__img { transform: scale(1.03); } }
+.case-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }   /* анимации при наведении нет */
 /* чёрный градиент поверх картинки: тёмный у нижнего края, где стоит текст. Чтобы градиент шёл сверху - поменяйте "to top" на "to bottom" */
 .case-card__shade { position: absolute; inset: 0; background: linear-gradient(to top, #000000eb 0%, #00000099 38%, #00000000 75%); }
 .case-card__body { position: absolute; left: 48px; bottom: 90px; width: 55%; max-width: 680px; text-align: left; }
@@ -55,34 +54,32 @@
 .body-medium.description.case-card__text { margin: 0; text-align: left; }
 /* «Подробнее» - продолжение текста описания, в той же строке */
 .case-card__more { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
-
+ 
 /* анимация карточек по скроллу (десктоп): сам расчёт - скрипт «АНИМАЦИЯ КАРТОЧЕК» в cases/index.html.
-   Старт: 80% размера и наклон rotateX 12deg, конец: 100% без наклона. Параметры START_SCALE и START_TILT - в начале скрипта */
+   Старт: 80% размера и наклон rotateX 12deg, конец: 100% без наклона; предыдущая карточка затемняется градиентом (--dim 0..1) */
 @media screen and (min-width: 768px) {
   .case-card { transform-origin: 50% 0; will-change: transform; backface-visibility: hidden; }
-  /* затемнение предыдущей карточки: чёрный градиент поверх, сила (--dim 0..1) задаётся скриптом по скроллу.
-     Меняйте цвета градиента, чтобы сделать темнее или светлее в финале */
   .case-card::after {
     content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
     background: linear-gradient(to top, #000000eb 0%, #0000008c 100%);
     opacity: var(--dim, 0);
   }
 }
-
+ 
 /* ---------- блок «Давайте обсудим ваш проект» ---------- */
 .cases-cta .limit-text { width: 100%; min-width: 0; max-width: none; align-items: center; text-align: center; }
 .cases-cta__title { margin: 0; color: #fff; text-align: center; }
 .body-medium.description.cases-cta__sub { max-width: 460px; margin: 16px 0 0; text-align: center; }
 .cases-cta .primary-btn .hover-bg { transition: width .5s cubic-bezier(.76, 0, .24, 1); }
 @media (hover: hover) { .cases-cta a:hover .primary-btn .hover-bg, .cases-cta a:focus-visible .primary-btn .hover-bg { width: 98%; } }
-
+ 
 /* ---------- планшет ---------- */
 @media screen and (max-width: 991px) {
   .cases-hero__title { font-size: 56px; }
   .case-card__title { font-size: 40px; }
   .case-card__body { width: 70%; left: 32px; bottom: 48px; }
 }
-
+ 
 /* ---------- телефон ---------- */
 @media screen and (max-width: 767px) {
   /* первый экран по центру: хлебные крошки, заголовок, цифры, абзац друг под другом */
@@ -93,7 +90,7 @@
   .cases-hero__title { margin-top: 14px; font-size: 44px; text-align: center; }
   .cases-hero__stat { font-size: 16px; }
   .body-medium.description.cases-hero__text { text-align: center; max-width: 340px; }
-
+ 
   /* карточки: сначала картинка 5:4 (чуть ниже квадрата) без градиента, потом блок с описанием, всё по левому краю */
   .cases-list__wrap { gap: 48px; padding-bottom: 80px; }
   .case-card { position: relative; top: auto; margin: 0; height: auto; min-height: 0; display: flex; flex-direction: column; background: transparent; overflow: visible; }
@@ -106,3 +103,4 @@
 @media screen and (max-width: 479px) {
   .body-medium.description.cases-hero__text { font-size: 13px; }   /* 14px - 1px */
 }
+ 

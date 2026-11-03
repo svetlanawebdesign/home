@@ -155,13 +155,21 @@
     els.forEach(function (el) { if (el.parentElement) io.observe(el.parentElement); });
   }
 })();</script>
-<!-- [SCRIPT] АНИМАЦИЯ КАРТОЧЕК (только десктоп, по скроллу): при заходе снизу карточка увеличивается с 80% до 100% и выравнивается из небольшого наклона (rotateX) -->
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>(function () {
+  if (!window.Lenis || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var lenis = new Lenis({ duration: 1.1, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
+  window.__lenis = lenis;
+  if (window.gsap) { gsap.ticker.add(function (time) { lenis.raf(time * 1000); }); gsap.ticker.lagSmoothing(0); }
+  else { (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0); }
+})();</script>
+        <script>(function () {
   var cards = [].slice.call(document.querySelectorAll('.case-card'));
   if (!cards.length) return;
   var mq = window.matchMedia('(min-width: 768px)'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var START_SCALE = 0.8, START_TILT = 12, STICK_TOP = 90, DELAY = 0.01, DIM = 1;   /* DELAY - доля пути до начала; DIM - сила затемнения предыдущей карточки (0-1) */
-  var SMOOTH = 0.05;                                  /* сглаживание, секунды: больше - плавнее, но с запаздыванием; 0 - без сглаживания */
+  var START_SCALE = 0.8, START_TILT = 12, STICK_TOP = 90, DELAY = 0.1, DIM = 1;
+  var SMOOTH = 0.1;
   var cur = cards.map(function () { return 0; }), tgt = cards.map(function () { return 0; });
   var raf = 0, last = 0, first = true;
   function ease(t) { return 1 - Math.pow(1 - t, 3); }
@@ -169,7 +177,7 @@
     var vh = window.innerHeight, on = mq.matches && !reduce.matches;
     cards.forEach(function (c, i) {
       if (!on) { tgt[i] = null; return; }
-      var p = (vh - c.getBoundingClientRect().top) / (vh - STICK_TOP);   /* 0 - у нижнего края экрана, 1 - дошла до места закрепления */
+      var p = (vh - c.getBoundingClientRect().top) / (vh - STICK_TOP);
       p = (p - DELAY) / (1 - DELAY);
       tgt[i] = ease(Math.max(0, Math.min(1, p)));
     });
@@ -203,5 +211,4 @@
   if (mq.addEventListener) mq.addEventListener('change', onScroll);
   onScroll();
 })();</script>
-<script>document.querySelectorAll('a.case-card[href="#"]').forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();});});</script>
 </body></html>

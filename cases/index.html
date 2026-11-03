@@ -168,7 +168,7 @@
   var cards = [].slice.call(document.querySelectorAll('.case-card'));
   if (!cards.length) return;
   var mq = window.matchMedia('(min-width: 768px)'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var START_SCALE = 0.8, START_TILT = 12, STICK_TOP = 90, DELAY = 0.1, DIM = 1;
+  var START_SCALE = 0.9, START_TILT = 10, STICK_TOP = 90, DELAY = 0.1, DIM = 1;
   var SMOOTH = 0.1;
   var cur = cards.map(function () { return 0; }), tgt = cards.map(function () { return 0; });
   var raf = 0, last = 0, first = true;

@@ -319,7 +319,7 @@ button, [type="button"], [type="reset"] {
     letter-spacing: 0;
     display: inline-block;
 }
-   img.footer-img.footer-img--mob.is-loaded {
+   img.footer-img.footer-img--mob {
     padding: 0 17px!important;
 }
   .w-container {
@@ -3138,6 +3138,10 @@ html.sk-on .reviews-track .review-card.image-wrap-work-card:not(.is-loaded)::aft
 
   /* TG | WH | MAX и EN | RU в шапке меньше (было 15px) */
   .lang-switch .nav-link-text { font-size: 12.5px; }
+.nav-link-text {
+    text-align: center;
+}
+   
 }
 
 /* ======================================================================

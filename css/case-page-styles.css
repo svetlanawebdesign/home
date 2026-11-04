@@ -72,4 +72,7 @@
   .case-hero__right { align-self: start; }
   .case-media { margin: 0; gap: 16px; }
   .case-media__wrap { padding-bottom: 80px; }
+   nav.breadcrumbs {
+    font-size: 11px!important;
+}
 }

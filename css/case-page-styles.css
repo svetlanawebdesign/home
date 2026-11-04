@@ -1,0 +1,75 @@
+/* ======================================================================
+   СТИЛИ СТРАНИЦЫ КЕЙСА (cases/название/index.html) - вставить в конец общего CSS.
+   Использует из cases-styles.css: .breadcrumbs, .case-pill (розовый / зелёный).
+   Колонки по линиям: слева от 1-й полоски (5%), справа от средней (50%)
+   ====================================================================== */
+
+/* ---------- первый экран ---------- */
+.case-hero__wrap { display: block; padding-top: 190px; padding-bottom: 80px; overflow: visible; }
+.case-hero__grid {
+  position: relative; z-index: 6;
+  display: grid;
+  grid-template-columns: 5% 45% 45% 5%;
+  min-height: calc(100vh - 270px); min-height: calc(100svh - 270px);
+}
+.case-hero__left { grid-column: 2; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; padding-right: 40px; }
+.case-hero__title { margin: 18px 0 0; color: #fff; font-size: 64px; text-align: left; }
+.body-medium.description.case-hero__year { margin: 0; text-align: left; }
+.case-hero__right { grid-column: 3; align-self: end; }   /* теги внизу, на одном уровне с годом. Чтобы они стояли сверху, замените end на start */
+
+/* теги: первые два - розовый и зелёный (платформа и ниша), остальные - белая обводка */
+.case-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.case-tag {
+  display: inline-flex; align-items: center;
+  padding: 6px 13px;
+  border: 1px solid #fff; border-radius: 600px;
+  color: #fff;
+  font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: .04em; text-transform: uppercase;
+}
+
+/* ---------- картинки: ширина по полоскам, высота по самой картинке ---------- */
+.case-media__wrap { display: block; padding-top: 0; padding-bottom: 120px; overflow: visible; }
+.case-media { position: relative; z-index: 6; display: flex; flex-direction: column; gap: 24px; margin: 0 5%; }
+.case-media__img { display: block; width: 100%; height: auto; border-radius: 10px; }
+
+/* ---------- лупа на большом скриншоте (только десктоп с мышью) ---------- */
+.case-zoom { position: relative; }
+.case-zoom__lens {
+  position: absolute; top: 0; left: 0; z-index: 3;
+  border-radius: 50%;
+  background-repeat: no-repeat; background-color: #1e1e1e;
+  border: 2px solid #ffffffcc;
+  box-shadow: 0 10px 40px #00000080;
+  opacity: 0; pointer-events: none;
+  transition: opacity .2s ease;
+  display: none;
+}
+.case-zoom__hint {
+  position: absolute; top: 16px; left: 16px; z-index: 2;
+  padding: 7px 12px; border-radius: 600px;
+  background: #000000a6; color: #fff;
+  font-family: Inter, sans-serif; font-size: 12px; line-height: 1;
+  pointer-events: none; transition: opacity .2s ease;
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .case-zoom { cursor: none; }
+  .case-zoom__lens, .case-zoom__hint { display: block; }
+  .case-zoom.is-zooming .case-zoom__lens { opacity: 1; }
+  .case-zoom.is-zooming .case-zoom__hint { opacity: 0; }
+}
+
+/* ---------- планшет и телефон ---------- */
+@media screen and (max-width: 991px) {
+  .case-hero__title { font-size: 48px; }
+}
+@media screen and (max-width: 767px) {
+  .case-hero__wrap { padding-top: 130px; padding-bottom: 50px; }
+  .case-hero__grid { grid-template-columns: 100%; min-height: 0; row-gap: 32px; }
+  .case-hero__left, .case-hero__right { grid-column: 1; padding-right: 0; }
+  .case-hero__left { gap: 28px; }
+  .case-hero__title { margin-top: 14px; font-size: 34px; }
+  .case-hero__right { align-self: start; }
+  .case-media { margin: 0; gap: 16px; }
+  .case-media__wrap { padding-bottom: 80px; }
+}

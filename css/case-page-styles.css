@@ -5,17 +5,19 @@
    ====================================================================== */
 
 /* ---------- первый экран ---------- */
-.case-hero__wrap { display: block; padding-top: 190px; padding-bottom: 80px; overflow: visible; }
+.case-hero__wrap { display: block; padding-top: 190px; padding-bottom: 70px; overflow: visible; }
 .case-hero__grid {
   position: relative; z-index: 6;
   display: grid;
   grid-template-columns: 5% 45% 45% 5%;
-  min-height: calc(100vh - 270px); min-height: calc(100svh - 270px);
+  align-items: end;                                   /* левый блок и теги выровнены по низу */
 }
-.case-hero__left { grid-column: 2; display: flex; flex-direction: column; justify-content: space-between; gap: 48px; padding-right: 40px; }
-.case-hero__title { margin: 18px 0 0; color: #fff; font-size: 64px; text-align: left; }
+/* расстояние: хлебные крошки - заголовок - год везде одинаковое, 16px */
+.case-hero__left { grid-column: 2; display: flex; flex-direction: column; gap: 16px; padding-right: 40px; }
+.case-hero__top { display: flex; flex-direction: column; gap: 16px; }
+.case-hero__title { margin: 0; color: #fff; font-size: 64px; text-align: left; }
 .body-medium.description.case-hero__year { margin: 0; text-align: left; }
-.case-hero__right { grid-column: 3; align-self: end; }   /* теги внизу, на одном уровне с годом. Чтобы они стояли сверху, замените end на start */
+.case-hero__right { grid-column: 3; }
 
 /* теги: первые два - розовый и зелёный (платформа и ниша), остальные - белая обводка */
 .case-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
@@ -28,8 +30,8 @@
 }
 
 /* ---------- картинки: ширина по полоскам, высота по самой картинке ---------- */
-.case-media__wrap { display: block; padding-top: 0; padding-bottom: 120px; overflow: visible; }
-.case-media { position: relative; z-index: 6; display: flex; flex-direction: column; gap: 24px; margin: 0 5%; }
+.case-media__wrap { display: block; padding-top: 0; padding-bottom: 60px; overflow: visible; }
+.case-media { position: relative; z-index: 6; display: flex; flex-direction: column; gap: 5px; margin: 0 5%; }
 .case-media__img { display: block; width: 100%; height: auto; border-radius: 10px; }
 
 /* ---------- лупа на большом скриншоте (только десктоп с мышью) ---------- */
@@ -44,19 +46,10 @@
   transition: opacity .2s ease;
   display: none;
 }
-.case-zoom__hint {
-  position: absolute; top: 16px; left: 16px; z-index: 2;
-  padding: 7px 12px; border-radius: 600px;
-  background: #000000a6; color: #fff;
-  font-family: Inter, sans-serif; font-size: 12px; line-height: 1;
-  pointer-events: none; transition: opacity .2s ease;
-  display: none;
-}
 @media (hover: hover) and (pointer: fine) {
   .case-zoom { cursor: none; }
-  .case-zoom__lens, .case-zoom__hint { display: block; }
+  .case-zoom__lens { display: block; }
   .case-zoom.is-zooming .case-zoom__lens { opacity: 1; }
-  .case-zoom.is-zooming .case-zoom__hint { opacity: 0; }
 }
 
 /* ---------- планшет и телефон ---------- */
@@ -64,15 +57,35 @@
   .case-hero__title { font-size: 48px; }
 }
 @media screen and (max-width: 767px) {
-  .case-hero__wrap { padding-top: 130px; padding-bottom: 50px; }
-  .case-hero__grid { grid-template-columns: 100%; min-height: 0; row-gap: 32px; }
-  .case-hero__left, .case-hero__right { grid-column: 1; padding-right: 0; }
-  .case-hero__left { gap: 28px; }
-  .case-hero__title { margin-top: 14px; font-size: 34px; }
-  .case-hero__right { align-self: start; }
-  .case-media { margin: 0; gap: 16px; }
-  .case-media__wrap { padding-bottom: 80px; }
-   nav.breadcrumbs {
-    font-size: 11px!important;
+  /* первый экран по центру: крошки, заголовок, год, теги */
+  .case-hero__wrap { padding-top: 130px; padding-bottom: 40px; }
+  .case-hero__grid { grid-template-columns: 100%; row-gap: 24px; justify-items: center; text-align: center; }
+  .case-hero__left, .case-hero__right { grid-column: 1; padding-right: 0; align-items: center; }
+  .case-hero__top { align-items: center; }
+  .breadcrumbs { justify-content: center; }
+  .case-hero__title { font-size: 34px; text-align: center; }
+  .body-medium.description.case-hero__year { text-align: center; }
+  .case-tags { justify-content: center; }
+  .case-media { margin: 0; gap: 5px; }
+  .case-media__wrap { padding-bottom: 40px; }
+  .case-nav { margin: 0; }
 }
+
+/* ---------- переход «Предыдущий кейс» / «Следующий кейс» ---------- */
+.case-nav__wrap { display: block; padding-top: 0; padding-bottom: 110px; overflow: visible; }
+.case-nav { position: relative; z-index: 6; display: flex; justify-content: space-between; align-items: center; gap: 24px; margin: 0 5%; }   /* левая кнопка - на первой полоске, правая - на последней */
+.case-nav__link {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: #ffffff99;                                   /* цвет абзаца */
+  font-family: Inter, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.2;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+.case-nav__link:hover, .case-nav__link:focus-visible { color: #fff; }
+.case-nav__arrow { flex: none; transition: transform .25s ease; }
+.case-nav__link--prev:hover .case-nav__arrow { transform: translateX(-4px); }
+.case-nav__link--next:hover .case-nav__arrow { transform: translateX(4px); }
+@media screen and (max-width: 767px) {
+  .case-nav__wrap { padding-bottom: 70px; }
+  .case-nav { margin: 0; }   /* на телефоне полоски по краям блока */
 }

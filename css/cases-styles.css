@@ -3,7 +3,7 @@
    Использует существующие классы: .heading-2, .body-medium.description, вертикальные линии,
    кнопку .primary-btn и цвета --pink / --green. Колонки стоят по линиям: 5% / 50% / 72.5% / 95%
    ====================================================================== */
-
+ 
 /* ---------- первый экран ---------- */
 .cases-hero__wrap { display: block; padding-top: 190px; padding-bottom: 90px; overflow: visible; }
 .cases-hero__grid {

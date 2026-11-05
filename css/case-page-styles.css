@@ -10,6 +10,12 @@ img.case-media__img.mobile
 {
    display:none;
 }
+
+.case-hero__right p {
+    text-align: left !important;
+    padding-bottom: 16px;
+   max-width: none !important;
+}
 .case-hero__wrap { display: block; padding-top: 190px; padding-bottom: 70px; overflow: visible; }
 .case-hero__grid {
   position: relative; z-index: 6;
@@ -110,11 +116,20 @@ img.case-media__img.desktop
    {
       display:none;
    }
-   
+
+.case-hero__right p {
+    text-align: center;
+    padding-bottom: 20px;
+    max-width: 90% !important;
+    margin: auto !important;
+}
 img.case-media__img.mobile
    {
       display:block;
    }
+.case-hero__grid {
+    row-gap: 14px;
+}
   .case-nav__wrap { padding-bottom: 70px; }
   .case-nav { margin: 0; }   /* на телефоне полоски по краям блока */
 }

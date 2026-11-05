@@ -118,7 +118,7 @@ img.case-media__img.desktop
    }
 
 .case-hero__right p {
-    text-align: center;
+    text-align: center!important;
     padding-bottom: 20px;
     max-width: 90% !important;
     margin: auto !important;

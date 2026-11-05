@@ -5,6 +5,11 @@
    ====================================================================== */
 
 /* ---------- первый экран ---------- */
+
+img.case-media__img.mobile
+{
+   display:none;
+}
 .case-hero__wrap { display: block; padding-top: 190px; padding-bottom: 70px; overflow: visible; }
 .case-hero__grid {
   position: relative; z-index: 6;
@@ -100,6 +105,16 @@
 .case-nav__link--prev:hover .case-nav__arrow { transform: translateX(-4px); }
 .case-nav__link--next:hover .case-nav__arrow { transform: translateX(4px); }
 @media screen and (max-width: 767px) {
+
+img.case-media__img.desktop
+   {
+      display:none;
+   }
+   
+img.case-media__img.mobile
+   {
+      display:block;
+   }
   .case-nav__wrap { padding-bottom: 70px; }
   .case-nav { margin: 0; }   /* на телефоне полоски по краям блока */
 }

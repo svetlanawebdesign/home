@@ -15,7 +15,7 @@
 /* расстояние: хлебные крошки - заголовок - год везде одинаковое, 16px */
 .case-hero__left { grid-column: 2; display: flex; flex-direction: column; gap: 16px; padding-right: 40px; }
 .case-hero__top { display: flex; flex-direction: column; gap: 16px; }
-.case-hero__title { margin: 0; color: #fff; font-size: 64px; text-align: left; }
+.case-hero__title { margin: 0; color: #fff; font-size: 55px; text-align: left; }
 .body-medium.description.case-hero__year { margin: 0; text-align: left; }
 .case-hero__right { grid-column: 3; }
 

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
   <url>
     <loc>https://svetlana.is-a.dev/</loc>
     <lastmod>2026-10-25</lastmod>
@@ -8,6 +10,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/"/>
   </url>
+
   <url>
     <loc>https://svetlana.is-a.dev/en/</loc>
     <lastmod>2026-10-25</lastmod>
@@ -16,6 +19,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/"/>
   </url>
+
   <url>
     <loc>https://svetlana.is-a.dev/privacy/</loc>
     <lastmod>2026-10-25</lastmod>
@@ -24,6 +28,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/privacy/"/>
   </url>
+
   <url>
     <loc>https://svetlana.is-a.dev/en/privacy/</loc>
     <lastmod>2026-10-25</lastmod>
@@ -32,6 +37,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/privacy/"/>
   </url>
+
   <url>
     <loc>https://svetlana.is-a.dev/cookies/</loc>
     <lastmod>2026-10-25</lastmod>
@@ -40,6 +46,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/cookies/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/cookies/"/>
   </url>
+
   <url>
     <loc>https://svetlana.is-a.dev/en/cookies/</loc>
     <lastmod>2026-10-25</lastmod>
@@ -48,4 +55,61 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/cookies/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/cookies/"/>
   </url>
+
+  <!-- Страница портфолио -->
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Кейсы -->
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/usk/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/icoone/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/say-agency/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/domzagorodom/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/komarovofood/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/etereo/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/advent-calendar/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://svetlana.is-a.dev/cases/garant-bezopasnost/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

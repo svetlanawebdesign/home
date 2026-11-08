@@ -57,11 +57,21 @@
   </url>
 
   <!-- Страница портфолио -->
-  <url>
-    <loc>https://svetlana.is-a.dev/cases/</loc>
-    <lastmod>2026-11-06</lastmod>
-    <priority>0.9</priority>
-  </url>
+ 
+        <url>
+  <loc>https://svetlana.is-a.dev/cases/</loc>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://svetlana.is-a.dev/cases/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/cases/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/cases/"/>
+  <lastmod>2026-11-08</lastmod>
+</url>
+<url>
+  <loc>https://svetlana.is-a.dev/en/cases/</loc>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://svetlana.is-a.dev/cases/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/cases/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/cases/"/>
+  <lastmod>2026-11-08</lastmod>
+</url>
 
   <!-- Кейсы -->
   <url>

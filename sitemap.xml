@@ -131,11 +131,20 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://svetlana.is-a.dev/cases/dieta-keto/</loc>
-    <lastmod>2026-11-07</lastmod>
-    <priority>0.8</priority>
-  </url>
+ <url>
+  <loc>https://svetlana.is-a.dev/cases/dieta-keto/</loc>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://svetlana.is-a.dev/cases/dieta-keto/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/cases/dieta-keto/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/cases/dieta-keto/"/>
+  <lastmod>2026-11-08</lastmod>
+</url>
+<url>
+  <loc>https://svetlana.is-a.dev/en/cases/dieta-keto/</loc>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://svetlana.is-a.dev/cases/dieta-keto/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/cases/dieta-keto/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/cases/dieta-keto/"/>
+  <lastmod>2026-11-08</lastmod>
+</url>
 
   <url>
     <loc>https://svetlana.is-a.dev/cases/ezsales-ai/</loc>

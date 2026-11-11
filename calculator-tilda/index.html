@@ -717,5 +717,52 @@
   }
 })();</script>
 
+     <script>(function () {
+  /* ---- первый экран: буквы выезжают снизу, картинки появляются по очереди, потом слегка следуют за мышью ---- */
+  var hero = document.querySelector('.wf-hero');
+  if (hero) {
+    var word = hero.querySelector('.wf-hero__word');
+    var text = word.textContent.trim(); word.setAttribute('aria-label', text); word.textContent = '';
+    text.split('').forEach(function (ch) { var s = document.createElement('span'); s.className = 'wf-letter'; s.setAttribute('aria-hidden', 'true'); s.textContent = ch; word.appendChild(s); });
+    var letters = [].slice.call(word.children), imgs = [].slice.call(hero.querySelectorAll('.wf-hero__img')), items = [].slice.call(hero.querySelectorAll('.wf-hero__reveal'));
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (window.gsap && !reduce) {
+      gsap.set(letters, { yPercent: 110, opacity: 0 }); gsap.set(imgs, { scale: 0.6, opacity: 0, y: 70 }); gsap.set(items, { opacity: 0, y: 24 });
+      var tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+      tl.to(letters, { yPercent: 0, opacity: 1, duration: 1.2, stagger: 0.07 }, 0.1)
+        .to(imgs, { scale: 1, opacity: 1, y: 0, duration: 1.1, stagger: 0.12, ease: 'power3.out' }, 0.35)
+        .to(items, { opacity: 1, y: 0, duration: 0.9, stagger: 0.12 }, 0.5);
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+        var depth = [14, -10, 18, -16], movers = imgs.map(function (el, i) { return { x: gsap.quickTo(el, 'xPercent', { duration: 0.9, ease: 'power3' }), y: gsap.quickTo(el, 'yPercent', { duration: 0.9, ease: 'power3' }), d: depth[i % depth.length] }; });
+        hero.addEventListener('pointermove', function (e) {
+          var r = hero.getBoundingClientRect(), nx = (e.clientX - r.left) / r.width - 0.5, ny = (e.clientY - r.top) / r.height - 0.5;
+          movers.forEach(function (m) { m.x(nx * m.d); m.y(ny * m.d); });
+        });
+      }
+    }
+  }
+  /* ---- аккордеон: текст ответов всегда в HTML, скрыт только визуально ---- */
+  [].forEach.call(document.querySelectorAll('.faq-item'), function (item) {
+    var btn = item.querySelector('.faq-q__btn');
+    btn.addEventListener('click', function () {
+      var open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+  /* ---- SEO-текст: свёрнут до первого абзаца, весь текст остаётся в HTML ---- */
+  var box = document.getElementById('seoText');
+  if (box) {
+    var body = document.getElementById('seoBody'), more = box.querySelector('.seo-text__more');
+    function collapsedH() { var p = body.querySelector('p'); return p ? p.offsetHeight + 24 : 160; }
+    box.classList.add('is-collapsible'); body.style.maxHeight = collapsedH() + 'px';
+    more.addEventListener('click', function () {
+      var open = box.classList.toggle('is-open');
+      body.style.maxHeight = open ? body.scrollHeight + 'px' : collapsedH() + 'px';
+      more.textContent = open ? 'Свернуть' : 'Читать подробнее'; more.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    window.addEventListener('resize', function () { body.style.maxHeight = box.classList.contains('is-open') ? body.scrollHeight + 'px' : collapsedH() + 'px'; });
+  }
+})();</script>
+
      
 </body></html>

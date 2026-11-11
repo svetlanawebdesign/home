@@ -172,7 +172,7 @@
     </div>
 
     <!-- Кнопка после работ: по центру, ссылка открывается в новом окне -->
-    <div class="service-works__more" style="display:flex;justify-content:center;align-items:center;width:100%;margin-top:60px;position:relative;z-index:2">
+    <div class="cases-cta service-works__more" style="display:flex;justify-content:center;align-items:center;width:100%;min-height:0;height:auto;padding:0;margin:60px 0 0;background:none;position:relative;z-index:2">
       <a href="/cases/" target="_blank" rel="noopener noreferrer" stagger-link="" style="--d:0s" class="stagger-animation w-inline-block reveal"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Смотреть все работы</div></div><div class="hover-bg"></div></div></a>
     </div>
 </div></div></section>
@@ -282,7 +282,7 @@
       </div>
 
       <!-- Кнопка Все отзывы: такая же, как «Подробнее» и «Смотреть все работы» -->
-      <div class="reviews-more" style="display:flex;justify-content:center;align-items:center;width:100%;margin-top:60px;position:relative;z-index:2">
+      <div class="cases-cta reviews-more" style="display:flex;justify-content:center;align-items:center;width:100%;min-height:0;height:auto;padding:0;margin:60px 0 0;background:none;position:relative;z-index:2">
         <a href="/#reviews" target="_blank" rel="noopener noreferrer" stagger-link="" style="--d:0s" class="stagger-animation w-inline-block reveal"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Все отзывы</div></div><div class="hover-bg"></div></div></a>
       </div>
 
@@ -302,6 +302,7 @@
 <!-- [COOKIE] Плашка про cookie: пока не нажата «Принять», показывается на каждой странице. Скрипт: js/cookie-banner.js, стили: CSS раздел 32 -->
 <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Уведомление о cookie" hidden><p class="cookie-banner__text">Мы используем файлы cookie для работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="/cookies/" class="cookie-banner__link">Политикой cookie</a>.</p><a href="#" stagger-link="" role="button" data-cookie-accept="" class="cookie-banner__btn w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Принять</span></span></a></div>
 <script src="../js/cookie-banner.js" defer></script>
+<!-- [LIGHTBOX] Просмотр отзывов на весь экран --><div class="lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-label="Просмотр отзыва" aria-hidden="true" tabindex="-1"><button type="button" class="lightbox__btn lightbox__close" aria-label="Закрыть" data-lb-close=""><svg viewBox="0 0 12 12" fill="none"><path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="lightbox__count" id="lbCount"></div><div class="lightbox__stage"><img class="lightbox__img" id="lbImg" alt="" draggable="false"/></div><button type="button" class="lightbox__btn lightbox__prev" aria-label="Предыдущий отзыв" data-lb-prev=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="lightbox__btn lightbox__next" aria-label="Следующий отзыв" data-lb-next=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
 <script src="../js/gsap.min.js"></script>
 <!-- [SCRIPT] Hover-эффект ссылок меню (stagger-link): текст «выезжает» вверх при наведении -->
 <script>(function () {
@@ -365,6 +366,19 @@
   window.__lenis = lenis;
   if (window.gsap) { gsap.ticker.add(function (time) { lenis.raf(time * 1000); }); gsap.ticker.lagSmoothing(0); }
   else { (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0); }
+  /* якорные ссылки: только на этой странице; ссылки в новое окно и на другие страницы (например /#reviews) не трогаем */
+  document.querySelectorAll('a[href*="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if (a.target === '_blank') return;
+      var h = a.getAttribute('href') || '', i = h.indexOf('#');
+      if (i < 0 || h.length - i < 2) return;
+      var p = h.slice(0, i);
+      if (p && p !== location.pathname) return;
+      var el = document.querySelector(h.slice(i));
+      if (!el) return;
+      e.preventDefault(); lenis.scrollTo(el, { offset: window.innerWidth <= 767 ? -30 : -80 });
+    });
+  });
 })();</script>
 <!-- [SCRIPT] АНИМАЦИИ СТРАНИЦЫ: 1) появление заголовков, текста и кнопок снизу вверх; 2) работы: зум-ин при скролле вниз и обратно при скролле вверх; 3) слайдер и видео; 4) кнопка «Подробнее» листает на один экран вниз -->
 <script>(function () {
@@ -651,29 +665,6 @@
     els.forEach(function (el) { if (el.parentElement) io.observe(el.parentElement); });
   }
 })();</script>
-<!-- [SCRIPT] ПЛАВНЫЙ СКРОЛЛ: библиотека Lenis (CDN) и её подключение к GSAP. Во время загрузки скролл заблокирован, плавные якоря меню -->
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script><script>(function () {
-  if (!window.Lenis || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var lenis = new Lenis({ duration: 1.1, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
-  window.__lenis = lenis;
-  lenis.stop(); /* пока идёт прелоадер, скролл заблокирован */
-  if (window.gsap) {
-    if (window.ScrollTrigger) { gsap.registerPlugin(ScrollTrigger); lenis.on('scroll', ScrollTrigger.update); }
-    gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-    gsap.ticker.lagSmoothing(0);
-  } else {
-    (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
-  }
-  /* якорные ссылки меню */
-  document.querySelectorAll('a[href*="#"]').forEach(function (a) {
-    a.addEventListener('click', function (e) {
-      var h = a.getAttribute('href') || '', i = h.indexOf('#');
-      if (i < 0 || h.length - i < 2) return;
-      var el = document.querySelector(h.slice(i));
-      if (!el) return;
-      e.preventDefault(); lenis.scrollTo(el, { offset: window.innerWidth <= 767 ? -30 : -80 });   /* отступ сверху у якоря: 80px на компьютере, 30px на телефоне */
-    });
-  });
-})();</script>
+
      
 </body></html>

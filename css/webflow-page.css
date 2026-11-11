@@ -55,7 +55,7 @@
 
 /* ---------- как я работаю ---------- */
 .wf-how__wrap { display: block; padding-top: 110px; padding-bottom: 110px; overflow: visible; }
-.wf-how__grid { position: relative; z-index: 6; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 0 5%; }
+.wf-how__grid { position: relative; z-index: 6; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.4%; margin: 0 5%; }
 .wf-step { position: relative; display: flex; flex-direction: column; gap: 14px; min-height: 420px; padding: 28px; overflow: hidden; border-radius: 12px; color: #18181a; }
 .wf-step--green { background-color: var(--green); }
 .wf-step--yellow { background-color: #fff3a6; }

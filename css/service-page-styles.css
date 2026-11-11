@@ -59,6 +59,9 @@
 .service-more .service-more__wrap { padding-top: 0; }
 .service-more .stagger-animation { margin-top: var(--works-to-btn); }
 
+
+.service-works__more { padding-bottom: clamp(80px, 10vw, 160px) !important; }
+
 /* ---------- появление снизу вверх (заголовки, текст, плашки, кнопки) ----------
    Класс .reveal ставится в HTML, .is-in добавляет скрипт, когда элемент вошёл в экран.
    Без JS и при «уменьшить движение» всё просто видно. --d - задержка элемента */

@@ -1,554 +1,76 @@
-<!DOCTYPE html><html lang="ru" class="is-loading sk-on" data-wf-page="6a74445026a325be5d9bf687" data-wf-site="6a74444e26a325be5d9bf646" data-wf-status="1"><head><meta charset="utf-8"/>
-<!--
-==============================================================================
-  КАРТА ФАЙЛА index.html  (сайт Светланы Кочетовой, веб-дизайнер)
-==============================================================================
-  Файлы рядом:
-    css/svetlanas-exceptional-site-09ba52.webflow.shared.f3bd06213.css  - ВСЕ стили сайта
-    js/   jquery, webflow, gsap, splittext, scrolltrigger                - скрипты Webflow/GSAP
-
-  СТРУКТУРА (сверху вниз):
-    [HEAD]    мета, предзагрузка hero-картинки, подключение CSS и шрифтов,
-              ранняя загрузка шрифтов, служебные скрипты
-    [1]  .page-loader        экран загрузки (проценты, линия прогресса)
-    [2]  .master-navigation  шапка: TG | WH | MAX, EN | RU, меню (на ≤991px - кнопка-бургер)
-    [3]  hero                первый экран: фото, бегущая строка, заголовки, кнопка
-    [4]  #work               второй экран: две бегущие линии карточек работ
-    [5]  about               абзац «Я создаю дизайн…» и кнопка
-    [6]  .limit-marquee-overlay  две наклонные ленты («6+ лет опыта», «400+ сайтов»)
-    [7]  #clients            карта клиентов + бегущая линия логотипов
-    [8]  #service            услуги: 4 карточки с ценой и сроком
-    [9]  #reviews            бегущая линия отзывов (пауза по ховеру)
-    [10] footer              бренд, колонки «Меню» и «Контакты», копирайт, политика, подпись
-    [SCRIPTS] размножение hero-строки, библиотеки, hover-эффект ссылок,
-              сборщик бегущих лент, плавный скролл (Lenis), логика экрана загрузки
-
-  ГДЕ ЧТО МЕНЯТЬ:
-    • Тексты и заголовки       - в соответствующем блоке ниже
-    • Цены и сроки услуг       - [8] #service: в КАЖДОЙ карточке цена указана два раза
-                                 (лицевая и обратная сторона)
-    • Скорость бегущих лент    - атрибут data-wr-speed у ленты (больше число = быстрее)
-    • Контакты в шапке         - [2] ссылки TG / WH / MAX (href); в футере [10] отдельно
-    • Точки на карте           - массив POINTS в скрипте внутри блока [7]
-    • Цвета, шрифты, отступы   - только в CSS-файле (разделы подписаны в его начале)
-    • Экран загрузки           - разметка [1] + CSS раздел 5 + скрипт «ЭКРАН ЗАГРУЗКИ» внизу
-==============================================================================
--->
-<!-- [HEAD] Предзагрузка hero-картинки (грузится первой, чтобы первый экран не «собирался» на глазах) -->
-<link rel="preload" as="image" href="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1).avif" imagesrcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1).avif 1159w" imagesizes="100vw" fetchpriority="high"/>
-<!-- [HEAD] Заранее открываем соединение с CDN, откуда грузятся картинки -->
-<link href="https://cdn.prod.website-files.com" rel="preconnect" /><title>Веб-дизайнер Светлана Кочетова | Дизайн и разработка сайтов, интерфейсов и приложений</title><meta name="description" content="Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify. Разработка сайта для специалистов, малого бизнеса и крупных компаний."/><!-- Open Graph / Telegram / соцсети: картинка img/cover.png (лучше 1200x630, PNG или JPG, до 1 МБ). Адрес сайта в этих тегах заменить при переезде на свой домен -->
-<link rel="canonical" href="https://svetlana.is-a.dev/"/>
-<link rel="alternate" hreflang="ru" href="https://svetlana.is-a.dev/"/><link rel="alternate" hreflang="en" href="https://svetlana.is-a.dev/en/"/><link rel="alternate" hreflang="x-default" href="https://svetlana.is-a.dev/"/>
-<meta property="og:type" content="website"/>
-<meta property="og:site_name" content="Web Designer Svetlana Kochetova"/><meta name="application-name" content="Web Designer Svetlana Kochetova"/><meta name="apple-mobile-web-app-title" content="Web Designer Svetlana Kochetova"/>
-<meta property="og:title" content="Веб-дизайнер Светлана Кочетова | Дизайн и разработка сайтов, интерфейсов и приложений"/>
-<meta property="og:description" content="Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify."/>
-<meta property="og:url" content="https://svetlana.is-a.dev/"/>
-<meta property="og:locale" content="ru_RU"/><meta property="og:locale:alternate" content="en_US"/>
-<meta property="og:image" content="https://svetlana.is-a.dev/img/cover.png"/>
-<meta property="og:image:type" content="image/png"/>
-<meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="Веб-дизайнер Светлана Кочетова: дизайн и разработка сайтов"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Веб-дизайнер Светлана Кочетова | Дизайн и разработка сайтов, интерфейсов и приложений"/>
-<meta name="twitter:description" content="Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify."/>
-<meta name="twitter:image" content="https://svetlana.is-a.dev/img/cover.png"/>
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8"/>
+<!-- Страница услуги «Разработка калькулятора на Tilda» (только русская версия). Стили: ../css/service-page-styles.css.
+     ПОКА noindex, потому что тексты и работы - заглушки. Когда страница будет готова: замените на "index, follow" и добавьте адрес в sitemap.xml -->
+<title>Разработка калькулятора на Tilda | Веб дизайнер Светлана Кочетова</title><meta name="description" content="Разработка калькуляторов на Tilda: расчёт стоимости и сроков, квизы, попапы. Примеры работ и форматы калькуляторов для сайта."/><meta name="robots" content="noindex, follow"/>
+<link rel="canonical" href="https://svetlana.is-a.dev/calculator/"/>
+<meta property="og:type" content="website"/><meta property="og:site_name" content="Веб дизайнер Светлана Кочетова"/><meta name="application-name" content="Web Designer Svetlana Kochetova"/><meta name="apple-mobile-web-app-title" content="Разработка калькулятора на Tilda"/><meta property="og:title" content="Разработка калькулятора на Tilda | Веб дизайнер Светлана Кочетова"/><meta property="og:description" content="Разработка калькуляторов на Tilda: расчёт стоимости и сроков, квизы, попапы. Примеры работ и форматы калькуляторов для сайта."/><meta property="og:url" content="https://svetlana.is-a.dev/calculator/"/><meta property="og:locale" content="ru_RU"/>
+<meta property="og:image" content="https://svetlana.is-a.dev/img/cover.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Разработка калькулятора на Tilda | Веб дизайнер Светлана Кочетова"/><meta name="twitter:description" content="Разработка калькуляторов на Tilda: расчёт стоимости и сроков, квизы, попапы. Примеры работ и форматы калькуляторов для сайта."/><meta name="twitter:image" content="https://svetlana.is-a.dev/img/cover.png"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<!-- [HEAD] ГЛАВНЫЙ CSS-ФАЙЛ: здесь все стили сайта, включая экран загрузки, карту и ленты -->
-<link href="css/svetlanas-exceptional-site-09ba52.webflow.shared.f3bd06213.css" rel="stylesheet" type="text/css"  />
-<!-- [HEAD] Шрифты Google: Inter (текст) и Oranienbaum (проценты, заголовки). display=block: без смены шрифта на лету -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=Oranienbaum&amp;display=block" rel="stylesheet"/>
-<!-- [HEAD] Ранняя загрузка шрифтов. Когда шрифты готовы, <html> получает класс fonts-ready, и на экране загрузки появляется текст. Промис нужен основному скрипту загрузки (window.__fontsPromise) -->
-<script>(function(){var r=document.documentElement;function s(){r.classList.add("fonts-ready")}if(document.fonts&&document.fonts.load){window.__fontsPromise=Promise.all([document.fonts.load("400 1em Oranienbaum","0123456789%"),document.fonts.load("400 1em Oranienbaum","Горжусь сотрудничеством"),document.fonts.load("400 1em Inter","Загружаем сайт")]);window.__fontsPromise.then(s,s)}else s();setTimeout(s,3000)})();</script>
-<!-- [HEAD] Служебный скрипт Webflow: ставит классы w-mod-js / w-mod-touch на <html>. Не удалять -->
+<link href="../css/svetlanas-exceptional-site-09ba52.webflow.shared.f3bd06213.css" rel="stylesheet" type="text/css"/>
+<link href="../css/cases-styles.css" rel="stylesheet" type="text/css"/>
+<link href="../css/404-styles.css" rel="stylesheet" type="text/css"/>
+<link href="../css/service-page-styles.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..700&amp;family=Oranienbaum&amp;display=swap" rel="stylesheet"/>
 <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-<!-- [HEAD] Страховка: включает режим загрузки (is-loading) и скелетоны (sk-on). Основной класс уже стоит на теге <html> -->
-<script>document.documentElement.classList.add("is-loading","sk-on");</script>
-<!-- [HEAD] Иконки сайта (favicon) -->
-<link rel="icon" href="img/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png"/><link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png"/><link rel="manifest" href="img/site.webmanifest"/><!-- Микроразметка schema.org (JSON-LD): данные о сайте, специалисте и услугах для поисковиков -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://svetlana.is-a.dev/#website", "url": "https://svetlana.is-a.dev/", "name": "Web Designer Svetlana Kochetova", "inLanguage": "ru", "publisher": {"@id": "https://svetlana.is-a.dev/#person"}, "alternateName": ["Веб-дизайнер Светлана Кочетова", "Светлана Кочетова", "Svetlana Kochetova"]}, {"@type": "Person", "@id": "https://svetlana.is-a.dev/#person", "name": "Светлана Кочетова", "alternateName": ["Svetlana Kochetova", "Светлана Кочетова"], "jobTitle": "Веб-дизайнер", "url": "https://svetlana.is-a.dev/", "image": "https://svetlana.is-a.dev/img/cover.png", "email": "mailto:svekochetova@gmail.com", "telephone": "+4366565742024", "sameAs": ["https://t.me/svetlanawebdesign", "https://webflow.com/@svetlanawebdesign", "https://experts.tilda.cc/flavoweb", "https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ"], "knowsAbout": ["Веб-дизайн", "Разработка сайтов", "Tilda", "WordPress", "Webflow", "Framer", "Shopify"]}, {"@type": "ProfessionalService", "@id": "https://svetlana.is-a.dev/#service", "name": "Светлана Кочетова — дизайн и разработка сайтов", "url": "https://svetlana.is-a.dev/", "image": "https://svetlana.is-a.dev/img/cover.png", "description": "Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify.", "provider": {"@id": "https://svetlana.is-a.dev/#person"}, "areaServed": "Worldwide", "availableLanguage": ["ru", "en"], "email": "svekochetova@gmail.com", "telephone": "+4366565742024", "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Услуги", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Лендинг", "description": "Современный лендинг с индивидуальным дизайном и адаптивной разработкой."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 30000, "priceCurrency": "RUB"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Корпоративный сайт", "description": "Сайт для бизнеса с несколькими разделами и удобной CMS."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 50000, "priceCurrency": "RUB"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Интернет-магазин", "description": "Интернет-магазин с каталогом, корзиной, оплатой и доставкой."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 65000, "priceCurrency": "RUB"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Просто верстка", "description": "Адаптивная вёрстка по готовому макету из Figma."}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 10000, "priceCurrency": "RUB"}}]}}, {"@type": "WebPage", "@id": "https://svetlana.is-a.dev/#webpage", "url": "https://svetlana.is-a.dev/", "name": "Веб-дизайнер Светлана Кочетова | Дизайн и разработка сайтов, интерфейсов и приложений", "description": "Дизайн и разработка сайтов «под ключ». Частный специалист, фрилансер, работаю с Tilda, WordPress, Webflow, Framer и Shopify.", "inLanguage": "ru", "isPartOf": {"@id": "https://svetlana.is-a.dev/#website"}, "about": {"@id": "https://svetlana.is-a.dev/#person"}, "primaryImageOfPage": {"@type": "ImageObject", "url": "https://svetlana.is-a.dev/img/cover.png"}}]}</script>
+<link rel="icon" href="../img/favicon.ico" sizes="any"/><link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png"/><link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png"/><link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png"/><link rel="manifest" href="../img/site.webmanifest"/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://svetlana.is-a.dev/calculator/#webpage", "url": "https://svetlana.is-a.dev/calculator/", "name": "Разработка калькулятора на Tilda | Веб дизайнер Светлана Кочетова", "description": "Разработка калькуляторов на Tilda: расчёт стоимости и сроков, квизы, попапы. Примеры работ и форматы калькуляторов для сайта.", "inLanguage": "ru", "isPartOf": {"@id": "https://svetlana.is-a.dev/#website"}, "about": {"@id": "https://svetlana.is-a.dev/#person"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://svetlana.is-a.dev/"}, {"@type": "ListItem", "position": 2, "name": "Разработка калькулятора на Tilda", "item": "https://svetlana.is-a.dev/calculator/"}]}]}</script>
 
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-(function () {
-    var loaded = false;
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113981375', 'ym');
 
-    // Заглушка ym создаётся сразу, чтобы вызовы reachGoal и др. не терялись
-    window.ym = window.ym || function () {
-        (window.ym.a = window.ym.a || []).push(arguments);
-    };
-    window.ym.l = 1 * new Date();
-
-    function loadMetrika() {
-        if (loaded) return;
-        loaded = true;
-
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://mc.yandex.ru/metrika/tag.js?id=113981375';
-        document.head.appendChild(s);
-
-        ym(113981375, 'init', {
-            ssr: true,
-            webvisor: true,
-            clickmap: true,
-            ecommerce: "dataLayer",
-            referrer: document.referrer,
-            url: location.href,
-            accurateTrackBounce: true,
-            trackLinks: true
-        });
-    }
-
-    ['scroll', 'click', 'mousemove', 'touchstart', 'keydown'].forEach(function (evt) {
-        window.addEventListener(evt, loadMetrika, { once: true, passive: true });
-    });
-})();
+    ym(113981375, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/113981375" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-</head><body class="body">
-<!-- [1] ЭКРАН ЗАГРУЗКИ: подпись слева, проценты справа, линия прогресса снизу. Число и ширину линии обновляет скрипт «ЭКРАН ЗАГРУЗКИ» в конце файла. Стили: CSS, раздел 5 -->
-<div class="page-loader" aria-hidden="true"><div class="page-loader__wrap"><div class="page-loader__row"><div class="page-loader__label">Загружаем сайт...</div><div class="page-loader__pct"><span id="plPct">0</span>%</div></div><div class="page-loader__bar"><i id="plFill"></i></div></div></div>
-<!-- [2] ШАПКА (.master-navigation): слева TG | WH | MAX, справа EN | RU, по центру меню. Каждый пункт - отдельная ссылка с эффектом «выезжающего» текста (атрибут stagger-link) -->
-<div class="master-navigation"><!-- Контакты: TG | WH | MAX. Здесь меняем href у ссылок --><div class="lang-switch not-mob w-inline-block"><div class="lang-row"><a href="https://t.me/svetlanawebdesign" stagger-link="" target="_blank" rel="noopener" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">TG</div></div></div></a><div class="nav-link-text lang-sep"><div>|</div></div><a href="https://wa.me/4366565742024" stagger-link="" target="_blank" rel="noopener" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">WH</div></div></div></a><div class="nav-link-text lang-sep"><div>|</div></div><a href="https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ" stagger-link="" target="_blank" rel="noopener" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">MAX</div></div></div></a></div></div><!-- Меню навигации по разделам страницы (якоря #work, #clients, #service, #reviews) --><div class="navbar" id="siteNav"><div class="nav-coontainer"><!-- Кнопка-бургер: видна на экранах ≤991px. Открывает/закрывает меню (скрипт «МЕНЮ-БУРГЕР» внизу файла) --><button type="button" class="menu-button" id="menuBtn" aria-label="Меню" aria-expanded="false" aria-controls="navMenu"><span class="menu-button-inner open"><span class="icon-nav-menu"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M2 6L10 6M2 9H10M2 3L10 3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="menu-button-inner close"><span class="icon-nav-menu"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></button><nav role="navigation" class="nav-menu" id="navMenu"><div class="nav-menu-inner"><a href="/cases/" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">Работы</div></div></div></a><a href="/#clients" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">клиенты</div></div></div></a><a href="/#service" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">Услуги</div></div></div></a><a href="/#reviews" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">Отзывы</div></div></div></a></div></nav></div></div><!-- Переключатель языка EN | RU (href="#": подставьте адреса языковых версий) --><div class="lang-switch w-inline-block"><div class="lang-row"><a href="/en/" stagger-link="" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">EN</div></div></div></a><div class="nav-link-text lang-sep"><div>|</div></div><a href="/" stagger-link="" class="lang-link is-current w-inline-block" aria-current="true"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">RU</div></div></div></a></div></div></div>
-<!-- [3] HERO - ПЕРВЫЙ ЭКРАН: фото, бегущая строка «Web Design • UX/UI • Development», два заголовка, кнопка «Свяжитесь со мной». Анимацию появления (grow in) запускает скрипт загрузки после ухода прелоадера -->
-<section class="page-section no-scroll"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap center add-top"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><!-- Блок «фото + кнопка + бегущая строка»: центрируется по вертикали на весь экран (CSS, раздел 30) --><div class="hero-stage"><!-- Главное фото hero --><img class="hero-img" src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1).avif" alt="" style="opacity:0" sizes="100vw" data-w-id="77ecca7d-adb8-a67b-8c74-9377a49356ea" loading="eager" fetchpriority="high" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-500.avif 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-800.avif 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1)-p-1080.avif 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad73977999164927a914056_Neon%20Cyber%20Collage%20Portrait%201%20(1).avif 1159w"/><a href="#" stagger-link="" data-open-popup="" data-w-id="64bf88e4-4440-56c1-b822-3ea0ecb97232" style="opacity:0" class="stagger-animation relative w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Свяжитесь со мной</div></div><div class="hover-bg"></div></div></a><!-- Бегущая строка на hero: в HTML один текст, скрипт «размножение hero-строки» делает 6 текстов x 3 блока --><div class="marquee-2"><div data-w-id="fda49462-dfa0-b15a-15ac-2e973116a85b" style="-webkit-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0%, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="marquee-text"><div class="single-marquee-text"><div class="text-h0">Web Design • UX/UI • Development •</div></div></div><div class="shadow-work-slider"></div><div class="shadow-work-slider right"></div></div></div><div data-w-id="f913e596-4d6e-4d96-fa16-bf3d380a080e" style="opacity:0" class="text-h6 heading-medium uppercase _01">Сайты с душой, <br/>от души, для души</div><h1 data-w-id="d2cd1c95-320f-befa-7e07-d260d9035a73" style="opacity:0" class="text-h6 heading-medium uppercase">Веб-дизайнер<br/>светлана Кочетова</h1></div></div></section>
-<!-- [4] РАБОТЫ (#work, второй экран): две ленты карточек, движутся в разные стороны. Фон карточек #232323 (скелетон) пока картинка грузится -->
-<section id="work" class="page-section no-scroll"><div class="w-layout-blockcontainer section-container no-limit w-container"><div class="content-wrap center"><div class="_1-clmn-line fix"></div><div class="_2-clmn-line fix"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line fix"></div><div class="_5-clmn-line fix"></div><div class="marquee img"><!-- Лента 1 (вправо). Скорость: data-wr-speed. Карточка = блок .work-card-link (не ссылка): только картинка, формат 1680/1260 (CSS, раздел 35) --><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="right" class="marquee-logos scroll images"><div class="single-line less-gap"><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img1.png" loading="lazy" alt="Дизайн и разработка сайта на Tilda для ярмарки недвижимости в Казани" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/ENnewline1img2.png" loading="lazy" alt="Дизайн и разработка сайта выставки Фриды Кало на Webflow" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img3.png" loading="lazy" alt="Дизайн и разработка сайта для производства мебели на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/ENnewline1img4.png" loading="lazy" alt="Дизайн и разработка финтех-сайта на Webflow" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img5.png" loading="lazy" alt="Дизайн и разработка сайта аппаратного массажа Icoone на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img6.png" loading="lazy" alt="Дизайн и разработка сайта веб-кам студии на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img7.png" loading="lazy" alt="Дизайн и разработка сайта стоматологической клиники на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img8.png" loading="lazy" alt="Дизайн и разработка сайта дилера коммерческих автомобилей Sitrak на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img9.png" loading="lazy" alt="Дизайн и разработка сайта ивент-агентства на Webflow" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img10.png" loading="lazy" alt="Дизайн и разработка сайта для поставщика холодильного оборудования на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img11.png" loading="lazy" alt="Дизайн и разработка сайта студии натурального камня на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline1img12.png" loading="lazy" alt="Дизайн и разработка сайта нефтегазовой строительной компании «Югорская Строительная Компания» на Tilda" class="image-cover"/></div></div></div></div><!-- Лента 2 (влево): тот же набор карточек --><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="left" class="marquee-logos scroll images"><div class="single-line less-gap"><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img1.png" loading="lazy" alt="Сайт ивент-агентства на Webflow: дизайн и разработка" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img2.png" loading="lazy" alt="Дизайн и разработка сайта для строительства и продажи домов на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img3.png" loading="lazy" alt="Сайт стоматологии на Tilda: разработка и дизайн" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img4.png" loading="lazy" alt="Дизайн и разработка сайта банкетного зала на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img5.png" loading="lazy" alt="Разработка сайта на Tilda для ярмарки недвижимости в Казани" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img6.png" loading="lazy" alt="Создание сайта на Tilda для ярмарки недвижимости в Казани: дизайн и разработка" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img7.png" loading="lazy" alt="Дизайн и разработка сайта с адвент-календарём на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img8.png" loading="lazy" alt="Дизайн и разработка сайта тату-салона на Tilda" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img9.png" loading="lazy" alt="Разработка и дизайн сайта ивент-агентства на Webflow" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img10.png" loading="lazy" alt="Дизайн и разработка сайта AI photo generator в Figma" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img11.png" loading="lazy" alt="Дизайн и разработка интернет-магазина на 1С-Битрикс" class="image-cover"/></div></div><div class="work-card-link w-inline-block"><div class="image-wrap-work-card"><img src="img/newline2img12.png" loading="lazy" alt="Дизайн и разработка сайта магазина косметики на Tilda" class="image-cover"/></div></div></div></div></div></div></div></section>
-<!-- [5] ТЕКСТ О СЕБЕ: абзац «Я создаю дизайн…» и кнопка «Свяжитесь со мной» -->
-<section class="page-section"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap center add-bottom"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><div class="w-layout-vflex limit-text"><div data-w-id="7deae46e-8be4-3a16-6a17-42ef5de4e2ad" style="opacity:0" class="huge-paragraph reveal-type">Я создаю дизайн, который привлекает внимание своей эстетикой и при этом работает на достижение ваших бизнес-целей.<br/><br/><span class="block-mob-span huge-paragraph__span">Давайте создадим сайт, который подчеркнёт ценность вашего бренда, вызовет доверие и поможет привлекать больше клиентов.</span></div></div><a href="/cases/" stagger-link="" data-w-id="7deae46e-8be4-3a16-6a17-42ef5de4e2c8" style="opacity:0" class="stagger-animation w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Смотреть кейсы</div></div><div class="hover-bg"></div></div></a></div></div></section>
+</head>
+<body class="body">
+<div class="master-navigation"><!-- Контакты: TG | WH | MAX. Здесь меняем href у ссылок --><div class="lang-switch not-mob w-inline-block"><div class="lang-row"><a href="https://t.me/svetlanawebdesign" stagger-link="" target="_blank" rel="noopener" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">TG</div></div></div></a><div class="nav-link-text lang-sep"><div>|</div></div><a href="https://wa.me/4366565742024" stagger-link="" target="_blank" rel="noopener" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">WH</div></div></div></a><div class="nav-link-text lang-sep"><div>|</div></div><a href="https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ" stagger-link="" target="_blank" rel="noopener" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">MAX</div></div></div></a></div></div><!-- Меню навигации по разделам страницы (якоря #work, #clients, #service, #reviews) --><div class="navbar" id="siteNav"><div class="nav-coontainer"><!-- Кнопка-бургер: видна на экранах ≤991px. Открывает/закрывает меню (скрипт «МЕНЮ-БУРГЕР» внизу файла) --><button type="button" class="menu-button" id="menuBtn" aria-label="Меню" aria-expanded="false" aria-controls="navMenu"><span class="menu-button-inner open"><span class="icon-nav-menu"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M2 6L10 6M2 9H10M2 3L10 3" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span><span class="menu-button-inner close"><span class="icon-nav-menu"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></button><nav role="navigation" class="nav-menu" id="navMenu"><div class="nav-menu-inner"><a href="/cases/" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">Работы</div></div></div></a><a href="/#clients" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">клиенты</div></div></div></a><a href="/#service" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">Услуги</div></div></div></a><a href="/#reviews" stagger-link="" class="nav-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">Отзывы</div></div></div></a></div></nav></div></div><!-- Переключатель языка EN | RU (href="#": подставьте адреса языковых версий) --><div class="lang-switch w-inline-block"><div class="lang-row"><a href="/en/cases" stagger-link="" class="lang-link w-inline-block"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">EN</div></div></div></a><div class="nav-link-text lang-sep"><div>|</div></div><a href="/" stagger-link="" class="lang-link is-current w-inline-block" aria-current="true"><div class="stagger-wrap"><div class="nav-link-text"><div stagger-link-text="orange">RU</div></div></div></a></div></div></div>
+<main>
+<!-- Первый экран: заголовок по центру, параграф, кнопка «Подробнее» (плавно прокручивает к блоку с работами) -->
+<section class="page-section service-hero"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap service-hero__wrap"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><div class="service-hero__inner"><h1 class="heading-2 service-hero__title">Разработка калькулятора на Тильде</h1><p class="body-medium description service-hero__text">Здесь будет текст об услуге: какие калькуляторы вы делаете, как они помогают считать стоимость и собирать заявки. Это заглушка, замените на свой текст.</p><a href="#works" stagger-link="" data-scroll-to="#works" class="stagger-animation w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Подробнее</div></div><div class="hover-bg"></div></div></a></div></div></div></section>
+<!-- Работы: заголовок H2, параграф, примеры шахматкой (нечётные слева: 1-я - 3-я полоска, чётные справа: 3-я - 5-я; на телефоне 78% ширины), в конце кнопка «Смотреть кейсы» -->
+<section class="page-section service-works" id="works"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap service-works__wrap"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><div class="service-works__head"><h2 class="heading-2 service-works__title">Примеры калькуляторов на Тильде</h2><p class="body-medium description service-works__text">Здесь будет вступительный текст к работам. Это заглушка, замените на свой текст.</p></div>
+    <div class="service-works__grid">
+
+      <!-- РАБОТА: КАРТИНКА (замените src, alt, теги, заголовок и текст) -->
+      <article class="work-item"><div class="work-media"><img class="work-media__el" src="../img/case5.avif" alt="Калькулятор на Tilda: название проекта" loading="lazy"/></div><div class="work-tags"><span class="case-pill case-pill--pink">Статичный</span><span class="case-pill case-pill--green">Строительство</span></div><h3 class="heading-2 work-title">Название калькулятора</h3><p class="body-medium description work-text">Здесь будет описание работы: что считает калькулятор, для какого бизнеса сделан и какой результат дал.</p></article>
+
+      <!-- РАБОТА: СЛАЙДЕР (картинки меняются сами каждые 1,5 с; интервал - data-interval в миллисекундах; первой картинке нужен класс is-active) -->
+      <article class="work-item"><div class="work-media work-slider" data-interval="1500"><img class="work-slider__img is-active" src="../img/keto1full.avif" alt="Калькулятор на Tilda: шаг 1" loading="lazy"/><img class="work-slider__img" src="../img/keto2full.avif" alt="Калькулятор на Tilda: шаг 2" loading="lazy"/></div><div class="work-tags"><span class="case-pill case-pill--pink">Попап</span><span class="case-pill case-pill--green">Здоровье</span></div><h3 class="heading-2 work-title">Название калькулятора</h3><p class="body-medium description work-text">Здесь будет описание работы: что считает калькулятор, для какого бизнеса сделан и какой результат дал.</p></article>
+
+      <!-- РАБОТА: ВИДЕО (без звука, по кругу, запускается когда попало на экран) -->
+      <article class="work-item"><div class="work-media"><video class="work-media__el work-video" src="../video/keto.mp4" muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-label="Калькулятор на Tilda: демонстрация"></video></div><div class="work-tags"><span class="case-pill case-pill--pink">Квиз</span><span class="case-pill case-pill--green">Услуги</span></div><h3 class="heading-2 work-title">Название калькулятора</h3><p class="body-medium description work-text">Здесь будет описание работы: что считает калькулятор, для какого бизнеса сделан и какой результат дал.</p></article>
+
+      <!-- РАБОТА: КАРТИНКА (ещё одна) (замените src, alt, теги, заголовок и текст) -->
+      <article class="work-item"><div class="work-media"><img class="work-media__el" src="../img/case5.avif" alt="Калькулятор на Tilda: название проекта" loading="lazy"/></div><div class="work-tags"><span class="case-pill case-pill--pink">Статичный</span><span class="case-pill case-pill--green">Строительство</span></div><h3 class="heading-2 work-title">Название калькулятора</h3><p class="body-medium description work-text">Здесь будет описание работы: что считает калькулятор, для какого бизнеса сделан и какой результат дал.</p></article>
+
+    </div>
+    <div class="service-works__more"><a href="/cases/" stagger-link="" class="stagger-animation w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Смотреть кейсы</div></div><div class="hover-bg"></div></div></a></div>
+</div></div></section>
 <!-- [6] НАКЛОННЫЕ ЛЕНТЫ-ПЛАШКИ между блоками: «6+ лет опыта / работаю с 2019 г.» и «400+ сайтов реализовано / 250+ отзывов». В HTML один цикл, до нужной ширины их размножает сборщик лент -->
 <div class="limit-marquee-overlay"><div class="div"><div class="marquee img rotate"><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="right" class="marquee-logos scroll text-marquee _2"><div class="single-line text"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1).png" loading="eager" sizes="30px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1).png 2389w" alt="" class="marquee-img"/><div class="marquee-text">6+ лет опыта</div><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1).png" loading="eager" sizes="30px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1)-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e959545d9c5dac8c940b_Frame%204%20(1).png 2389w" alt="" class="marquee-img"/><div class="marquee-text">работаю с 2019 г.</div></div></div></div><div class="marquee img rotate-other"><div data-wr-speed="50" data-wr-marquee="" data-wr-direction="left" class="marquee-logos scroll text-marquee"><div class="single-line text"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13.png" loading="eager" sizes="30px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13.png 2000w" alt="" class="marquee-img"/><div class="marquee-text">400+ сайтов реализовано </div><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13.png" loading="eager" sizes="30px" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad1e244bf6c5bb030ddf7fd_Label-13.png 2000w" alt="" class="marquee-img"/><div class="marquee-text">250+ отзывов</div></div></div></div></div></div>
-<!-- [7] КЛИЕНТЫ (#clients): заголовок, карта мира с точками и лента логотипов -->
-<section id="clients" class="page-section no-scroll"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap center"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><h2 data-w-id="fb7fa576-361a-5414-6a92-31f56e5aedb7" style="opacity:0" class="heading-2 limit">Горжусь сотрудничеством<br/>с успешными компаниями <span class="span-small inline orinebaum">351+</span><br/><span class="block-mob-span">cо всего мира</span></h2><!-- Карта мира. Блок вставлен как embed: внутри картинка карты, подсказка и скрипт с массивом POINTS (координаты точек, подписи, кластеры «10+», «25+»). Стили - CSS, раздел 15 --><div class="map w-embed w-script">
-
-
-<div class="map" id="map">
-  <!-- Картинка карты: img/world_1_1_5 1.svg. Пропорции SVG должны совпадать с aspect-ratio 1733 / 833 (CSS, .map), иначе точки сместятся -->
-  <img class="map__svg" alt="Карта мира с проектами Светланы Кочетовой" draggable="false"
-       src="img/world_1_1_5%201.svg">
-
-  <div class="tip" id="tip" role="tooltip">
-    <img class="tip__img" id="tipImg" alt="">
-    <h3 class="tip__title" id="tipTitle"></h3>
-    <p class="tip__sub" id="tipSub"></p>
-    <p class="tip__text" id="tipText"></p>
-    <ul class="tip__list" id="tipList"></ul>
-    <span class="tip__arrow"></span>
-  </div>
-</div>
-
-
-<!-- Скрипт карты: массив POINTS (x, y, диаметр, подпись, title/country/text/image для подсказки) и логика подсказки -->
-<script>
-/* ======================================================================
-   POINTS
-   x, y  – position on the map in percent (0–100) of map width / height
-   d     – dot diameter in percent of map width
-   label – optional text inside the dot (for clusters: "25+")
-   Fill title / country / text / image for every point yourself.
-   ====================================================================== */
-const MAP_W = 1733, MAP_H = 833;           // reference size used to place the dots
-const px = (x, y, r) => ({                  // helper: pixels → percent
-  x: +(x / MAP_W * 100).toFixed(2),
-  y: +(y / MAP_H * 100).toFixed(2),
-  d: +(r * 2 / MAP_W * 100).toFixed(2)
-});
-
-/* EMPTY - точка-«декор»: просто точка без подсказки. Чтобы сделать её живой, замените ...EMPTY на
-   title (город), country (страна), text (описание проекта), image (картинка в подсказке), как у Dubai ниже */
-const EMPTY = {};
-
-const POINTS = [
-  // --- Clusters (Moscow / Saint Petersburg / Nizhny Novgorod) ---
-  { ...px(886, 104, 28), label: "10+",
-    country: "Россия, Санкт-Петербург",
-    items: [
-      "A Finance Pro — деньги под залог автомобиля",
-      "Verum Stone — ателье природного камня",
-      "Baibo — магазин женской одежды",
-      "ПерсонаДент — стоматологическая клиника",
-      "Unirite — получение ипотеки для загородного строительства и покупки",
-      "Синица — маркетинговое агентство",
-      "KOMAROVOFOOD — кафе на территории конного клуба в Комарово",
-      "Сайт Елены Казакевич — помощь в получении кредита",
-      "Проект Здоровья — многопрофильный медицинский центр",
-      "GLADKO Space — студия лазерной эпиляции" ] },
-  { ...px(935, 127, 36), label: "25+",
-    country: "Россия, Москва",
-    items: [
-      "Tanzza — производитель мебели",
-      "Веста — агентство по подбору персонала",
-      "Vamos Centro Español — школа испанского",
-      "Tattoo Ceremony — тату-студия",
-      "Sendo Aqua — поставщик фильтров для воды",
-      "Reon — маркетинговое агентство",
-      "MVP Group — рекламное агентство",
-      "ВизаВезде — визовый центр",
-      "Ферумсталь — производство секционных ограждений",
-      "ДОМСЕГОДНЯ — застройщик",
-      "«Снегири» — производство и доставка бетона",
-      "RoyalGroup — производитель мебели",
-      "ЕвроПанель — производитель панелей для ремонта и строительства",
-      "The Toy — ресторан",
-      "Beauty Med City — многопрофильный медицинский центр",
-      "Горклиника — наркологическая клиника",
-      "4 Гнома — клининговая компания",
-      "Blisski — бар",
-      "SmartWidgets — IT-компания по разработке виджетов",
-      "Арифметическая академия — для школьников",
-      "UV DTF CRISTAL — изготовление брендированных стикеров от производителя",
-      "Vibe — бренд энергетических напитков",
-      "Freska — клининговая компания",
-      "Москредит — автоломбард",
-      "Баттути — детский развлекательный центр" ] },
-  { ...px(984, 138, 16), label: "5+",
-    country: "Россия, Нижний Новгород",
-    items: [
-      "Sitrak — дилер грузовых автомобилей",
-      "МеталлНН — производство и поставка металлопроката",
-      "SMA Digital — маркетинговое агентство" ] },
-  // --- North America ---
-  { ...px(254, 247, 11), title: "Ezsales", country: "Сан-Франциско, Калифорния, США",
-    text: "Дизайн и разработка сайта для сервиса генерации лидов и автоматических рассылок",
-    image: "img/ezsales.png" },
-  { ...px(243, 277, 13), title: "Content Place Marketing", country: "Лос-Анджелес, Калифорния, США",
-    text: "Дизайн и разработка сайта для фуд-фотографа из Лос-Анджелеса",
-    image: "img/contentplacemarketing.png" },
-  { ...px(320, 351, 11), title: "Dieta Keto", country: "Мексика",
-    text: "Дизайн и разработка сайта для продажи курсов кето-диеты в Мексике",
-    image: "img/dietaketo.png" },
-  { ...px(426, 321, 13), title: "PizzaHunters", country: "Санни-Айлс-Бич, Флорида, США",
-    text: "Дизайн и разработка сайта для заказа и доставки еды пиццерии",
-    image: "img/pizzahunters.png" },
-  // --- Africa / Middle East ---
-  { ...px(1076, 311, 11),                    // Dubai
-    title: "DexCoyote", country: "Дубай, Арабские Эмираты",
-    text: "Дизайн и разработка сайта для криптостартапа",
-    image: "img/dexcoyte.png" },
-  // --- Europe ---
-  { ...px(764, 153, 13), title: "Pancost", country: "Саутгемптон, Великобритания",
-    text: "Дизайн и разработка интернет-магазина кухонной техники в Великобритании",
-    image: "img/pancost.png" },
-  { ...px(837, 186, 11), title: "VLWO", country: "Термен, Швейцария",
-    text: "Дизайн и разработка многостраничного сайта для ассоциации учителей",
-    image: "img/vlwo.png" },
-  { ...px(869, 144, 11), title: "ESLD", country: "Латвия",
-    text: "Дизайн и разработка многостраничного сайта для онлайн-курсов European School of Leadership Development",
-    image: "img/esld.png" },
-  { ...px(889, 157, 5), title: "Автоклимат", country: "Полоцк, Беларусь",
-    text: "Дизайн и разработка сайта для сервиса по ремонту и обслуживанию автокондиционеров",
-    image: "img/autoclimat.png" },
-  { ...px(926, 82, 4), title: "РБСтрой", country: "Коряжма, Архангельская область, Россия",
-    text: "Дизайн и разработка сайта для строительной компании",
-    image: "img/rbstori.png" },
-  { ...px(942, 169, 8), title: "Black Cherry", country: "Казань, Россия",
-    text: "Дизайн и разработка сайта для веб-студии",
-    image: "img/blackcherry.png" },
-  { ...px(957, 180, 4), title: "YarnTube", country: "Волгоград, Россия",
-    text: "Дизайн и разработка сайта для курсов по вязанию",
-    image: "img/yarntube.png" },
-  { ...px(1006, 157, 5), title: "Надежные двери", country: "Оренбург, Россия",
-    text: "Дизайн и разработка интернет-магазина межкомнатных и входных дверей",
-    image: "img/Frame_28_1.png" },
-  // --- Russia / Central Asia ---
-  { ...px(1047, 110, 10), title: "MobiPro", country: "Екатеринбург, Россия",
-    text: "Дизайн и разработка сайта для сервиса и обслуживания электроники",
-    image: "img/mobipro.png" },
-  { ...px(1049, 131, 3), title: "Borga", country: "Екатеринбург, Россия",
-    text: "Дизайн и разработка сайтов для всех подразделений компании",
-    image: "img/borga.png" },
-  { ...px(1062, 127, 3), title: "Югорская Строительная Компания", country: "Тюмень, Россия",
-    text: "Дизайн и разработка сайта для строительной компании в сфере нефтегазовой промышленности",
-    image: "img/usk.png" },
-  { ...px(1096, 136, 17), title: "Гарант Безопасность", country: "Екатеринбург, Россия",
-    text: "Дизайн и разработка сайта для частной охранной организации",
-    image: "img/garantbezopasnost.png" },
-  { ...px(1126, 138, 5), title: "AirComfort", country: "Новосибирск, Россия",
-    text: "Дизайн и разработка сайта для компании по установке кондиционеров",
-    image: "img/aircomfort.png" },
-  { ...px(1163, 127, 8), title: "ВизаВезде", country: "Красноярск, Россия",
-    text: "Дизайн и разработка лендингов для визового центра с филиалами в Москве и Красноярске",
-    image: "img/vizavezde.png" },
-  { ...px(1176, 138, 5), title: "Методика отдыха", country: "Красноярск, Россия",
-    text: "Дизайн и разработка сайта авторских туров по России",
-    image: "img/metodikaotdiha.png" },
-  { ...px(1164, 161, 5), title: "Светлана Березова", country: "Красноярск, Россия",
-    text: "Дизайн и разработка персонального сайта для бизнес-психолога",
-    image: "img/svetlanaberezova.png" },
-  { ...px(1076, 205, 11), title: "Eurasian Brands", country: "Астана, Казахстан",
-    text: "Дизайн и разработка многостраничного сайта для патентного центра",
-    image: "img/eurasianbrands.png" },
-  { ...px(1100, 205, 11), title: "Le Dome", country: "Алматы, Казахстан",
-    text: "Дизайн и разработка сайта для банкетного зала",
-    image: "img/le%20dome.png" },
-  // --- East / Southeast Asia ---
-  { ...px(1467, 181, 11), title: "Финансист", country: "Хабаровск, Россия",
-    text: "Дизайн и разработка сайта для инвестиционного клуба",
-    image: "img/finansist.png" },
-  { ...px(1443, 181, 11), title: "Арена27", country: "Хабаровск, Россия",
-    text: "Дизайн и разработка сайта для автомобильного техцентра в Хабаровске",
-    image: "img/arena27.png" },
-  { ...px(1450, 162, 11), title: "Земля Камчатка", country: "Камчатка, Россия",
-    text: "Дизайн и разработка сайта авторских туров по Камчатке",
-    image: "img/kamchatka.png" },
-  { ...px(1479, 251, 11), title: "Pollzu", country: "Киото, Япония",
-    text: "Дизайн и разработка интернет-магазина детских ковриков для России и Японии",
-    image: "img/pollzu.png" },
-  { ...px(1309, 417, 11), title: "ZabotaPhuket", country: "Пхукет, Таиланд",
-    text: "Дизайн и разработка сайта для аренды и продажи недвижимости на Пхукете",
-    image: "img/zabotaphuket.png" },
-
-  // --- Projects (added: Murmansk, Tashkent, Kaliningrad, Tver, Serpukhov, USA, Europe, Asia ...) ---
-  { ...px(918, 57, 11), title: "Golden Hair", country: "Мурманск, Россия",
-    text: "Дизайн и разработка сайта для студии наращивания волос в Мурманске",
-    image: "img/goldenhair.png" },
-  { ...px(1117, 237, 11), title: "Alfa Потолок", country: "Ташкент, Узбекистан",
-    text: "Дизайн и разработка сайта для установки натяжных потолков и освещения",
-    image: "img/alpha.png" },
-  { ...px(1100, 311, 11), title: "Amaline", country: "Дубай, Арабские Эмираты",
-    text: "Дизайн и разработка сайта для логистической компании",
-    image: "img/amaline.png" },
-  { ...px(862, 131, 11), title: "Оптика для бережливых", country: "Калининград, Санкт-Петербург, Тихвин, Мурманск, Россия",
-    text: "Дизайн и разработка интернет-магазина очков и линз и сайта для оптики",
-    image: "img/optika.png" },
-  { ...px(893, 180, 11), title: "СтопДолг", country: "Брянск, Россия",
-    text: "Дизайн и разработка сайта для банкротства физических лиц",
-    image: "img/stopdolg.png" },
-  { ...px(964, 192, 8), title: "REON", country: "Ростов-на-Дону, Россия",
-    text: "Дизайн и разработка сайта для маркетингового агентства",
-    image: "img/reon.png" },
-  { ...px(1010, 142, 8), title: "Crazy Drift", country: "Ижевск, Россия",
-    text: "Дизайн и разработка сайта для картинга",
-    image: "img/crazydrift.png" },
-  { ...px(951, 273, 8), title: "Devils Trades", country: "Тель-Авив, Израиль",
-    text: "Дизайн и разработка сайта для криптообучения и крипто-наставника",
-    image: "img/devilstrade.png" },
-  { ...px(1032, 141, 8), title: "Domzagorodom", country: "Екатеринбург, Россия",
-    text: "Дизайн и разработка сайта для строительства и продажи готовых загородных домов",
-    image: "img/domzagorodom.png" },
-  { ...px(230, 247, 11), title: "FaceAI", country: "Сан-Франциско, Калифорния, США",
-    text: "Дизайн и разработка приложения и лендинга для генератора фотографий",
-    image: "img/feisai.png" },
-  { ...px(978, 173, 8), title: "O DA BRANDS", country: "Казань, Россия",
-    text: "Дизайн и разработка интернет-магазина брендов",
-    image: "img/odabrands.png" },
-  { ...px(924, 171, 8), title: "ETEREO", country: "Тверь, Россия",
-    text: "Дизайн и разработка сайта для центра эстетической стоматологии",
-    image: "img/etereo.png" },
-  { ...px(313, 253, 8), title: "Amy C Weber", country: "Санта-Фе, Нью-Мексико, США",
-    text: "Дизайн и разработка сайта-портфолио для графического дизайнера",
-    image: "img/amycweber.png" },
-  { ...px(408, 264, 8), title: "Vibe Curator", country: "Атланта, Джорджия, США",
-    text: "Дизайн и разработка сайта для креативного агентства",
-    image: "img/vibecurator.png" },
-  { ...px(1343, 453, 11), title: "Bidmatrix", country: "Сингапур",
-    text: "Дизайн и разработка сайта для международной мобильной рекламной технологической компании (International Mobile Ad Tech Company)",
-    image: "img/bidmatrix.png" },
-  { ...px(465, 226, 8), title: "Starti.TV", country: "Нью-Йорк, Нью-Йорк, США",
-    text: "Дизайн и разработка сайта для телевизионных кампаний",
-    image: "img/startitv.png" },
-  { ...px(798, 414, 8), title: "Agamanos Africa", country: "Того",
-    text: "Дизайн и разработка сайта для некоммерческой организации",
-    image: "img/agamanos.png" },
-  { ...px(992, 162, 8), title: "Ярмарка недвижимости", country: "Казань, Россия",
-    text: "Дизайн и разработка сайта для ярмарки недвижимости",
-    image: "img/yarmarka.png" },
-  { ...px(739, 162, 11), title: "OnTheHouse", country: "Лондон, Великобритания",
-    text: "Дизайн и разработка сайта-карты разных ивентов",
-    image: "img/onthehouse.png" },
-  { ...px(349, 269, 8), title: "Beautech", country: "Даллас, Техас, США",
-    text: "Дизайн и разработка сайта для лизинга авиационных активов (aviation assets)",
-    image: "img/beautech.png" },
-  { ...px(427, 269, 8), title: "HiWire", country: "Чарльстон, Южная Каролина, США",
-    text: "Дизайн и разработка сайта для сервиса безопасного пенсионного обеспечения",
-    image: "img/hiwire.png" },
-  { ...px(955, 208, 8), title: "Белый мыс", country: "Геленджик, Россия",
-    text: "Дизайн и разработка сайта с вакансиями",
-    image: "img/belimis.png" },
-  { ...px(969, 157, 8), title: "Институт государственного администрирования", country: "Серпухов, Россия",
-    text: "Дизайн и разработка сайта для представителя института",
-    image: "img/iga.png" },
-  { ...px(958, 167, 8), title: "Европанель", country: "Серпухов, Россия",
-    text: "Дизайн и разработка интернет-магазина панелей",
-    image: "img/europanel.png" },
-  { ...px(1027, 305, 8), title: "Atme", country: "Манама, Бахрейн",
-    text: "Дизайн и разработка сайта для программы инвестирования в самолёты (aircraft)",
-    image: "img/atme.png" },
-  { ...px(904, 160, 8), title: "Sneakersland", country: "Минск, Беларусь",
-    text: "Дизайн и разработка интернет-магазина кроссовок",
-    image: "img/sneakersland.png" },
-  { ...px(813, 186, 11), title: "Brot Bistro Bar", country: "Берн, Швейцария",
-    text: "Дизайн и разработка сайта для кафе",
-    image: "img/brot.png" },
-  { ...px(429, 353, 11), title: "Ackee House", country: "Порт-Антонио, Ямайка",
-    text: "Дизайн и разработка сайта для курортного комплекса",
-    image: "img/ackee.png" },
-  { ...px(1076, 335, 11), title: "Trusto", country: "Дубай, Арабские Эмираты",
-    text: "Дизайн и разработка сайта для финтех-компании, которая помогает бизнесу избежать чарджбэков",
-    image: "img/trusto.png" },
-  { ...px(432, 222, 11), title: "FM Turner", country: "Вестлейк, Огайо, США",
-    text: "Дизайн и разработка сайта для поставщика непродовольственных товаров для общественного питания (foodservice non-foods)",
-    image: "img/fmturner.png" },
-  { ...px(757, 222, 11), title: "ELNIQ geo", country: "Барселона, Испания",
-    text: "Дизайн и разработка сайта для сервиса мониторинга ИИ-ботов и аналитики поиска в ИИ (AI Bot Monitoring & AI Search Analytics)",
-    image: "img/elniq.png" },
-];
-
-/* ======================================================================
-   RENDER + TOOLTIP LOGIC
-   ====================================================================== */
-const map  = document.getElementById('map');
-const tip  = document.getElementById('tip');
-const tImg = document.getElementById('tipImg');
-const tList = document.getElementById('tipList');
-const tTit = document.getElementById('tipTitle');
-const tSub = document.getElementById('tipSub');
-const tTxt = document.getElementById('tipText');
-
-let active = null;
-let hideTimer = null;
-
-POINTS.forEach((p, i) => {
-  const live = !!(p.title || p.items);                    // точка с данными - кнопка, остальные - просто декор
-  const el = document.createElement(live ? 'button' : 'div');
-  if (live) el.type = 'button'; else el.setAttribute('aria-hidden', 'true');
-  el.className = 'point' + (live ? '' : ' point--static') + (p.label ? ' point--cluster' : '');
-  el.style.zIndex = 100 - Math.round(p.d * 10);   // маленькие точки выше больших: кластер не перекрывает соседей
-  el.style.left = p.x + '%';
-  el.style.top  = p.y + '%';
-  el.style.setProperty('--d', p.d + '%');
-  if (live) el.setAttribute('aria-label', (p.title ? p.title + ', ' : '') + p.country);
-  if (p.label) el.textContent = p.label;
-  if (!live) { map.appendChild(el); return; }
-
-  /* hover только для мыши: на тачскринах браузер эмулирует mouseenter перед click,
-     из-за чего подсказка открывалась и тут же закрывалась */
-  el.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') show(el, p); });
-  el.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') scheduleHide(); });
-  el.addEventListener('focus',      () => { if (el.matches(':focus-visible')) show(el, p); });   // только с клавиатуры: при тапе focus срабатывал раньше click и подсказка сразу закрывалась
-  el.addEventListener('blur',       scheduleHide);
-  el.addEventListener('click', e => {         // тап: открыть / повторный тап - закрыть
-    e.stopPropagation();
-    const open = active === el && tip.classList.contains('is-open');
-    (open && e.pointerType !== 'mouse') ? hide() : show(el, p);
-  });
-  map.appendChild(el);
-});
-
-document.addEventListener('click', hide);
-
-function show(el, p) {
-  clearTimeout(hideTimer);
-  if (active) active.classList.remove('is-active');
-  active = el;
-  el.classList.add('is-active');
-
-  tTit.textContent = p.title   || '';
-  tSub.textContent = p.country || '';
-  tTxt.textContent = p.text    || '';
-  tTit.style.display = p.title ? '' : 'none';
-  tTxt.style.display = p.text  ? '' : 'none';
-  tip.classList.toggle('tip--list', !!p.items);          // подсказка-список (кластеры)
-  tip.classList.toggle('tip--wide', !!p.items && p.items.length > 12);   // длинный список - три колонки
-  tList.innerHTML = '';
-  tList.style.display = p.items ? '' : 'none';
-  (p.items || []).forEach(t => { const li = document.createElement('li'); li.textContent = t; tList.appendChild(li); });
-  tImg.style.display = p.image ? 'block' : 'none';
-  tSub.style.display = p.country ? '' : 'none';
-  if (p.image) { tImg.src = p.image; tImg.alt = (p.title ? p.title + ': ' : '') + (p.text || ''); }
-  else         { tImg.removeAttribute('src'); tImg.alt = ''; }
-
-  tip.classList.add('is-open');
-  position(el);
-}
-
-function position(el) {
-  const m = map.getBoundingClientRect();
-  const r = el.getBoundingClientRect();
-  const tw = tip.offsetWidth, th = tip.offsetHeight;
-  const cx = r.left + r.width / 2 - m.left;        // dot centre inside map
-  const gap = 14;
-
-  // horizontal: centre over the dot, but keep inside the viewport
-  let left = cx - tw / 2;
-  const minL = 8 - m.left, maxL = window.innerWidth - 8 - m.left - tw;
-  left = Math.max(minL, Math.min(left, maxL));
-
-  // vertical: above the dot, or below if there's no room
-  const above = r.top - th - gap > 8;
-  const top = above
-    ? (r.top - m.top) - th - gap
-    : (r.bottom - m.top) + gap;
-
-  tip.classList.toggle('is-below', !above);
-  tip.style.left = left + 'px';
-  tip.style.top  = top + 'px';
-  tip.style.setProperty('--arrow-x', (cx - left) + 'px');
-}
-
-function scheduleHide() { hideTimer = setTimeout(hide, 220); }
-/* подсказку можно навести мышью (прокрутить длинный список), тап внутри не закрывает её */
-tip.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') clearTimeout(hideTimer); });
-tip.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') scheduleHide(); });
-tip.addEventListener('click', e => e.stopPropagation());
-function hide() {
-  tip.classList.remove('is-open');
-  if (active) active.classList.remove('is-active');
-  active = null;
-}
-
-window.addEventListener('resize', () => { if (active) position(active); });
-
-/* Помощник: откройте страницу с ?mappick в адресе (например index.html?mappick) и кликните по карте -
-   внизу слева появятся и скопируются координаты в формате px(x, y, 11) для массива POINTS */
-if (/[?&]mappick/.test(location.search)) {
-  const box = document.createElement('div');
-  box.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:9999;background:#000;color:#8fdc72;font:13px/1.4 monospace;padding:8px 10px;border-radius:6px';
-  box.textContent = 'click the map'; document.body.appendChild(box); map.style.cursor = 'crosshair';
-  map.addEventListener('click', e => {
-    const r = map.getBoundingClientRect();
-    const t = 'px(' + Math.round((e.clientX - r.left) / r.width * MAP_W) + ', ' + Math.round((e.clientY - r.top) / r.height * MAP_H) + ', 11)';
-    box.textContent = t; if (navigator.clipboard) navigator.clipboard.writeText(t).catch(() => {});
-  }, true);
-}
-
-</script>
-</div><!-- Лента логотипов клиентов (скорость data-wr-speed="75"). Размеры логотипов регулируют классы smaller / bigger / bright в CSS --><div class="marquee logo"><div data-wr-speed="75" data-wr-marquee="" class="marquee-logos scroll"><div class="single-line"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe7f_logo6.avif" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_new-logo-top7.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_Group%252082-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_Group%252082-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_Group%252082-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_Group%252082-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_Group%252082-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_Group%252082-p-2600.png 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_Group%252082-p-3200.png 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeda_new-logo-top7.png 3820w" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe92_logo10.avif" loading="eager" alt="" class="company-logo bright bigger"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe81_logo1.avif" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea6_logo2update.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf12_new-logo-top1.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbecf_new-logo-top3.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe73_Logo3.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbefa_new-logo-top2.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbefb_new-logo-top5.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe83_logo4.avif" loading="eager" alt="" class="company-logo size-big"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf1d_new-logo-top4.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe90_logo5.avif" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea7_Group_1321316873_1%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea8_Group_2_1%201.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea9_Logo%20Hausmann(RGB)%20(1)%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbead_Mask%20group-1.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbead_Mask%2520group-1-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbead_Mask%2520group-1-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbead_Mask%2520group-1-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbead_Mask%20group-1.png 1169w" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb2___%202.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb3_new-logo-top8.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb9__1_2%201.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb9__1_2%25201-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb9__1_2%25201-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb9__1_2%25201-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb9__1_2%25201-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb9__1_2%25201-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeb9__1_2%201.png 2176w" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec0__1807254533520_4%201.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec1__x0020_1%201.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf06_new-logo-top6.svg" loading="eager" alt="" class="company-logo more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbed0_new-logo-top7.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec2_68e3ef725a42795f5dae0186_Group%2012%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec7_564530114c4e482d06360911a682edcf3c3d5531%20(1)%201.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec7_564530114c4e482d06360911a682edcf3c3d5531%2520(1)%25201-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec7_564530114c4e482d06360911a682edcf3c3d5531%2520(1)%25201-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec7_564530114c4e482d06360911a682edcf3c3d5531%2520(1)%25201-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec7_564530114c4e482d06360911a682edcf3c3d5531%2520(1)%25201-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbec7_564530114c4e482d06360911a682edcf3c3d5531%20(1)%201.png 1968w" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf05_logo%20(3)%201.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf07_logo%20(5)%201.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf0a_logo_curves-01_2%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf08_logo%20(6)%201.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf09_logo%20(7)%201.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf1f_getlicense.ai%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf18_Paper%20%26%20Flowers%20Logo%20(1)%201.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf18_Paper%2520%2526%2520Flowers%2520Logo%2520(1)%25201-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf18_Paper%2520%2526%2520Flowers%2520Logo%2520(1)%25201-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf18_Paper%2520%2526%2520Flowers%2520Logo%2520(1)%25201-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf18_Paper%20%26%20Flowers%20Logo%20(1)%201.png 1496w" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf0d_logo_oniks.png%201.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf0d_logo_oniks.png%25201-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf0d_logo_oniks.png%25201-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf0d_logo_oniks.png%201.png 1080w" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf11_medved-logo%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf13_neskuchnye_logo_10_s%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf1e_Vector_17%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf14_rbs-white-finalll%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbecd_Balcony_logo_22_1_1%201.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbece_citrus-logo%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbed1_Group%2080%201.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbed2_Frame_2131333660%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%2083.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%252083-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%252083-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%252083-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%252083-p-1600.png 1600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%252083-p-2000.png 2000w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%252083-p-2600.png 2600w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%252083-p-3200.png 3200w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbeea_Group%2083.png 4316w" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbef6_Group%2084.png" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbefc_Group_31%20(1)%201.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf00_image_1%201.png" loading="eager" sizes="100vw" srcset="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf00_image_1%25201-p-500.png 500w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf00_image_1%25201-p-800.png 800w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf00_image_1%25201-p-1080.png 1080w, https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbf00_image_1%201.png 1344w" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe6d_logo8.svg" loading="eager" alt="" class="company-logo bigger"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe94_logo8.webp" loading="eager" alt="" class="company-logo bright smaller-2"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea0_logo9.webp" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbe9f_logo11.webp" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe8e_logo13.avif" loading="eager" alt="" class="company-logo bigger brighter"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe8b_logo14.avif" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe99_logo15.webp" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea1_logo16.webp" loading="eager" alt="" class="company-logo more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe89_logo17.avif" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe45_logo18.svg" loading="eager" alt="" class="company-logo smaller bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe58_logo19.svg" loading="eager" alt="" class="company-logo bright more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea3_logo20.webp" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe87_logo24.avif" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe74_logo27.avif" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbe9b_logo22.webp" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe95_logo23.webp" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe7c_logo25.svg" loading="eager" alt="" class="company-logo bright bigger-2"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbe9e_logo21.webp" loading="eager" alt="" class="company-logo size-big"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe7b_logo26.svg" loading="eager" alt="" class="company-logo bright bigger-2"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe72_logo28.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe6b_logo29.svg" loading="eager" alt="" class="company-logo bright smaller-2"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe65_logo30.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea2_logo31.webp" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbe9d_logo32.webp" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe9a_logo33.webp" loading="eager" alt="" class="company-logo smaller bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe7a_logo34.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe79_logo35.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe78_logo36.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe76_logo37.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe70_Logo38.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe5d_logo39.svg" loading="eager" alt="" class="company-logo bright smaller-2"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbea4_logo40.webp" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744945c83039285bdfbe9c_logo41.webp" loading="eager" alt="" class="company-logo bright more-color bigger"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe96_logo42.webp" loading="eager" alt="" class="company-logo bright more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe71_logo46.svg" loading="eager" alt="" class="company-logo bigger"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe85_logo43.avif" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe7e_logo44.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe67_logo47.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe77_logo45.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe4a_logo48.svg" loading="eager" alt="" class="company-logo bright smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe47_logo49.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe49_logo50.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe97_logo51.webp" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe6c_logo55.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe6f_logo52.svg" loading="eager" alt="" class="company-logo bright more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe6e_logo53.svg" loading="eager" alt="" class="company-logo bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe68_logo43.svg" loading="eager" alt="" class="company-logo more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe6a_logo54.svg" loading="eager" alt="" class="company-logo bright margin-top-pos"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe61_logo56.svg" loading="eager" alt="" class="company-logo bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe5c_logo57.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe62_logo58.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe64_logo59.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe69_logo61.svg" loading="eager" alt="" class="company-logo bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe63_logo62.svg" loading="eager" alt="" class="company-logo bright more-color bigger"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe5f_logo63.svg" loading="eager" alt="" class="company-logo bigger-3 grayscale more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe5e_logo64.svg" loading="eager" alt="" class="company-logo bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe60_logo67.svg" loading="eager" alt="" class="company-logo bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe59_logo65.svg" loading="eager" alt="" class="company-logo bright bigger-2"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe5a_logo66.svg" loading="eager" alt="" class="company-logo bright more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe56_logo68.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe54_logo69.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe53_logo70.svg" loading="eager" alt="" class="company-logo bright bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe55_logo71.svg" loading="eager" alt="" class="company-logo bigger-3 grayscale more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe52_logo72.svg" loading="eager" alt="" class="company-logo bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe51_logo74.svg" loading="eager" alt="" class="company-logo bigger-3 bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe4f_logo73.svg" loading="eager" alt="" class="company-logo bigger-3 grayscale more-height more-color"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe4b_logo75.svg" loading="eager" alt="" class="company-logo bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe4d_logo76.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe41_logo77.webp" loading="eager" alt="" class="company-logo bright more-height more-size"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe46_logo78.svg" loading="eager" alt="" class="company-logo bright margin-top"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe4c_logo79.svg" loading="eager" alt="" class="company-logo bright"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe4e_logo80.svg" loading="eager" alt="" class="company-logo bright bigger-3"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe48_logo81.svg" loading="eager" alt="" class="company-logo bigger-3 grayscale more-height"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe50_logo82.svg" loading="eager" alt="" class="company-logo"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe57_logo85.svg" loading="eager" alt="" class="company-logo bigger-3 grayscale more-height more-color smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe7d_logo84.svg" loading="eager" alt="" class="company-logo smaller"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6a744944c83039285bdfbe98_logo86.webp" loading="eager" alt="" class="company-logo bigger-3"/></div></div><div class="shadow-work-slider"></div><div class="shadow-work-slider right"></div></div><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad0ac4378dc84e969d18a0a_Group%20(1).svg" loading="lazy" data-w-id="268e576d-2ac7-ae64-1608-3c5e703f9a1f" alt="" class="abs-star _2"/><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad0ac4378dc84e969d18a0a_Group%20(1).svg" loading="lazy" data-w-id="7b93d5a8-bf25-c162-11a6-5da79736314d" alt="" class="abs-star"/></div></div></section>
-<!-- [8] УСЛУГИ (#service): 4 карточки (Лендинг, Корпоративный сайт, Интернет-магазин, Просто верстка). У каждой две стороны: лицевая (название, срок, цена) и обратная (описание). Цену и срок меняем в обеих -->
-<section id="service" class="page-section no-scroll"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap center"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><div class="text-flex"><h2 data-w-id="3b74435d-7085-279c-4dd6-83ea1ca6d1c8" style="opacity:0" class="heading-2">Дизайн и разработка сайтов</h2><div data-w-id="3b74435d-7085-279c-4dd6-83ea1ca6d1ca" style="opacity:0" class="body-medium description no-br-mobile">Любого масштаба, для любой ниши, на любом языке. <br/>По стоимости договоримся. </div></div><div class="services-list new-list"><!-- Карточка услуги 1: Лендинг --><div class="cloneable-area-2 service"><div class="c-flip-card-2 service-card"><div class="_w-flip-card-2 ser"><div class="c-card-front-2 service-front"><div class="_w-card-front-2"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad22b1a70c59a8fd9a707cb_Vector%20(2).svg" loading="lazy" alt="" class="service-vector"/><div class="w-layout-vflex icon-text-wrap"><h3 heading-animation="" class="no-margins h3">Лендинг</h3><div class="text-small geist-mono big uppercase white normal-font">от 10 дней • от 30 000 ₽ </div></div></div></div><div class="c-card-back-2 service-back"><div class="_w-card-back-2 green"><div class="w-layout-vflex icon-text-wrap"><div heading-animation="" class="no-margins h3">Лендинг</div><div class="text-small geist-mono big uppercase white normal-font">от 10 дней • от 30 000 ₽ </div><div class="body-medium description left gray">Быстрый запуск современного лендинга с индивидуальным дизайном и адаптивной разработкой. Подходит для рекламы, запуска продукта или проверки ниши.<br/><span class="green-span" data-open-popup="" role="button" tabindex="0">Обсудить проект</span><br/></div></div></div></div></div></div></div><!-- Карточка услуги 2: Корпоративный сайт --><div class="cloneable-area-2 service"><div class="c-flip-card-2 service-card"><div class="_w-flip-card-2 ser"><div class="c-card-front-2 service-front"><div class="_w-card-front-2 yellow"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad261b046496cd39d1f5363_Vector%20(6).svg" loading="lazy" alt="" class="service-vector"/><div class="w-layout-vflex icon-text-wrap"><h3 heading-animation="" class="no-margins h3">Корпоративный сайт</h3><div class="text-small geist-mono big uppercase white normal-font">от 20 дней • от 50 000 ₽ </div></div></div></div><div class="c-card-back-2 service-back"><div class="_w-card-back-2 yellow"><div class="w-layout-vflex icon-text-wrap"><div heading-animation="" class="no-margins h3">Корпоративный сайт</div><div class="text-small geist-mono big uppercase white normal-font">от 20 дней • от 50 000 ₽ </div><div class="body-medium description left gray">Сайт для бизнеса с несколькими разделами, удобной CMS и возможностью самостоятельно добавлять услуги, статьи, кейсы и другой контент. <span class="green-span" data-open-popup="" role="button" tabindex="0">Обсудить проект</span><br/></div></div></div></div></div></div></div><!-- Карточка услуги 3: Интернет-магазин --><div class="cloneable-area-2 service"><div class="c-flip-card-2 service-card"><div class="_w-flip-card-2 ser"><div class="c-card-front-2 service-front"><div class="_w-card-front-2 pink"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad262b76ae9b988a4d84b0e_Vector%20(8).svg" loading="lazy" alt="" class="service-vector"/><div class="w-layout-vflex icon-text-wrap"><h3 heading-animation="" class="no-margins h3">Интернет-магазин</h3><div class="text-small geist-mono big uppercase white normal-font">от 20 дней • от 65 000 ₽ </div></div></div></div><div class="c-card-back-2 service-back"><div class="_w-card-back-2 pink"><div class="w-layout-vflex icon-text-wrap"><div heading-animation="" class="no-margins h3">Интернет-магазин</div><div class="text-small geist-mono big uppercase white normal-font">от 20 дней • от 65 000 ₽ </div><div class="body-medium description left gray">Интернет-магазин с каталогом товаров, корзиной, оплатой, доставкой и удобной системой управления. Готов к приему заказов сразу после запуска. <span class="green-span" data-open-popup="" role="button" tabindex="0">Обсудить проект</span><br/></div></div></div></div></div></div></div><!-- Карточка услуги 4: Просто верстка --><div class="cloneable-area-2 service"><div class="c-flip-card-2 service-card"><div class="_w-flip-card-2 ser"><div class="c-card-front-2 service-front"><div class="_w-card-front-2 blue"><img src="https://cdn.prod.website-files.com/6a74444e26a325be5d9bf646/6ad261b0d9678b5996361667_Vector%20(7).svg" loading="lazy" alt="" class="service-vector"/><div class="w-layout-vflex icon-text-wrap"><h3 heading-animation="" class="no-margins h3">просто верстка</h3><div class="text-small geist-mono big uppercase white normal-font">от 1 дня • от 10 000 ₽ </div></div></div></div><div class="c-card-back-2 service-back"><div class="_w-card-back-2 blue"><div class="w-layout-vflex icon-text-wrap"><div heading-animation="" class="no-margins h3">просто верстка</div><div class="text-small geist-mono big uppercase white normal-font">от 1 дня • от 10 000 ₽ </div><div class="body-medium description left gray">Адаптивная вёрстка сайта по готовому макету из Figma с точным соблюдением дизайна и корректным отображением на всех устройствах. Реализация на Tilda, LPmotor, Webflow, Framer, Wix, WordPress или Shopify. Анимации, интерактивные элементы, формы и дополнительный функционал — в соответствии с задачами проекта. <span class="green-span" data-open-popup="" role="button" tabindex="0">Обсудить проект</span><br/></div></div></div></div></div></div></div></div><a href="#" stagger-link="" data-open-popup="" data-w-id="3b74435d-7085-279c-4dd6-83ea1ca6d22c" style="opacity:0" class="stagger-animation w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Обсудить проект</div></div><div class="hover-bg"></div></div></a></div></div></section>
-<!-- [9] ОТЗЫВЫ (#reviews): лента скриншотов отзывов: свайп/drag, клик - просмотр (CSS, разделы 26-27) -->
-<section id="reviews" class="page-section no-scroll"><div class="w-layout-blockcontainer section-container no-limit w-container"><div class="content-wrap center no-crop"><div class="_1-clmn-line fix"></div><div class="_2-clmn-line fix"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line fix"></div><div class="_5-clmn-line fix"></div><div class="text-flex"><h2 data-w-id="b695f53b-e3bb-7082-2799-15a6ec151c41" style="opacity:0" class="heading-2">Реальные отзывы <br/>за реальные проекты</h2><div data-w-id="f1e768b1-e306-1e1d-8dc9-d72af9424582" style="opacity:0" class="body-medium description no-br-mobile">Отзывы с независимых площадок и бирж. <br/>Все прозрачно — это клиенты, которые реально заказали мои услуги.</div></div><!-- Лента отзывов: на компьютере и телефоне бегущая, на телефоне ещё и листается пальцем. Клик по карточке - просмотр на весь экран. Формат карточки 1595/958 - CSS, раздел 26 --><div class="reviews-scroller" id="reviewsScroller"><div class="reviews-track" id="reviewsTrack"><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="0" aria-label="Открыть отзыв 1"><img src="img/review%201.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 1" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="1" aria-label="Открыть отзыв 2"><img src="img/review%202.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 2" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="2" aria-label="Открыть отзыв 3"><img src="img/review%203.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 3" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="3" aria-label="Открыть отзыв 4"><img src="img/review%204.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 4" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="4" aria-label="Открыть отзыв 5"><img src="img/review%205.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 5" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="5" aria-label="Открыть отзыв 6"><img src="img/review%206.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 6" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="6" aria-label="Открыть отзыв 7"><img src="img/review%207.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 7" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="7" aria-label="Открыть отзыв 8"><img src="img/review%208.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 8" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="8" aria-label="Открыть отзыв 9"><img src="img/review%209.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 9" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="9" aria-label="Открыть отзыв 10"><img src="img/review%2010.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 10" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="10" aria-label="Открыть отзыв 11"><img src="img/review%2011.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 11" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="11" aria-label="Открыть отзыв 12"><img src="img/review%2012.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 12" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="12" aria-label="Открыть отзыв 13"><img src="img/review%2013.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 13" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="13" aria-label="Открыть отзыв 14"><img src="img/review%2014.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 14" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="14" aria-label="Открыть отзыв 15"><img src="img/review%2015.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 15" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="15" aria-label="Открыть отзыв 16"><img src="img/review%2016.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 16" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="16" aria-label="Открыть отзыв 17"><img src="img/review%2017.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 17" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="17" aria-label="Открыть отзыв 18"><img src="img/review%2018.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 18" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="18" aria-label="Открыть отзыв 19"><img src="img/review%2019.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 19" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="19" aria-label="Открыть отзыв 20"><img src="img/review%2020.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 20" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="20" aria-label="Открыть отзыв 21"><img src="img/review%2021.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 21" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="21" aria-label="Открыть отзыв 22"><img src="img/review%2022.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 22" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="22" aria-label="Открыть отзыв 23"><img src="img/review%2023.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 23" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="23" aria-label="Открыть отзыв 24"><img src="img/review%2024.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 24" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="24" aria-label="Открыть отзыв 25"><img src="img/review%2025.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 25" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="25" aria-label="Открыть отзыв 26"><img src="img/review%2026.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 26" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="26" aria-label="Открыть отзыв 27"><img src="img/review%2027.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 27" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="27" aria-label="Открыть отзыв 28"><img src="img/review%2028.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 28" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="28" aria-label="Открыть отзыв 29"><img src="img/review%2029.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 29" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="29" aria-label="Открыть отзыв 30"><img src="img/review%2030.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 30" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="30" aria-label="Открыть отзыв 31"><img src="img/review%2031.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 31" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="31" aria-label="Открыть отзыв 32"><img src="img/review%2032.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 32" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="32" aria-label="Открыть отзыв 33"><img src="img/review%2033.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 33" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="33" aria-label="Открыть отзыв 34"><img src="img/review%2034.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 34" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="34" aria-label="Открыть отзыв 35"><img src="img/review%2035.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 35" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="35" aria-label="Открыть отзыв 36"><img src="img/review%2036.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 36" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="36" aria-label="Открыть отзыв 37"><img src="img/review%2037.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 37" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="37" aria-label="Открыть отзыв 38"><img src="img/review%2038.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 38" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="38" aria-label="Открыть отзыв 39"><img src="img/review%2039.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 39" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="39" aria-label="Открыть отзыв 40"><img src="img/review%2040.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 40" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="40" aria-label="Открыть отзыв 41"><img src="img/review%2041.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 41" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="41" aria-label="Открыть отзыв 42"><img src="img/review%2042.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 42" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="42" aria-label="Открыть отзыв 43"><img src="img/review%2043.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 43" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="43" aria-label="Открыть отзыв 44"><img src="img/review%2044.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 44" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="44" aria-label="Открыть отзыв 45"><img src="img/review%2045.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 45" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="45" aria-label="Открыть отзыв 46"><img src="img/review%2046.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 46" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="46" aria-label="Открыть отзыв 47"><img src="img/review%2047.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 47" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="47" aria-label="Открыть отзыв 48"><img src="img/review%2048.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 48" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="48" aria-label="Открыть отзыв 49"><img src="img/review%2049.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 49" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="49" aria-label="Открыть отзыв 50"><img src="img/review%2050.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 50" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="50" aria-label="Открыть отзыв 51"><img src="img/review%2051.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 51" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="51" aria-label="Открыть отзыв 52"><img src="img/review%2052.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 52" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="52" aria-label="Открыть отзыв 53"><img src="img/review%2053.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 53" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="53" aria-label="Открыть отзыв 54"><img src="img/review%2054.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 54" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="54" aria-label="Открыть отзыв 55"><img src="img/review%2055.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 55" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="55" aria-label="Открыть отзыв 56"><img src="img/review%2056.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 56" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="56" aria-label="Открыть отзыв 57"><img src="img/review%2057.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв клиента о работе со Светланой Кочетовой, веб-дизайнером — отзыв 57" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="57" aria-label="Открыть отзыв 58"><img src="img/review%2058.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв заказчика о Светлане Кочетовой: дизайн и разработка сайта — отзыв 58" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="58" aria-label="Открыть отзыв 59"><img src="img/review%2059.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Благодарность Светлане Кочетовой за разработку сайта — отзыв 59" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="59" aria-label="Открыть отзыв 60"><img src="img/review%2060.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Скриншот отзыва о веб-дизайнере Светлане Кочетовой — отзыв 60" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="60" aria-label="Открыть отзыв 61"><img src="img/review%2061.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о сотрудничестве со Светланой Кочетовой — отзыв 61" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="61" aria-label="Открыть отзыв 62"><img src="img/review%2062.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Клиент рекомендует Светлану Кочетову как веб-дизайнера — отзыв 62" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="62" aria-label="Открыть отзыв 63"><img src="img/review%2063.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв на работу Светланы Кочетовой над сайтом — отзыв 63" draggable="false" class="image-cover"/></div><div class="image-wrap-work-card review review-card" role="button" tabindex="0" data-i="63" aria-label="Открыть отзыв 64"><img src="img/review%2064.png" width="800" height="480" decoding="async" loading="lazy" sizes="(max-width: 767px) 90vw, 34vw" alt="Отзыв о Светлане Кочетовой, фрилансере по дизайну и разработке сайтов — отзыв 64" draggable="false" class="image-cover"/></div></div></div></div></div></section>
+</main>
 <!-- [10] ФУТЕР: слева бренд и описание, колонки «Меню» (50% экрана) и «Контакты» (72.5%, по вертикальным линиям), внизу копирайт, политика (50%), Cookie Policy (72.5%) и подпись-картинка. Стили: CSS, раздел 17 -->
 <section class="page-section footer"><div class="w-layout-blockcontainer section-container w-container"><div class="content-wrap footer"><div class="_1-clmn-line"></div><div class="_2-clmn-line"></div><div class="_3-clmn-line"></div><div class="_4-clmn-line"></div><div class="_5-clmn-line"></div><!-- Верхняя часть: бренд | Меню | Контакты -->
-<div class="footer-grid footer-top"><div class="footer-col footer-col--brand"><div class="footer-brand">Веб-дизайнер<br/>Светлана Кочетова</div><div class="body-medium description footer-desc">Сайты с душой, от души, для души</div></div><div class="footer-col"><div class="footer-label">Меню</div><div class="footer-list"><a stagger-link="" href="/cases/" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Работы</span></span></a><a stagger-link="" href="/#clients" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Клиенты</span></span></a><a stagger-link="" href="/#service" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Услуги</span></span></a><a stagger-link="" href="/#reviews" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Отзывы</span></span></a></div></div><div class="footer-col"><div class="footer-label">Контакты</div><div class="footer-list"><a stagger-link="" href="mailto:svekochetova@gmail.com" class="footer-link is-mail w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">svekochetova@gmail.com</span></span></a><a stagger-link="" href="tel:+4366565742024" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">+43 665 6574 2024</span></span></a><div class="footer-social"><a href="https://t.me/svetlanawebdesign" target="_blank" rel="noopener" aria-label="Telegram"><span class="icon-roll"><img src="img/Telegram.svg" alt="" width="40" height="40"/><img src="img/Telegram.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://wa.me/4366565742024" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="icon-roll"><img src="img/Whatsapp.svg" alt="" width="40" height="40"/><img src="img/Whatsapp.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ" target="_blank" rel="noopener" aria-label="MAX"><span class="icon-roll"><img src="img/Max.svg" alt="" width="40" height="40"/><img src="img/Max.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://experts.tilda.cc/flavoweb" target="_blank" rel="noopener" aria-label="Tilda"><span class="icon-roll"><img src="img/Tilda.svg" alt="" width="40" height="40"/><img src="img/Tilda.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://webflow.com/@svetlanawebdesign" target="_blank" rel="noopener" aria-label="Webflow"><span class="icon-roll"><img src="img/Webflow.svg" alt="" width="40" height="40"/><img src="img/Webflow.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a></div></div></div></div>
+<div class="footer-grid footer-top"><div class="footer-col footer-col--brand"><div class="footer-brand">Веб-дизайнер<br/>Светлана Кочетова</div><div class="body-medium description footer-desc">Сайты с душой, от души, для души</div></div><div class="footer-col"><div class="footer-label">Меню</div><div class="footer-list"><a stagger-link="" href="/cases/" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Работы</span></span></a><a stagger-link="" href="/#clients" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Клиенты</span></span></a><a stagger-link="" href="/#service" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Услуги</span></span></a><a stagger-link="" href="/#reviews" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Отзывы</span></span></a></div></div><div class="footer-col"><div class="footer-label">Контакты</div><div class="footer-list"><a stagger-link="" href="mailto:svekochetova@gmail.com" class="footer-link is-mail w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">svekochetova@gmail.com</span></span></a><a stagger-link="" href="tel:+4366565742024" class="footer-link w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">+43 665 6574 2024</span></span></a><div class="footer-social"><a href="https://t.me/svetlanawebdesign" target="_blank" rel="noopener" aria-label="Telegram"><span class="icon-roll"><img src="../img/Telegram.svg" alt="" width="40" height="40"/><img src="../img/Telegram.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://wa.me/4366565742024" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="icon-roll"><img src="../img/Whatsapp.svg" alt="" width="40" height="40"/><img src="../img/Whatsapp.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ" target="_blank" rel="noopener" aria-label="MAX"><span class="icon-roll"><img src="../img/Max.svg" alt="" width="40" height="40"/><img src="../img/Max.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://experts.tilda.cc/flavoweb" target="_blank" rel="noopener" aria-label="Tilda"><span class="icon-roll"><img src="../img/Tilda.svg" alt="" width="40" height="40"/><img src="../img/Tilda.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://webflow.com/@svetlanawebdesign" target="_blank" rel="noopener" aria-label="Webflow"><span class="icon-roll"><img src="../img/Webflow.svg" alt="" width="40" height="40"/><img src="../img/Webflow.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a></div></div></div></div>
 <!-- Нижняя часть: © | Политика конфиденциальности (50%) | Cookie Policy (72.5%) -->
 <div class="footer-grid footer-bottom"><div class="footer-col footer-copy">© 2026 Svetlana Kochetova</div><div class="footer-col"><a href="/privacy/" class="footer-small">Политика конфиденциальности</a></div><div class="footer-col"><a href="/cookies/" class="footer-small">Cookie Policy</a></div></div>
 <!-- Подпись картинкой -->
-<!-- Подпись для компьютера --><img src="img/footer-bottom-desktop.svg" loading="lazy" alt="" class="footer-img footer-img--desk"/><!-- Подпись для телефона (≤767px): картинка footer-bottom-mobile.svg --><img src="img/footer-bottom-mobile.svg" loading="lazy" alt="" class="footer-img footer-img--mob"/></div></div></section>
-
+<!-- Подпись для компьютера --><img src="../img/footer-bottom-desktop.svg" loading="lazy" alt="" class="footer-img footer-img--desk"/><!-- Подпись для телефона (≤767px): картинка footer-bottom-mobile.svg --><img src="../img/footer-bottom-mobile.svg" loading="lazy" alt="" class="footer-img footer-img--mob"/></div></div></section>
+<!-- [POPUP] Окно «Давайте обсудим ваш проект»: открывается по кнопкам с атрибутом data-open-popup (кнопки «Свяжитесь со мной» / «Обсудить проект»). Стили: CSS, раздел 24; скрипт «ПОПАП» внизу файла -->
+<div class="contact-popup" id="contactPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true"><div class="contact-popup__backdrop" data-popup-close=""></div><div class="contact-popup__card" tabindex="-1"><button type="button" class="contact-popup__close" aria-label="Закрыть" data-popup-close=""><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></button><h2 class="heading-2 contact-popup__title" id="popupTitle">Давайте обсудим ваш проект</h2><a href="https://calendly.com/svekochetova/30min" target="_blank" rel="noopener" stagger-link="" class="stagger-animation w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Записаться на созвон</div></div><div class="hover-bg"></div></div></a><div class="body-medium description contact-popup__note">или свяжитесь со мной в мессенджерах</div><div class="footer-social"><a href="https://t.me/svetlanawebdesign" target="_blank" rel="noopener" aria-label="Telegram"><span class="icon-roll"><img src="../img/Telegram.svg" alt="" width="40" height="40"/><img src="../img/Telegram.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://wa.me/4366565742024" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="icon-roll"><img src="../img/Whatsapp.svg" alt="" width="40" height="40"/><img src="../img/Whatsapp.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ" target="_blank" rel="noopener" aria-label="MAX"><span class="icon-roll"><img src="../img/Max.svg" alt="" width="40" height="40"/><img src="../img/Max.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a></div></div></div>
 <!-- [COOKIE] Плашка про cookie: пока не нажата «Принять», показывается на каждой странице. Скрипт: js/cookie-banner.js, стили: CSS раздел 32 -->
 <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Уведомление о cookie" hidden><p class="cookie-banner__text">Мы используем файлы cookie для работы сайта и аналитики. Продолжая пользоваться сайтом, вы соглашаетесь с <a href="/cookies/" class="cookie-banner__link">Политикой cookie</a>.</p><a href="#" stagger-link="" role="button" data-cookie-accept="" class="cookie-banner__btn w-inline-block"><span class="stagger-wrap"><span stagger-link-text="orange">Принять</span></span></a></div>
-<script src="js/cookie-banner.js" defer></script>
-<!-- [POPUP] Окно «Давайте обсудим ваш проект»: открывается по кнопкам с атрибутом data-open-popup (кнопки «Свяжитесь со мной» / «Обсудить проект»). Стили: CSS, раздел 24; скрипт «ПОПАП» внизу файла -->
-<div class="contact-popup" id="contactPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle" aria-hidden="true"><div class="contact-popup__backdrop" data-popup-close=""></div><div class="contact-popup__card" tabindex="-1"><button type="button" class="contact-popup__close" aria-label="Закрыть" data-popup-close=""><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 12 12" fill="none"><path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></button><h2 class="heading-2 contact-popup__title" id="popupTitle">Давайте обсудим ваш проект</h2><a href="https://calendly.com/svekochetova/30min" target="_blank" rel="noopener" stagger-link="" class="stagger-animation w-inline-block"><div class="w-layout-hflex primary-btn hero-btn"><div class="btn-hide"><div stagger-link-text="orange" class="z-index">Записаться на созвон</div></div><div class="hover-bg"></div></div></a><div class="body-medium description contact-popup__note">или свяжитесь со мной в мессенджерах</div><div class="footer-social"><a href="https://t.me/svetlanawebdesign" target="_blank" rel="noopener" aria-label="Telegram"><span class="icon-roll"><img src="img/Telegram.svg" alt="" width="40" height="40"/><img src="img/Telegram.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://wa.me/4366565742024" target="_blank" rel="noopener" aria-label="WhatsApp"><span class="icon-roll"><img src="img/Whatsapp.svg" alt="" width="40" height="40"/><img src="img/Whatsapp.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a><a href="https://max.ru/u/f9LHodD0cOLoLIRcD_p2RswX8Iq2lN2jLvThQGKk7ZDEkZbzO3w_fng-zjQ" target="_blank" rel="noopener" aria-label="MAX"><span class="icon-roll"><img src="img/Max.svg" alt="" width="40" height="40"/><img src="img/Max.svg" alt="" width="40" height="40" aria-hidden="true"/></span></a></div></div></div>
-<!-- [LIGHTBOX] Просмотр отзывов на весь экран, фон #1e1e1e. Листать: стрелки, свайп, клавиши ← →. Стили: CSS, раздел 27; скрипт «ОТЗЫВЫ» внизу файла --><div class="lightbox" id="reviewLightbox" role="dialog" aria-modal="true" aria-label="Просмотр отзыва" aria-hidden="true" tabindex="-1"><button type="button" class="lightbox__btn lightbox__close" aria-label="Закрыть" data-lb-close=""><svg viewBox="0 0 12 12" fill="none"><path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="lightbox__count" id="lbCount"></div><div class="lightbox__stage"><img class="lightbox__img" id="lbImg" alt="" draggable="false"/></div><button type="button" class="lightbox__btn lightbox__prev" aria-label="Предыдущий отзыв" data-lb-prev=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="lightbox__btn lightbox__next" aria-label="Следующий отзыв" data-lb-next=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button></div>
-<!-- [SCRIPT] Размножение hero-строки: из одного текста делает 6 в блоке и 3 блока (выполняется до Webflow-скриптов) -->
-<script>(function () {
-  /* Размножаем повторяющиеся элементы в hero-строке: 1 текст -> 6, 1 блок -> 3 */
-  document.querySelectorAll('.marquee-text > .single-marquee-text').forEach(function (blk, i, all) {
-    if (i) return;
-    var parent = blk.parentNode, t = blk.querySelector('.text-h0');
-    if (!t) return;
-    for (var k = 1; k < 6; k++) blk.appendChild(t.cloneNode(true));
-    for (var j = 1; j < 3; j++) parent.appendChild(blk.cloneNode(true));
-  });
-})();</script>
-<!-- [SCRIPT] Библиотеки: jQuery и рантайм Webflow (меню, интеракции), GSAP + SplitText + ScrollTrigger (анимации) -->
-<script src="js/jquery.js?site=6a74444e26a325be5d9bf646" type="text/javascript"  ></script><script src="js/webflow.schunk.a3140c51201be139.js" type="text/javascript"  ></script><script src="js/webflow-script.js" type="text/javascript"  ></script><script src="js/gsap.min.js" type="text/javascript"></script><script src="js/splittext.min.js" type="text/javascript"></script><script src="js/scrolltrigger.min.js" type="text/javascript"></script>
+<script src="../js/cookie-banner.js" defer></script>
+<script src="../js/gsap.min.js"></script>
 <!-- [SCRIPT] Hover-эффект ссылок меню (stagger-link): текст «выезжает» вверх при наведении -->
 <script>(function () {
   if (!window.matchMedia('(hover: hover)').matches) return;   // на тачскринах hover не нужен
@@ -603,133 +125,6 @@ if (/[?&]mappick/.test(location.search)) {
   });
   pop.addEventListener('click', function (e) { if (e.target.closest('[data-popup-close]')) close(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && pop.classList.contains('is-open')) close(); });
-})();</script>
-<!-- [SCRIPT] ОТЗЫВЫ: на компьютере - бегущая лента (автопрокрутка, пауза при наведении), на телефоне (≤767px) - тоже едет сама, но ещё и листается пальцем. Клик по карточке - просмотр на весь экран, листание стрелками / свайпом / клавишами -->
-<script>(function () {
-  var sc = document.getElementById('reviewsScroller'), track = document.getElementById('reviewsTrack'), lb = document.getElementById('reviewLightbox');
-  if (!sc || !track || !lb) return;
-  var cards = [].slice.call(track.querySelectorAll('.review-card'));
-  var img = document.getElementById('lbImg'), cnt = document.getElementById('lbCount');
-  var idx = 0, last = null;
-  var rafId = 0, autoOn = false, inView = true, pos = 0, dist = 0, lastSet = 0, prevT = 0, activeUntil = 0;
-  var MSPEED = 40;                                   /* скорость автопрокрутки на телефоне, px в секунду */
-  var SPEED = 120;                                   /* скорость бегущей ленты на компьютере, px в секунду */
-  var mq = window.matchMedia('(min-width: 768px)');
-
-  /* --- бегущая лента: дублируем карточки один раз, считаем длину пути --- */
-  function clearMarquee() {
-    autoOn = false; if (rafId) cancelAnimationFrame(rafId); rafId = 0;
-    [].forEach.call(track.querySelectorAll('[data-clone]'), function (c) { c.remove(); });
-    track.classList.remove('is-marquee');
-    track.style.removeProperty('--rv-dist'); track.style.removeProperty('--rv-dur');
-  }
-  function mk(c) {
-    var k = c.cloneNode(true);
-    k.setAttribute('data-clone', ''); k.setAttribute('aria-hidden', 'true'); k.setAttribute('tabindex', '-1'); k.removeAttribute('role'); k.removeAttribute('aria-label');
-    return k;
-  }
-  function setup() {
-    clearMarquee();
-    sc.scrollLeft = 0;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    if (mq.matches) {                                  /* компьютер: CSS-анимация */
-      var frag = document.createDocumentFragment();
-      cards.forEach(function (c) { frag.appendChild(mk(c)); });
-      track.appendChild(frag);
-      var first = track.querySelector('[data-clone]');
-      var d = first.offsetLeft - cards[0].offsetLeft;  /* ширина одного набора карточек + gap */
-      if (!d) return;
-      track.style.setProperty('--rv-dist', d + 'px');
-      track.style.setProperty('--rv-dur', (d / SPEED) + 's');
-      track.classList.add('is-marquee');
-      return;
-    }
-    /* телефон: набор карточек x3, лента едет сама и при этом листается пальцем */
-    var pre = document.createDocumentFragment(), post = document.createDocumentFragment();
-    cards.forEach(function (c) { pre.appendChild(mk(c)); post.appendChild(mk(c)); });
-    track.insertBefore(pre, track.firstChild); track.appendChild(post);
-    dist = cards[0].offsetLeft - track.firstChild.offsetLeft;
-    if (!dist) return;
-    pos = dist; sc.scrollLeft = pos; lastSet = sc.scrollLeft;
-    autoOn = true; prevT = 0; activeUntil = 0;
-    rafId = requestAnimationFrame(tick);
-  }
-  /* --- телефон: автопрокрутка (пауза, пока палец на ленте и ~2 c после) --- */
-  function tick(t) {
-    rafId = requestAnimationFrame(tick);
-    if (!autoOn || !inView) { prevT = 0; return; }
-    if (!prevT) { prevT = t; return; }
-    var dt = (t - prevT) / 1000; prevT = t;
-    if (performance.now() < activeUntil) { pos = sc.scrollLeft; return; }
-    pos += MSPEED * dt;
-    if (pos >= 2 * dist) pos -= dist; else if (pos < dist) pos += dist;
-    sc.scrollLeft = pos; lastSet = sc.scrollLeft;
-  }
-  sc.addEventListener('scroll', function () {
-    if (autoOn && Math.abs(sc.scrollLeft - lastSet) > 1.5) activeUntil = performance.now() + 1800;
-  }, { passive: true });
-  sc.addEventListener('touchstart', function () { if (autoOn) activeUntil = Infinity; }, { passive: true });
-  ['touchend', 'touchcancel'].forEach(function (n) {
-    sc.addEventListener(n, function () { if (autoOn) activeUntil = performance.now() + 1800; }, { passive: true });
-  });
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { inView = es[0].isIntersecting; }, { rootMargin: '100px' }).observe(sc);
-  setup();
-  var lastW = window.innerWidth, t;
-  window.addEventListener('resize', function () {
-    if (window.innerWidth === lastW) return;           /* игнорируем «прыжки» адресной строки на телефоне */
-    lastW = window.innerWidth; clearTimeout(t); t = setTimeout(setup, 200);
-  });
-
-  /* --- клик / Enter по карточке --- */
-  sc.addEventListener('dragstart', function (e) { e.preventDefault(); });
-  sc.addEventListener('click', function (e) {
-    var c = e.target.closest('.review-card'); if (c) openAt(+c.getAttribute('data-i'), c);
-  });
-  sc.addEventListener('keydown', function (e) {
-    if (e.key !== 'Enter' && e.key !== ' ') return;
-    var c = e.target.closest('.review-card'); if (c) { e.preventDefault(); openAt(+c.getAttribute('data-i'), c); }
-  });
-
-  /* --- просмотр --- */
-  function show(i) {
-    idx = (i + cards.length) % cards.length;
-    var im = cards[idx].querySelector('img');
-    img.style.opacity = 0;
-    img.onload = img.onerror = function () { img.style.opacity = 1; };
-    img.src = im.getAttribute('data-full') || im.getAttribute('src'); img.alt = im.alt;
-    cnt.textContent = (idx + 1) + ' / ' + cards.length;
-    [idx + 1, idx - 1].forEach(function (j) { var n = cards[(j + cards.length) % cards.length].querySelector('img'); new Image().src = n.getAttribute('data-full') || n.getAttribute('src'); });
-  }
-  function openAt(i, trigger) {
-    last = trigger || null; show(i);
-    lb.classList.add('is-open'); lb.setAttribute('aria-hidden', 'false');
-    document.documentElement.classList.add('popup-open');
-    if (window.__lenis) window.__lenis.stop();
-    setTimeout(function () { lb.focus({ preventScroll: true }); }, 50);
-  }
-  function close() {
-    lb.classList.remove('is-open'); lb.setAttribute('aria-hidden', 'true');
-    document.documentElement.classList.remove('popup-open');
-    if (window.__lenis) window.__lenis.start();
-    if (last && !last.hasAttribute('data-clone')) last.focus({ preventScroll: true });
-  }
-  lb.addEventListener('click', function (e) {
-    if (e.target.closest('[data-lb-prev]')) return show(idx - 1);
-    if (e.target.closest('[data-lb-next]')) return show(idx + 1);
-    if (e.target.closest('[data-lb-close]') || !e.target.closest('.lightbox__img')) close();
-  });
-  document.addEventListener('keydown', function (e) {
-    if (!lb.classList.contains('is-open')) return;
-    if (e.key === 'Escape') close();
-    else if (e.key === 'ArrowLeft') show(idx - 1);
-    else if (e.key === 'ArrowRight') show(idx + 1);
-  });
-  var tx = 0, ty = 0;
-  lb.addEventListener('touchstart', function (e) { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, { passive: true });
-  lb.addEventListener('touchend', function (e) {
-    var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
-    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) show(idx + (dx < 0 ? 1 : -1));
-  }, { passive: true });
 })();</script>
 <!-- [SCRIPT] СБОРЩИК БЕГУЩИХ ЛЕНТ: клонирует линию под ширину экрана, считает скорость из data-wr-speed, ставит на паузу ленты вне экрана -->
 <script>(function () {
@@ -794,180 +189,48 @@ if (/[?&]mappick/.test(location.search)) {
     els.forEach(function (el) { if (el.parentElement) io.observe(el.parentElement); });
   }
 })();</script>
-<!-- [SCRIPT] ПЛАВНЫЙ СКРОЛЛ: библиотека Lenis (CDN) и её подключение к GSAP. Во время загрузки скролл заблокирован, плавные якоря меню -->
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script><script>(function () {
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>(function () {
   if (!window.Lenis || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var lenis = new Lenis({ duration: 1.1, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
   window.__lenis = lenis;
-  lenis.stop(); /* пока идёт прелоадер, скролл заблокирован */
-  if (window.gsap) {
-    if (window.ScrollTrigger) { gsap.registerPlugin(ScrollTrigger); lenis.on('scroll', ScrollTrigger.update); }
-    gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
-    gsap.ticker.lagSmoothing(0);
-  } else {
-    (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
-  }
-  /* якорные ссылки меню */
-  document.querySelectorAll('a[href*="#"]').forEach(function (a) {
+  if (window.gsap) { gsap.ticker.add(function (time) { lenis.raf(time * 1000); }); gsap.ticker.lagSmoothing(0); }
+  else { (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0); }
+})();</script>
+<!-- [SCRIPT] РАБОТЫ: слайдер (смена картинок каждые data-interval мс, без указателя мыши), видео (играет только на экране), кнопка «Подробнее» - плавный скролл к якорю -->
+<script>(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* видео: запуск, когда попало на экран (muted + playsinline нужны для автоплея в Safari) */
+  [].forEach.call(document.querySelectorAll('.work-video'), function (v) {
+    v.muted = true; v.setAttribute('muted', ''); v.playsInline = true;
+    function play() { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    if (reduce) return;
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) play(); else v.pause(); }); }, { threshold: 0.25 }).observe(v);
+    } else { play(); }
+    document.addEventListener('touchstart', play, { once: true, passive: true });   /* если iOS заблокировал автоплей, первое касание запустит */
+  });
+  /* слайдер: картинки одного размера (16:9), меняются сами; плавность - переменная --slide-fade в CSS (сейчас 0 - как покадровая анимация) */
+  [].forEach.call(document.querySelectorAll('.work-slider'), function (box) {
+    var slides = [].slice.call(box.querySelectorAll('.work-slider__img'));
+    if (slides.length < 2 || reduce) return;
+    var i = 0, timer = null, ms = parseInt(box.getAttribute('data-interval'), 10) || 1500, warmed = false;
+    function warm() { if (warmed) return; warmed = true; slides.forEach(function (im) { im.loading = 'eager'; }); }   /* догружаем все кадры, чтобы смена не мигала */
+    function next() { slides[i].classList.remove('is-active'); i = (i + 1) % slides.length; slides[i].classList.add('is-active'); }
+    function start() { warm(); if (!timer) timer = setInterval(next, ms); }
+    function stop() { clearInterval(timer); timer = null; }
+    if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { es[0].isIntersecting ? start() : stop(); }, { threshold: 0.1 }).observe(box); } else { start(); }
+  });
+  /* кнопка «Подробнее» */
+  [].forEach.call(document.querySelectorAll('[data-scroll-to]'), function (a) {
     a.addEventListener('click', function (e) {
-      var h = a.getAttribute('href') || '', i = h.indexOf('#');
-      if (i < 0 || h.length - i < 2) return;
-      var el = document.querySelector(h.slice(i));
-      if (!el) return;
-      e.preventDefault(); lenis.scrollTo(el, { offset: window.innerWidth <= 767 ? -30 : -80 });   /* отступ сверху у якоря: 80px на компьютере, 30px на телефоне */
+      var t = document.querySelector(a.getAttribute('data-scroll-to'));
+      if (!t) return;
+      e.preventDefault();
+      if (window.__lenis) window.__lenis.scrollTo(t, { offset: -40 });
+      else t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
     });
   });
 })();</script>
-<!-- [SCRIPT] ЭКРАН ЗАГРУЗКИ И ИНТРО: считает проценты, ждёт шрифты/картинки/ленты, подгружает картинки заранее, убирает прелоадер и запускает grow-in анимацию hero -->
-<script>(function () {
-  var root = document.documentElement, done = false;
-  var pctEl = document.getElementById('plPct'), fillEl = document.getElementById('plFill');
-
-  function mark(img) {
-    if (!img || img.tagName !== 'IMG') return;
-    if (!(img.complete && (img.naturalWidth || /\.svg/i.test(img.currentSrc || img.src)))) return;
-    img.classList.add('is-loaded');
-    var w = img.closest('.image-wrap-work-card');
-    if (w) w.classList.add('is-loaded');
-  }
-  function markAll() { [].forEach.call(document.images, mark); }
-  document.addEventListener('load', function (e) { mark(e.target); }, true);
-  document.addEventListener('error', function (e) {
-    var t = e.target;
-    if (t && t.tagName === 'IMG') {
-      t.classList.add('is-loaded');
-      var w = t.closest('.image-wrap-work-card'); if (w) w.classList.add('is-loaded');
-    }
-  }, true);
-  markAll();
-
-  /* sizes по реальной ширине карточки: браузер берёт нужный вариант srcset, а не 1080-3354px */
-  document.querySelectorAll('img').forEach(function (im) { im.decoding = 'async'; });
-  document.querySelectorAll('.image-wrap-work-card img').forEach(function (im) {
-    var w = im.closest('.image-wrap-work-card').clientWidth;
-    if (w >= 120) im.sizes = w + 'px';
-  });
-
-  /* ---- критичные картинки: hero + первые 6 карточек каждой строки работ грузим сразу ---- */
-  var critical = [];
-  var hero = document.querySelector('.hero-img');
-  if (hero) critical.push(hero);
-  document.querySelectorAll('#work [data-wr-marquee]').forEach(function (row) {
-    [].slice.call(row.querySelectorAll('.work-card-link img'), 0, 6).forEach(function (im) {
-      im.loading = 'eager'; im.setAttribute('fetchpriority', 'high'); critical.push(im);
-    });
-  });
-  function imgsFraction() {
-    if (!critical.length) return 1;
-    var ok = critical.filter(function (im) { return im.complete; }).length;
-    return ok / critical.length;
-  }
-
-  /* ---- прогресс ---- */
-  var st = { fonts: 0, imgs: 0, load: 0, mq: 0 };
-  var shown = 0, t0 = performance.now();
-  function target() {
-    var real = st.fonts * 15 + imgsFraction() * 45 + st.load * 20 + st.mq * 20;
-    var creep = Math.min(40, (performance.now() - t0) / 60);
-    return Math.min(100, Math.max(real, creep));
-  }
-  function render(v) {
-    if (pctEl) pctEl.textContent = Math.round(v);
-    if (fillEl) fillEl.style.width = v + '%';
-  }
-  /* ---- интро hero: проигрываем появление уже ПОСЛЕ прелоадера ---- */
-  var intro = null;
-  function introPrep() {
-    if (!window.gsap || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var hs = document.querySelector('body > section.page-section');
-    if (!hs) return;
-    intro = {
-      img: hs.querySelector('.hero-img'),
-      texts: [].slice.call(hs.querySelectorAll('.text-h6')),
-      btn: hs.querySelector('a.stagger-animation')
-    };
-    /* grow in: прозрачность + масштаб от меньшего к 1 */
-    var all = [intro.img, intro.btn].concat(intro.texts).filter(Boolean);
-    gsap.set(all, { opacity: 0, scale: 0.7, transformOrigin: '50% 50%' });
-  }
-  function introPlay() {
-    if (!intro) return;
-    var tl = gsap.timeline({ defaults: { ease: 'back.out(1.2)' } });
-    if (intro.img) tl.to(intro.img, { opacity: 1, scale: 1, duration: 1.1 }, 0);
-    if (intro.texts.length) tl.to(intro.texts, { opacity: 1, scale: 1, duration: 0.9, stagger: 0.14 }, 0.25);
-    if (intro.btn) tl.to(intro.btn, { opacity: 1, scale: 1, duration: 0.8 }, 0.7);
-  }
-  /* Переход с других страниц по якорю (/#work, /#service ...): когда экран загрузки ушёл, прокручиваем к нужному блоку с тем же отступом, что у меню */
-  var userMoved = false;
-  ['wheel', 'touchstart', 'keydown'].forEach(function (n) { window.addEventListener(n, function () { userMoved = true; }, { passive: true, once: true }); });
-  function goHash() {
-    var h = location.hash; if (h.length < 2) return;
-    var el = null; try { el = document.querySelector(h); } catch (e) {}
-    if (!el) return;
-    var off = window.innerWidth <= 767 ? -30 : -80;
-    if (window.__lenis) window.__lenis.scrollTo(el, { offset: off, immediate: true });
-    else window.scrollTo(0, el.getBoundingClientRect().top + window.pageYOffset + off);
-  }
-  function goHashAgain() { if (!userMoved) goHash(); }   /* после дозагрузки лент высота блоков могла чуть измениться */
-  function finish() {
-    if (done) return; done = true;
-    introPrep();
-    shown = 100; render(100); markAll();
-    setTimeout(function () { root.classList.remove('is-loading'); if (window.__lenis) window.__lenis.start(); goHash(); setTimeout(goHashAgain, 700); setTimeout(introPlay, 150); }, 250);
-    /* после прелоадера подгружаем остальные lazy-картинки заранее, чтобы ленты не «дорисовывались» на глазах */
-    setTimeout(function () {
-      document.querySelectorAll('img[loading="lazy"]').forEach(function (im) { if (!im.closest('#reviews')) im.loading = 'eager'; });   /* отзывы (много картинок) грузятся по мере прокрутки */
-    }, 600);
-    [800, 2000, 4500, 8000].forEach(function (t) { setTimeout(markAll, t); });
-    var iv = setInterval(function () {
-      markAll();
-      var left = [].filter.call(document.images, function (i) { return i.getAttribute('src') && !i.classList.contains('is-loaded'); });
-      if (!left.length) clearInterval(iv);
-    }, 1500);
-    setTimeout(function () { clearInterval(iv); root.classList.remove('sk-on'); }, 45000);
-    /* заранее декодируем картинки лент, чтобы при скролле не было дорисовки кусками */
-    setTimeout(function () {
-      var list = [].slice.call(document.querySelectorAll('#work .work-card-link img, #reviews .work-card-link img'));
-      (function next() {
-        var im = list.shift(); if (!im) return;
-        (im.decode ? im.decode() : Promise.resolve()).catch(function () {}).then(function () { setTimeout(next, 40); });
-      })();
-    }, 900);
-  }
-  function allSet() { return st.fonts && st.imgs && st.load && st.mq; }
-  function tick() {
-    if (done) return;
-    var tg = allSet() ? 100 : Math.min(target(), 97);
-    shown += Math.max((tg - shown) * 0.08, tg > shown ? 0.25 : 0);
-    if (shown > tg) shown = tg;
-    render(shown);
-    if (allSet() && shown >= 99.5) return finish();
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-
-  var cap = function (p, ms) { return Promise.race([p, new Promise(function (r) { setTimeout(r, ms); })]); };
-  var fonts = window.__fontsPromise || (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve());
-  var winLoad = document.readyState === 'complete' ? Promise.resolve()
-    : new Promise(function (r) { window.addEventListener('load', r, { once: true }); });
-  var critReady = Promise.all(critical.map(function (im) {
-    return im.complete ? Promise.resolve() : new Promise(function (r) {
-      im.addEventListener('load', r, { once: true }); im.addEventListener('error', r, { once: true });
-    });
-  }));
-
-  cap(fonts, 3000).then(function () { st.fonts = 1; });
-  cap(critReady, 8000).then(function () { st.imgs = 1; });
-  cap(winLoad, 6000).then(function () { st.load = 1; });
-
-  /* ленты считаем готовыми, когда marquee-скрипт собрал их все */
-  var mqEls = [].slice.call(document.querySelectorAll('[data-wr-marquee]'));
-  var mqStart = performance.now();
-  (function pollMq() {
-    var ready = mqEls.every(function (el) { return el.classList.contains('mq-ready'); });
-    if (ready || performance.now() - mqStart > 10000) { setTimeout(function () { st.mq = 1; }, 200); return; }
-    setTimeout(pollMq, 100);
-  })();
-
-  setTimeout(finish, 13000);
-})();</script></body></html>
+</body></html>

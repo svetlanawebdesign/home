@@ -1,0 +1,80 @@
+/* ======================================================================
+   СТИЛИ СТРАНИЦЫ УСЛУГИ (calculator/index.html) - подключается ПОСЛЕ
+   общего CSS, cases-styles.css и 404-styles.css:
+   <link href="../css/service-page-styles.css" rel="stylesheet" type="text/css"/>
+   Использует из cases-styles.css: .case-pill (розовый / зелёный).
+   Колонки по линиям: 1-я полоска = 5%, 3-я = 50%, 5-я = 95% ширины экрана
+   ====================================================================== */
+
+/* ---------- первый экран: всё по центру ---------- */
+.service-hero__wrap { display: block; padding-top: 190px; padding-bottom: 110px; overflow: visible; }
+.service-hero__inner {
+  position: relative; z-index: 6;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 24px; margin: 0 5%; text-align: center;
+}
+.service-hero__title { margin: 0; color: #fff; font-size: 55px; text-align: center; }
+.body-medium.description.service-hero__text { margin: 0 0 8px; max-width: 640px; text-align: center; }
+
+/* ---------- блок с работами ---------- */
+.service-works__wrap { display: block; padding-top: 0; padding-bottom: 110px; overflow: visible; }
+.service-works__head {
+  position: relative; z-index: 6;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 24px; margin: 0 5% 90px; text-align: center;
+}
+.service-works__title { margin: 0; color: #fff; font-size: 55px; text-align: center; }
+.body-medium.description.service-works__text { margin: 0; max-width: 640px; text-align: center; }
+
+/* шахматка: нечётные работы слева (1-я - 3-я полоска), чётные справа (3-я - 5-я) */
+.service-works__grid { position: relative; z-index: 6; display: flex; flex-direction: column; gap: 90px; margin: 0 5%; }
+.work-item { width: 50%; }
+.work-item:nth-child(even) { margin-left: auto; }
+
+/* картинка, слайдер и видео: у всех одинаковая пропорция 1920 x 1080 */
+.work-media {
+  position: relative; width: 100%; aspect-ratio: 1920 / 1080;
+  border-radius: 10px; overflow: hidden; isolation: isolate;
+  background: #1e1e1e;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+.work-media__el, .work-slider__img {
+  position: absolute; top: 0; left: 0;
+  display: block; width: 100%; height: 100%; object-fit: cover;
+}
+
+/* слайдер: без указателя мыши, картинки меняются сами (скрипт каждые 1,5 с).
+   --slide-fade: 0s = мгновенная смена, как кадры анимации. Хотите мягче - поставьте .3s */
+.work-slider { pointer-events: none; --slide-fade: 0s; }
+.work-slider__img { opacity: 0; transition: opacity var(--slide-fade) linear; }
+.work-slider__img.is-active { opacity: 1; }
+.work-video { pointer-events: none; }
+
+/* плашки и текст под работой */
+.work-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.work-title { margin: 22px 0 0; color: #fff; font-size: 40px; text-align: left; }
+.body-medium.description.work-text { margin: 14px 0 0; max-width: none; text-align: left; }
+
+/* кнопка «Смотреть кейсы» после всех работ */
+.service-works__more { position: relative; z-index: 6; display: flex; justify-content: center; margin: 100px 5% 0; }
+
+/* ---------- планшет ---------- */
+@media screen and (max-width: 991px) {
+  .service-hero__title, .service-works__title { font-size: 48px; }
+  .work-title { font-size: 34px; }
+}
+
+/* ---------- телефон: работы шире (78%), всё так же шахматкой ---------- */
+@media screen and (max-width: 767px) {
+  .service-hero__wrap { padding-top: 130px; padding-bottom: 70px; }
+  .service-hero__inner { margin: 0 5%; gap: 20px; }
+  .service-hero__title, .service-works__title { font-size: 34px; }
+  .body-medium.description.service-hero__text, .body-medium.description.service-works__text { max-width: 90%; }
+  .service-works__wrap { padding-bottom: 70px; }
+  .service-works__head { margin: 0 5% 50px; gap: 18px; }
+  .service-works__grid { margin: 0; gap: 56px; }
+  .work-item { width: 78%; }
+  .work-title { margin-top: 18px; font-size: 28px; }
+  .work-tags { margin-top: 18px; }
+  .service-works__more { margin: 64px 5% 0; }
+}

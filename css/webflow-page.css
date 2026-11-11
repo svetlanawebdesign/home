@@ -185,9 +185,9 @@
     position: relative;
     z-index: 6;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 4px;
-    margin: 0 5%;
+    margin: 0 0%;
 }
        .wf-step {
         min-height: auto;

@@ -123,3 +123,48 @@
   .wf-why__stat { padding-right: 0; }
   .wf-why__text { padding-left: 0; }
 }
+
+
+/* Блок «Зачем нужен калькулятор» */
+.wf-why {
+  --why-left: 5%;     /* где стоит первая полоска (от левого края экрана) */
+  --why-mid: 50%;     /* где стоит средняя полоска */
+  margin: 0;
+  padding: 0;           /* отступы вынесены внутрь .wf-why__wrap, чтобы полоски шли без разрывов */
+}
+.wf-why__wrap {
+  padding-top: clamp(80px, 10vw, 160px);
+  padding-bottom: clamp(80px, 10vw, 160px);
+}
+.wf-why__grid { display: flex; align-items: flex-start; position: relative; z-index: 2; }
+.wf-why__stat {
+  flex: 0 0 var(--why-mid);
+  box-sizing: border-box;
+  padding-left: var(--why-left);
+  padding-right: 3%;
+}
+.wf-why__text { flex: 1 1 0; min-width: 0; padding-right: var(--why-left); text-align: left; }
+
+.wf-why__num {
+  font-family: 'Oranienbaum', serif;
+  font-weight: 400;
+  font-size: clamp(96px, 15vw, 240px);
+  line-height: .9;
+  letter-spacing: 0;
+  color: #fff;
+  margin: 0 0 24px;
+}
+.wf-why__lead { font-size: clamp(18px, 1.8vw, 28px); line-height: 1.25; color: #fff; margin: 0 0 32px; max-width: 16em; }
+.wf-why__note { font-size: 13px; line-height: 1.5; color: #8a8a8a; margin: 0; max-width: 30em; }
+.wf-why__note a { color: inherit; text-decoration: underline; word-break: break-all; }
+.wf-why__note a:hover { color: #fff; }
+.wf-why__title { margin: 0 0 24px; text-align: left; }
+.wf-why__text .description { margin: 0 0 20px; text-align: left; }
+.wf-why__text .description:last-child { margin-bottom: 0; }
+
+@media (max-width: 767px) {
+  .wf-why__grid { flex-direction: column; row-gap: 48px; align-items: stretch; }
+  .wf-why__stat, .wf-why__text { flex: none; padding-left: 0; padding-right: 0; text-align: center; }
+  .wf-why__lead, .wf-why__note { margin-left: auto; margin-right: auto; }
+  .wf-why__title, .wf-why__text .description { text-align: center; }
+}

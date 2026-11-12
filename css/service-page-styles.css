@@ -342,3 +342,27 @@ li.wf-incl__item {
   .wf-seo__inner { flex-direction: column; padding: 0; }
   .wf-seo__title { flex: none; padding-right: 0; margin-bottom: 24px; text-align: center; }
 }
+
+
+.faq {
+    border: 0 !important;
+    display: flex;
+    flex-direction: unset;
+    gap: 13px 10px;
+    flex-wrap: wrap;
+}
+.faq-a__inner {
+    padding: none;
+    /* margin-top: 0px; */
+    padding-left: 25px;
+    padding-right: 25px;
+}
+p.body-medium.description.cases-cta__sub.reveal.is-in {
+    max-width: none !important;
+}
+.service-hero__img {
+    display: block;
+    width: min(100%, 740px);
+    ight: auto;
+    margin: 0 auto -42px;
+}

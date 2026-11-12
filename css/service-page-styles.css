@@ -307,3 +307,38 @@ li.wf-incl__item {
   
 }
 }
+/* Первый экран */
+.service-hero__img { display: block; width: min(100%, 560px); height: auto; margin: 0 auto 48px; }
+.service-hero__row { display: flex; align-items: flex-end; width: 100%; padding: 0 5%; box-sizing: border-box; position: relative; z-index: 2; text-align: left; }
+.service-hero__left { flex: 0 0 50%; box-sizing: border-box; padding-right: 40px; }
+.service-hero__right { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.service-hero__row .breadcrumbs { margin-bottom: 24px; justify-content: flex-start; }
+.service-hero__row .service-hero__title,
+.service-hero__row .cases-cta__sub { text-align: left !important; margin: 0; max-width: none; }
+@media (max-width: 767px) {
+  .service-hero__img { width: min(100%, 320px); margin-bottom: 24px; }
+  .service-hero__row { flex-direction: column; align-items: center; padding: 0; text-align: center; gap: 24px; }
+  .service-hero__left { flex: none; padding-right: 0; }
+  .service-hero__right { align-items: center; }
+  .service-hero__row .breadcrumbs { justify-content: center; }
+  .service-hero__row .service-hero__title,
+  .service-hero__row .cases-cta__sub { text-align: center !important; }
+}.wf-why__stat--mob { display: none; }
+@media (max-width: 767px) {
+  .wf-why__stat--desk { display: none; }
+  .wf-why__stat--mob { display: block; text-align: center; margin: 24px 0 32px; }
+}
+/* FAQ: плашки без разделителей */
+.faq { border: 0 !important; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { background: #161616; border: 0 !important; border-radius: 10px; overflow: hidden; box-shadow: none; }
+.faq-q, .faq-a { border: 0 !important; }
+.faq-q__btn { padding: 20px 24px; }
+.faq-a__inner { padding: 0 24px 20px; }
+/* SEO-блок: заголовок слева, текст справа */
+.wf-seo__inner { display: flex; align-items: flex-start; padding: 0 5%; box-sizing: border-box; position: relative; z-index: 2; }
+.wf-seo__title { flex: 0 0 50%; box-sizing: border-box; padding-right: 40px; margin: 0; text-align: left; }
+.wf-seo__inner .seo-text { flex: 1 1 0; min-width: 0; }
+@media (max-width: 767px) {
+  .wf-seo__inner { flex-direction: column; padding: 0; }
+  .wf-seo__title { flex: none; padding-right: 0; margin-bottom: 24px; text-align: center; }
+}

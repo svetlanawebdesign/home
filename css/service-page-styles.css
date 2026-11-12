@@ -152,7 +152,7 @@
   line-height: .9;
   letter-spacing: 0;
   color: #fff;
-  margin: 0 0 12px;
+  margin: 0 0 22px;
 }
 .wf-why__lead { font-size: clamp(18px, 1.8vw, 28px); line-height: 1.25; color: #fff; margin: 0 0 16px; max-width: 16em; }
 .wf-why__note { font-size: 13px; line-height: 1.5; color: #8a8a8a; margin: 0; max-width: 30em; }
@@ -255,4 +255,55 @@ h2.heading-2.wf-incl__title {
 }
 @media (max-width: 767px) {
   .wf-incl__list { grid-template-columns: 1fr; }
+   .wf-incl__row {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    padding: 0 0%;
+    position: relative;
+    z-index: 2;
+    flex-direction: column-reverse !important;
+}
+   .wf-incl__card--green {
+    flex: 1 1 0;
+    min-width: 0;
+    background: #B7F9A7;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+}
+   .wf-incl__bottom {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 2px 19px;
+    flex-direction: column;
+}
+   .wf-incl__price {
+    margin-top: -12px;
+}
+li.wf-incl__item {
+    max-width: 46%;
+}
+   ul.wf-incl__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px 0px;
+      text-align:center;
+          justify-content: space-between;
+}
+   .wf-incl__item {
+    position: relative;
+    padding-left: 0px;
+    padding-top: 32px;
+}
+   .wf-incl__item::before {
+    content: "";
+    position: absolute;
+    left: 46%;
+  
+}
 }

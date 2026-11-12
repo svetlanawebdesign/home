@@ -114,7 +114,7 @@
 .wf-why__note { font-size: 13px; line-height: 1.5; color: #8a8a8a; margin: 0; max-width: 28em; }
 .wf-why__note a { color: inherit; text-decoration: underline; word-break: break-all; }
 .wf-why__note a:hover { color: #fff; }
-.wf-why__text { padding-left: 40px; }
+.wf-why__text { padding-left: 0px; }
 .wf-why__title { margin: 0 0 24px; }
 .wf-why__text .description { margin: 0 0 20px; }
 .wf-why__text .description:last-child { margin-bottom: 0; }

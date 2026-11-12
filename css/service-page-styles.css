@@ -366,3 +366,33 @@ p.body-medium.description.cases-cta__sub.reveal.is-in {
     ight: auto;
     margin: 0 auto -42px;
 }
+
+.faq-a__inner { padding: 0 !important; }
+.faq-a__inner > p { margin: 0; padding: 0 24px 20px; }
+
+/* SEO-блок: заголовок по центру, текст в 2 колонки */
+.wf-seo__inner { display: block; padding: 0 5%; box-sizing: border-box; position: relative; z-index: 2; }
+.wf-seo__title { flex: none; width: 100%; padding: 0; margin: 0 0 40px; text-align: center; }
+.wf-seo__inner .seo-text { width: 100%; }
+
+/* Колонки включаются, когда текст раскрыт (в свёрнутом виде виден один абзац на всю ширину) */
+.seo-text:not(.is-collapsible) .seo-text__body,
+.seo-text.is-open .seo-text__body { column-count: 2; column-gap: 48px; }
+.seo-text__body h3 { break-after: avoid; break-inside: avoid; }
+.seo-text__body p { break-inside: avoid; }
+
+@media (max-width: 767px) {
+  .wf-seo__inner { padding: 0; }
+  .wf-seo__title { text-align: left; margin-bottom: 24px; }
+  .seo-text:not(.is-collapsible) .seo-text__body,
+  .seo-text.is-open .seo-text__body { column-count: 1; }
+   .service-hero__img {
+    display: block;
+    width: min(100%, 740px);
+    ight: auto;
+    margin: 0 auto 22px;
+}
+   .service-hero__row {
+    gap: 0px;
+}
+}

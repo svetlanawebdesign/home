@@ -103,3 +103,23 @@
 
 /* Отступ между работами и отзывами */
 .service-works__more { padding-bottom: clamp(80px, 10vw, 160px) !important; }
+
+
+/* Блок «Зачем нужен калькулятор» */
+.wf-why { padding-top: clamp(80px, 10vw, 160px); padding-bottom: clamp(80px, 10vw, 160px); }
+.wf-why__grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 0; align-items: start; position: relative; z-index: 2; }
+.wf-why__stat { padding-right: 40px; }
+.wf-why__num { font-size: clamp(96px, 15vw, 240px); line-height: .9; letter-spacing: -.02em; color: #fff; margin: 0 0 24px; }
+.wf-why__lead { font-size: clamp(22px, 2.4vw, 36px); line-height: 1.2; color: #fff; margin: 0 0 32px; max-width: 14em; }
+.wf-why__note { font-size: 13px; line-height: 1.5; color: #8a8a8a; margin: 0; max-width: 28em; }
+.wf-why__note a { color: inherit; text-decoration: underline; word-break: break-all; }
+.wf-why__note a:hover { color: #fff; }
+.wf-why__text { padding-left: 40px; }
+.wf-why__title { margin: 0 0 24px; }
+.wf-why__text .description { margin: 0 0 20px; }
+.wf-why__text .description:last-child { margin-bottom: 0; }
+@media (max-width: 767px) {
+  .wf-why__grid { grid-template-columns: 1fr; row-gap: 48px; }
+  .wf-why__stat { padding-right: 0; }
+  .wf-why__text { padding-left: 0; }
+}

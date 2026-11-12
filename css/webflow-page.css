@@ -113,6 +113,7 @@
 
 .faq-item {
     max-width: 49%;
+    min-width: 49%;
 }
 .faq {
     display: flex;

@@ -179,19 +179,39 @@ section.page-section.cases-cta.service-hero .content-wrap.center.add-bottom.serv
 .wf-incl__wrap { padding-top: clamp(80px, 10vw, 160px); padding-bottom: clamp(80px, 10vw, 160px); }
 .wf-incl__row { display: flex; align-items: stretch; gap: 12px; padding: 0 5%; position: relative; z-index: 2; }
 .wf-incl__card { box-sizing: border-box; padding: 24px; border-radius: 12px; }
-.wf-incl__card--dark { flex: 0 0 49.5%; background: #161616; color: #fff; }
+.wf-incl__card--dark {
+    flex: 0 0 49.5%;
+    background: #ffb7ff;
+    color: #000000;
+}
 .wf-incl__card--green { flex: 1 1 0; min-width: 0; background: #B7F9A7; color: #000; display: flex; flex-direction: column; justify-content: space-between; gap: 32px; }
 
 .wf-incl__title { margin: 0 0 32px; text-align: left; }
 .wf-incl__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; }
 .wf-incl__item { position: relative; padding-left: 32px; }
 .wf-incl__item::before {
-  content: ""; position: absolute; left: 0; top: .15em; width: 20px; height: 20px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23B7F9A7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10.5l4 4 8-9'/%3E%3C/svg%3E") center / contain no-repeat;
+    content: "";
+    position: absolute;
+    left: 0;
+    filter: brightness(0);
+    top: .15em;
+    width: 20px;
+    height: 20px;
+    background: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23B7F9A7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10.5l4 4 8-9'/%3E%3C/svg%3E) center / contain no-repeat;
 }
-.wf-incl__h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.25; font-weight: 500; color: #fff; }
-.wf-incl__p { margin: 0; font-size: 14px; line-height: 1.5; color: #a8a8a8; }
-
+.wf-incl__h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.25;
+    font-weight: 500;
+    color: #000;
+}
+.wf-incl__p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #000000b5;
+}
 .wf-incl__eyebrow { margin: 0; font-size: 12px; font-weight: 400; line-height: 1.4; letter-spacing: .08em; text-transform: uppercase; color: #000; }
 .wf-incl__price { font-family: 'Oranienbaum', serif; font-weight: 400; font-size: clamp(72px, 9vw, 150px); line-height: .95; color: #000; }
 .wf-incl__bottom { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 24px; }

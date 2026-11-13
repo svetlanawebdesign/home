@@ -112,8 +112,8 @@
 .faq-a__inner p { margin: 0 0 22px; color: #ffffffb3; font-family: Inter, sans-serif; font-size: 15px; font-weight: 300; line-height: 1.6; }
 
 .faq-item {
-    max-width: 49%;
-    min-width: 49%;
+    max-width: 49.5%;
+    min-width: 49.5%;
 }
 .faq {
     display: flex;

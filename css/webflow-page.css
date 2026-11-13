@@ -124,7 +124,7 @@
 
 /* ---------- SEO-текст ---------- */
 .wf-seo__wrap { display: block; padding-top: 30px; padding-bottom: 130px; overflow: visible; }
-.wf-seo__inner { position: relative; z-index: 6; margin: 0 5%; max-width: 880px; text-align: left; }
+.wf-seo__inner { position: relative; z-index: 6; margin: 0 0%; max-width: 100%; text-align: left; }
 .wf-seo__title { margin: 0 0 28px; color: #fff; font-size: 40px; text-align: left; }
 .seo-text__body { color: #ffffffb3; font-family: Inter, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.65; }
 .seo-text__body p { margin: 0 0 14px; }

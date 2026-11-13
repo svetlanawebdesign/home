@@ -748,18 +748,27 @@
       if (!wasOpen) { item.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
     });
   });
+
   /* ---- SEO-текст: свёрнут до первого абзаца, весь текст остаётся в HTML ---- */
   var box = document.getElementById('seoText');
   if (box) {
     var body = document.getElementById('seoBody'), more = box.querySelector('.seo-text__more');
     function collapsedH() { var p = body.querySelector('p'); return p ? p.offsetHeight + 24 : 160; }
+    /* полная высота: на время замера снимаем ограничение, иначе колонки не помещаются и текст обрезается */
+    function fullH() {
+      var prev = body.style.maxHeight;
+      body.style.maxHeight = 'none';
+      var h = body.scrollHeight;
+      body.style.maxHeight = prev;
+      return h;
+    }
     box.classList.add('is-collapsible'); body.style.maxHeight = collapsedH() + 'px';
     more.addEventListener('click', function () {
       var open = box.classList.toggle('is-open');
-      body.style.maxHeight = open ? body.scrollHeight + 'px' : collapsedH() + 'px';
+      body.style.maxHeight = (open ? fullH() : collapsedH()) + 'px';
       more.textContent = open ? 'Свернуть' : 'Читать подробнее'; more.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
-    window.addEventListener('resize', function () { body.style.maxHeight = box.classList.contains('is-open') ? body.scrollHeight + 'px' : collapsedH() + 'px'; });
+    window.addEventListener('resize', function () { body.style.maxHeight = (box.classList.contains('is-open') ? fullH() : collapsedH()) + 'px'; });
   }
 })();</script>
 

@@ -415,6 +415,9 @@ div#reviewsScroller {
 .cases-cta.reviews-more {
     margin-top: 20px !important;
 }
+.wf-incl__price {
+    font-size: 133px;
+}
 
 
 @media (max-width: 767px) {

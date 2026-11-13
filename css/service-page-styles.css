@@ -17,7 +17,11 @@
 .service-hero .service-hero__text-block .service-hero__title { margin: 0 0 16px; }
 .service-hero .service-hero__text-block .cases-cta__sub { margin: 0; }
 .service-hero .stagger-animation { margin: 0; }
-
+span.rub {
+    font-size: 38px;
+    padding: 0px 11px;
+    /* margin-top: -20px; */
+}
 /* ---------- блок с работами ---------- */
 .service-works__wrap { display: block; padding-top: 0; padding-bottom: 0; overflow: visible; }
 .service-works__head { margin: 0 auto 90px; align-items: center; text-align: center; }   /* заголовок и текст по центру */
@@ -380,8 +384,59 @@ p.body-medium.description.cases-cta__sub.reveal.is-in {
 .seo-text.is-open .seo-text__body { column-count: 2; column-gap: 48px; }
 .seo-text__body h3 { break-after: avoid; break-inside: avoid; }
 .seo-text__body p { break-inside: avoid; }
+.content-wrap.wf-why__wrap {
+    padding-top: 160px !important;
+    padding-bottom: 80px !important;
+}
+.content-wrap.wf-incl__wrap {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+.content-wrap.wf-how__wrap , .wf-faq__wrap, .content-wrap.wf-seo__wrap{
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+.content-wrap.service-works__wrap {
+    padding-top: 80px !important;
+    padding-bottom: 0px !important;
+}
+.w-layout-vflex.limit-text.cases-cta__text.service-works__head {
+    margin-bottom: 40px;
+}
+.cases-cta.service-works__more {
+    padding-bottom: 80px !important;
+}
+.wf-head {
+    margin-bottom: 0px;
+}
+div#reviewsScroller {
+    margin-top: 0px;
+}
+.cases-cta.reviews-more {
+    margin-top: 20px !important;
+}
+
 
 @media (max-width: 767px) {
+   .content-wrap.wf-how__wrap, .wf-faq__wrap, .content-wrap.wf-seo__wrap {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+   .content-wrap.wf-why__wrap {
+    padding-top: 120px !important;
+    padding-bottom: 60px !important;
+}
+   .content-wrap.service-works__wrap {
+    padding-top: 60px !important;
+    padding-bottom: 0px !important;
+}
+   .content-wrap.wf-incl__wrap {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+   .cases-cta.service-works__more {
+    padding-bottom: 60px !important;
+}
   .wf-seo__inner { padding: 0; }
   .wf-seo__title { text-align: left; margin-bottom: 24px; }
   .seo-text:not(.is-collapsible) .seo-text__body,

@@ -251,7 +251,7 @@ section.page-section.cases-cta.service-hero .content-wrap.center.add-bottom.serv
 }
 h2.heading-2.wf-incl__title {
     max-width: 600px;
-    text-align: center;
+    text-align: left;
 }
 @media (max-width: 991px) {
   .wf-incl__row { flex-direction: column; }

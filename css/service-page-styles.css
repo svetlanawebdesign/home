@@ -340,7 +340,7 @@ li.wf-incl__item {
 .wf-seo__inner .seo-text { flex: 1 1 0; min-width: 0; }
 @media (max-width: 767px) {
   .wf-seo__inner { flex-direction: column; padding: 0; }
-  .wf-seo__title { flex: none; padding-right: 0; margin-bottom: 24px; text-align: center; }
+  .wf-seo__title { flex: none; padding-right: 0; margin-bottom: 24px; text-align: left; }
 }
 
 
@@ -372,7 +372,7 @@ p.body-medium.description.cases-cta__sub.reveal.is-in {
 
 /* SEO-блок: заголовок по центру, текст в 2 колонки */
 .wf-seo__inner { display: block; padding: 0 5%; box-sizing: border-box; position: relative; z-index: 2; }
-.wf-seo__title { flex: none; width: 100%; padding: 0; margin: 0 0 40px; text-align: center; }
+.wf-seo__title { flex: none; width: 100%; padding: 0; margin: 0 0 40px; text-align: left; }
 .wf-seo__inner .seo-text { width: 100%; }
 
 /* Колонки включаются, когда текст раскрыт (в свёрнутом виде виден один абзац на всю ширину) */

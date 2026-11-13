@@ -20,6 +20,9 @@
 span.rub {
     font-size: 38px;
 }
+.wf-incl__price {
+    margin-top: -22px;
+}
 /* ---------- блок с работами ---------- */
 .service-works__wrap { display: block; padding-top: 0; padding-bottom: 0; overflow: visible; }
 .service-works__head { margin: 0 auto 90px; align-items: center; text-align: center; }   /* заголовок и текст по центру */

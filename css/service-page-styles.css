@@ -450,4 +450,35 @@ div#reviewsScroller {
    .service-hero__row {
     gap: 0px;
 }
+   .wf-why__num.reveal.is-in {
+    font-size: 63px !important;
+    margin-bottom: 3px;
+      color:#1e1e1e;
+}
+   p.wf-why__lead.reveal.is-in {
+    color: #1e1e1e;
+    font-size: 14px;
+}
+   p.wf-why__note.reveal.is-in {
+    font-size: 11px;
+}
+   .wf-incl__term , .faq-a__inner p, .seo-text__body p{
+    font-size: 14px;
+}
+   p.wf-why__lead.reveal.is-in {
+    margin-bottom: 4px;
+}
+.wf-why__stat.wf-why__stat--mob {
+    background-color: #d0eeff;
+    border-radius: 138px;
+    padding: 24px;
+    width: 210px;
+    margin: auto;
+    margin-bottom: 23px;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: rotate(-8deg);
+}
 }

@@ -19,8 +19,6 @@
 .service-hero .stagger-animation { margin: 0; }
 span.rub {
     font-size: 38px;
-    padding: 0px 11px;
-    /* margin-top: -20px; */
 }
 /* ---------- блок с работами ---------- */
 .service-works__wrap { display: block; padding-top: 0; padding-bottom: 0; overflow: visible; }

@@ -565,7 +565,7 @@
     a.addEventListener('click', function (e) {
       e.preventDefault();
       var sec = a.closest('section'), next = sec && sec.nextElementSibling;
-      var offset = window.innerWidth <= 767 ? 60 : 100;   /* отступ сверху: компьютер / телефон */
+      var offset = window.innerWidth <= 767 ? 40 : 80;   /* отступ сверху: компьютер / телефон */
       var y = next ? next.getBoundingClientRect().top + window.scrollY - offset : window.scrollY + window.innerHeight;
       y = Math.max(0, y);
       if (window.__lenis) window.__lenis.scrollTo(y);

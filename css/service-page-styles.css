@@ -485,4 +485,17 @@ div#reviewsScroller {
     justify-content: center;
     transform: rotate(-8deg);
 }
+   h2.heading-2.wf-incl__title
+   {
+      text-align:center;
+   }
+   .wf-incl__price {
+    font-size: 79px;
+}
+   span.rub {
+    font-size: 26px;
+}
+       .wf-incl__price {
+        margin-top: -42px;
+    }
 }

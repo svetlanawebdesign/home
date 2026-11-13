@@ -537,11 +537,14 @@
     if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { es[0].isIntersecting ? start() : stop(); }, { threshold: 0.1 }).observe(box); } else { start(); }
   });
 
-  /* 4. Кнопка «Подробнее»: просто листает на один экран вниз */
+  /* 4. Кнопка «Подробнее»: листает к следующей секции, оставляя сверху отступ (200px на компьютере, 100px на телефоне) */
   [].forEach.call(document.querySelectorAll('[data-scroll-screen]'), function (a) {
     a.addEventListener('click', function (e) {
       e.preventDefault();
-      var y = window.scrollY + window.innerHeight;
+      var sec = a.closest('section'), next = sec && sec.nextElementSibling;
+      var offset = window.innerWidth <= 767 ? 100 : 200;   /* отступ сверху: компьютер / телефон */
+      var y = next ? next.getBoundingClientRect().top + window.scrollY - offset : window.scrollY + window.innerHeight;
+      y = Math.max(0, y);
       if (window.__lenis) window.__lenis.scrollTo(y);
       else window.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
     });
@@ -776,6 +779,28 @@
     });
     window.addEventListener('resize', function () { body.style.maxHeight = (box.classList.contains('is-open') ? fullH() : collapsedH()) + 'px'; });
   }
+     
 })();</script>
-
+<script>(function () {
+  /* Блокировка скролла под попапами (связь и отзывы): страница остаётся на месте и после закрытия возвращается на ту же позицию */
+  var root = document.documentElement, body = document.body, lastY = 0, locked = false, savedY = 0;
+  window.addEventListener('scroll', function () { if (!locked) lastY = window.scrollY || root.scrollTop || 0; }, { passive: true });
+  function lock() {
+    if (locked) return;
+    locked = true; savedY = lastY;
+    body.style.position = 'fixed'; body.style.top = (-savedY) + 'px';
+    body.style.left = '0'; body.style.right = '0'; body.style.width = '100%';
+  }
+  function unlock() {
+    if (!locked) return;
+    locked = false;
+    body.style.position = body.style.top = body.style.left = body.style.right = body.style.width = '';
+    root.style.scrollBehavior = 'auto';
+    window.scrollTo(0, savedY);
+    root.style.scrollBehavior = '';
+  }
+  new MutationObserver(function () {
+    if (root.classList.contains('popup-open')) lock(); else unlock();
+  }).observe(root, { attributes: true, attributeFilter: ['class'] });
+})();</script>
 </body></html>
